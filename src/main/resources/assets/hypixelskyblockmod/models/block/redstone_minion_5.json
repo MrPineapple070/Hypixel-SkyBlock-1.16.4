@@ -1,0 +1,10 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "hypixelskyblockmod:block/minion",
+	"textures": {
+		"0": "hypixelskyblockmod:blocks/minion_body",
+		"1": "hypixelskyblockmod:blocks/redstone_minion",
+		"2": "hypixelskyblockmod:blocks/tier/tier_5",
+		"particle": "hypixelskyblockmod:blocks/redstone_minion"
+	}
+}

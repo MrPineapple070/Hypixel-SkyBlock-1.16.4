@@ -1,0 +1,8 @@
+{
+	"variants": {
+		"facing=north": { "model": "hypixelskyblockmod:block/cobblestone_minion_b" },
+		"facing=south": { "model": "hypixelskyblockmod:block/cobblestone_minion_b", "y": 180 },
+		"facing=east": { "model": "hypixelskyblockmod:block/cobblestone_minion_b", "y": 90 },
+		"facing=west": { "model": "hypixelskyblockmod:block/cobblestone_minion_b", "y": 270 }
+	}
+}

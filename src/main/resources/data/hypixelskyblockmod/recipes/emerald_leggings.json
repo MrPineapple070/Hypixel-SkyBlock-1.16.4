@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "# #",
+        "# #"
+    ],
+    "key": {
+        "#": {
+            "item": "hypixelskyblockmod:enchanted_emerald_block"
+        }
+    },
+    "result": {
+        "item": "hypixelskyblockmod:emerald_leggings",
+        "count": 1
+    }
+}

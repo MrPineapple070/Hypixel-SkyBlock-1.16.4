@@ -1,0 +1,35 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/cube_all",
+	"texture_size": [64, 32],
+	"textures": {
+		"layer0": "hypixelskyblockmod:items/cat_talisman"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [2, 4, 4, 8], "texture": "#layer0"},
+				"east": {"uv": [0, 4, 2, 8], "texture": "#layer0"},
+				"south": {"uv": [6, 4, 8, 8], "texture": "#layer0"},
+				"west": {"uv": [4, 4, 6, 8], "texture": "#layer0"},
+				"up": {"uv": [4, 4, 2, 0], "texture": "#layer0"},
+				"down": {"uv": [4, 0, 6, 4], "texture": "#layer0"}
+			}
+		},
+		{
+			"from": [-1, -1, -1],
+			"to": [17, 17, 17],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 7, 8]},
+			"faces": {
+				"north": {"uv": [10, 4, 12, 8], "texture": "#layer0"},
+				"east": {"uv": [8, 4, 10, 8], "texture": "#layer0"},
+				"south": {"uv": [14, 4, 16, 8], "texture": "#layer0"},
+				"west": {"uv": [12, 4, 14, 8], "texture": "#layer0"},
+				"up": {"uv": [12, 4, 10, 0], "texture": "#layer0"},
+				"down": {"uv": [12, 0, 14, 4], "texture": "#layer0"}
+			}
+		}
+	]
+}

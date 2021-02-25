@@ -1,0 +1,21 @@
+{
+	"replace": false,
+	"values": [
+		"#hypixelskyblockmod:cobblestone_minion",
+		"#hypixelskyblockmod:coal_minion",
+		"#hypixelskyblockmod:clay_minion",
+		"#hypixelskyblockmod:diamond_minion",
+		"#hypixelskyblockmod:emerald_minion",
+		"#hypixelskyblockmod:end_stone_minion",
+		"#hypixelskyblockmod:glowstone_minion",
+		"#hypixelskyblockmod:gold_minion",
+		"#hypixelskyblockmod:gravel_minion",
+		"#hypixelskyblockmod:ice_minion",
+		"#hypixelskyblockmod:iron_minion",
+		"#hypixelskyblockmod:lapis_minion",
+		"#hypixelskyblockmod:obsidian_minion",
+		"#hypixelskyblockmod:redstone_minion",
+		"#hypixelskyblockmod:quartz_minion",
+		"#hypixelskyblockmod:sand_minion"
+	]
+}

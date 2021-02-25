@@ -1,0 +1,15 @@
+{
+	"replace": false,
+	"values": [
+		"#hypixelskyblockmod:blaze_minion",
+		"#hypixelskyblockmod:cave_spider_minion",
+		"#hypixelskyblockmod:creeper_minion",
+		"#hypixelskyblockmod:skeleton_minion",
+		"#hypixelskyblockmod:enderman_minion",
+		"#hypixelskyblockmod:ghast_minion",
+		"#hypixelskyblockmod:magma_cube_minion",
+		"#hypixelskyblockmod:slime_minion",
+		"#hypixelskyblockmod:spider_minion",
+		"#hypixelskyblockmod:zombie_minion"
+	]
+}

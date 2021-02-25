@@ -1,0 +1,11 @@
+{
+	"replace": false,
+	"values": [
+		"#hypixelskyblockmod:acacia_minion",
+		"#hypixelskyblockmod:birch_minion",
+		"#hypixelskyblockmod:dark_oak_minion",
+		"#hypixelskyblockmod:jungle_minion",
+		"#hypixelskyblockmod:oak_minion",
+		"#hypixelskyblockmod:spruce_minion"
+	]
+}

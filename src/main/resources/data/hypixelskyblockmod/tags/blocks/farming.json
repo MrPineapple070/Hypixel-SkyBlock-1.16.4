@@ -1,0 +1,20 @@
+{
+	"replace": false,
+	"values": [
+		"#hypixelskyblockmod:cactus_minion",
+		"#hypixelskyblockmod:carrot_minion",
+		"#hypixelskyblockmod:chicken_minion",
+		"#hypixelskyblockmod:cocoa_beans_minion",
+		"#hypixelskyblockmod:cow_minion",
+		"#hypixelskyblockmod:melon_minion",
+		"#hypixelskyblockmod:mushroom_minion",
+		"#hypixelskyblockmod:nether_wart_minion",
+		"#hypixelskyblockmod:pig_minion",
+		"#hypixelskyblockmod:potato_minion",
+		"#hypixelskyblockmod:pumpkin_minion",
+		"#hypixelskyblockmod:rabbit_minion",
+		"#hypixelskyblockmod:sheep_minion",
+		"#hypixelskyblockmod:sugar_cane_minion",
+		"#hypixelskyblockmod:wheat_minion"
+	]
+}

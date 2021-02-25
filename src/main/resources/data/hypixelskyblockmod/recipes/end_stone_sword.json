@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#",
+        "#",
+        "/"
+    ],
+    "key": {
+        "#": {
+            "item": "hypixelskyblockmod:enchanted_end_stone",
+            "count": 64
+        },
+        "/": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "hypixelskyblockmod:end_stone_sword",
+        "count": 1
+    }
+}

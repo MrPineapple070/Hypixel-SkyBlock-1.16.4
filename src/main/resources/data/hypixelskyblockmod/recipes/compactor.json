@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "# #",
+        "#R#"
+    ],
+    "key": {
+        "#": {
+            "item": "hypixelskyblockmod:enchanted_cobblestone"
+        },
+        "R": {
+            "item": "hypixelskyblockmod:enchanted_redstone"
+        }
+    },
+    "result": {
+        "item": "minecraft:dropper",
+        "count": 1
+    }
+}

@@ -1,0 +1,31 @@
+{
+	"replace": false,
+	"values": [
+	    "minecraft:barrier",
+	    "minecraft:bedrock",
+	    "minecraft:end_portal",
+	    "minecraft:end_portal_frame",
+	    "minecraft:end_gateway",
+	    "minecraft:command_block",
+	    "minecraft:repeating_command_block",
+	    "minecraft:chain_command_block",
+	    "minecraft:structure_block",
+	    "minecraft:jigsaw",
+	    "minecraft:moving_piston",
+	    "minecraft:obsidian",
+	    "minecraft:end_stone",
+	    "minecraft:iron_bars",
+	    
+	    "hypixelskyblockmod:cobblestone_minion_1",
+		"hypixelskyblockmod:cobblestone_minion_2",
+		"hypixelskyblockmod:cobblestone_minion_3",
+		"hypixelskyblockmod:cobblestone_minion_4",
+		"hypixelskyblockmod:cobblestone_minion_5",
+		"hypixelskyblockmod:cobblestone_minion_6",
+		"hypixelskyblockmod:cobblestone_minion_7",
+		"hypixelskyblockmod:cobblestone_minion_8",
+		"hypixelskyblockmod:cobblestone_minion_9",
+		"hypixelskyblockmod:cobblestone_minion_a",
+		"hypixelskyblockmod:cobblestone_minion_b"
+	]
+}

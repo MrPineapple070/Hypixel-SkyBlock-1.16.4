@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "# #"
+    ],
+    "key": {
+        "#": {
+            "item": "hypixelskyblockmod:enchanted_cobblestone"
+        }
+    },
+    "result": {
+        "item": "hypixelskyblockmod:miner_helmet",
+        "count": 1
+    }
+}

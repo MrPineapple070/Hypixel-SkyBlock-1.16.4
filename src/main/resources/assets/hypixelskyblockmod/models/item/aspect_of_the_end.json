@@ -1,0 +1,6 @@
+{
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "hypixelskyblockmod:items/aspect_of_the_end"
+	}
+}

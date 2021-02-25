@@ -1,0 +1,8 @@
+{
+	"variants": {
+		"facing=north": { "model": "hypixelskyblockmod:block/emerald_minion" },
+		"facing=south": { "model": "hypixelskyblockmod:block/emerald_minion", "y": 180 },
+		"facing=east": { "model": "hypixelskyblockmod:block/emerald_minion", "y": 90 },
+		"facing=west": { "model": "hypixelskyblockmod:block/emerald_minion", "y": 270 }
+	}
+}

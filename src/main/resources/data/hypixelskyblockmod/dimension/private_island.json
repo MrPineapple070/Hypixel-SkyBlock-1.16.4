@@ -1,0 +1,21 @@
+{
+	"type": "hypixelskyblockmod:private_island",
+	"generator": {
+		"type": "minecraft:flat",
+		"settings": {
+			"layers": [
+				{
+					"height": 5,
+					"block": "minecraft:air"
+				}
+			],
+			"biome": "minecraft:plains",
+			"lakes": false,
+			"features": false,
+			"structures": {
+				"structures": {
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        "#D#",
+        " # "
+    ],
+    "key": {
+        "#": {
+            "item": "hypixelskyblockmod:enchanted_diamond_block"
+        },
+        "D": {
+            "item": "hypixelskyblockmod:perfect_boots_7"
+        }
+    },
+    "result": {
+        "item": "hypixelskyblockmod:perfect_boots_8",
+        "count": 1
+    },
+    "group": "perfect_boots"
+}

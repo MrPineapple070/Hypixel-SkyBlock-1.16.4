@@ -1,0 +1,18 @@
+{
+	"replace": false,
+	"values": [
+		"minecraft:coal",
+		"minecraft:coal_block",
+		"hypixelskyblockmod:enchanted_bread",
+		"hypixelskyblockmod:enchanted_coal",
+		"hypixelskyblockmod:enchanted_charcoal",
+		"hypixelskyblockmod:solar_panel",
+		"hypixelskyblockmod:enchanted_lava_bucket",
+		"hypixelskyblockmod:magma_bucket",
+		"hypixelskyblockmod:plasma_bucket",
+		"hypixelskyblockmod:hamster_wheel",
+		"hypixelskyblockmod:foul_flesh",
+		"hypixelskyblockmod:catalyst",
+		"hypixelskyblockmod:hyper_catalyst"
+	]
+}

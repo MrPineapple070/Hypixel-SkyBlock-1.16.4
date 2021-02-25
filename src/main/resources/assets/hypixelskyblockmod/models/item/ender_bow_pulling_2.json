@@ -1,0 +1,6 @@
+{
+    "parent": "hypixelskyblockmod:item/ender_bow",
+    "textures": {
+        "layer0": "hypixelskyblockmod:items/ender_bow_pulling_2"
+    }
+}

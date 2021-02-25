@@ -1,0 +1,12 @@
+{
+	"replace": false,
+	"values": [
+		"#hypixelskyblockmod:combat",
+		"#hypixelskyblockmod:farming",
+		"#hypixelskyblockmod:fishing",
+		"#hypixelskyblockmod:foraging",
+		"#hypixelskyblockmod:mining",
+		"#hypixelskyblockmod:other",
+		"#hypixelskyblockmod:slayer"
+	]
+}

@@ -1,0 +1,22 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/cube_all",
+	"texture_size": [32, 16],
+	"textures": {
+		"layer0": "hypixelskyblockmod:items/skeleton_talisman"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [4, 8, 8, 16], "texture": "#layer0"},
+				"east": {"uv": [0, 8, 4, 16], "texture": "#layer0"},
+				"south": {"uv": [12, 8, 16, 16], "texture": "#layer0"},
+				"west": {"uv": [8, 8, 12, 16], "texture": "#layer0"},
+				"up": {"uv": [8, 8, 4, 0], "texture": "#layer0"},
+				"down": {"uv": [8, 0, 12, 8], "texture": "#layer0"}
+			}
+		}
+	]
+}

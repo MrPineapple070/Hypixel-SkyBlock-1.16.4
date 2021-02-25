@@ -1,0 +1,58 @@
+FarmingPet	http://textures.minecraft.net/texture/
+Bee		-
+Chicken		-
+Elephant	-
+Pig		-
+Rabbit		-
+
+MiningPets
+Bat		-
+Endermite	-
+Rock		-
+Silverfish	-
+WitherSkeleton	-
+
+CombatPets
+BlackCat	-
+Blaze		-
+EnderDragon	-
+Enderman	-
+Ghoul		-
+Golem		-
+Griffin		-
+Guardian	-
+Horse		-
+Hound		-
+Jerry		-
+MagmaCube	-
+Phoenix		-
+Pigman		-
+SkeletonHorse	-
+Skeleton	-
+Snowman		-
+Spider		-
+Spirit		-
+Tarantula	8300986ed0a04ea79904f6ae53f49ed3a0ff5b1df62bba622ecbd3777f156df8
+Tiger		-
+Turtle		-
+Wolf		-
+Zombie		-
+
+ForagingPets
+Giraffe		-
+Lion		-
+Monkey		-
+Ocelot		-
+
+FishingPets
+BabyYeti	-
+BlueWhale	-
+Dolphin		-
+FlyingFish	-
+Megalodon	-
+Squid		-
+
+AlchemyPets
+Jellyfish	-
+Parrot		-
+Sheep		-

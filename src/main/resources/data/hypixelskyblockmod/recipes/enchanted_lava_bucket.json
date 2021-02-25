@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "i#i",
+        " i "
+    ],
+    "key": {
+        "#": {
+            "item": "hypixelskyblockmod:enchanted_coal_block",
+            "count": 2
+        },
+        "i": {
+            "item": "hypixelskyblockmod:enchanted_iron_ingot"
+        }
+    },
+    "result": {
+        "item": "hypixelskyblockmod:enchanted_lava_bucket",
+        "count": 1
+    }
+}

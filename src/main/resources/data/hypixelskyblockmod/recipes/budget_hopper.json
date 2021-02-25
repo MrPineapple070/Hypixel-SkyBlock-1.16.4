@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "i i",
+        "iCi",
+        " i "
+    ],
+    "key": {
+        "i": {
+            "item": "hypixelskyblockmod:enchanted_iron_ingot"
+        },
+        "C": {
+            "item": "minecraft:chest"
+        }
+    },
+    "result": {
+        "item": "hypixelskyblockmod:budget_hopper",
+        "count": 1
+    }
+}

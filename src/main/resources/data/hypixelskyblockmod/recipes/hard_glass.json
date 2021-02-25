@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "#S#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:coal"
+        },
+        "S": {
+            "item": "hypixelskyblockmod:enchanted_sand"
+        }
+    },
+    "result": {
+        "item": "hypixelskyblockmod:hard_glass",
+        "count": 8
+    }
+}

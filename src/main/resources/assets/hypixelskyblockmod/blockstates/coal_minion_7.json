@@ -1,0 +1,8 @@
+{
+	"variants": {
+		"facing=north": { "model": "hypixelskyblockmod:block/coal_minion_7" },
+		"facing=south": { "model": "hypixelskyblockmod:block/coal_minion_7", "y": 180 },
+		"facing=east": { "model": "hypixelskyblockmod:block/coal_minion_7", "y": 90 },
+		"facing=west": { "model": "hypixelskyblockmod:block/coal_minion_7", "y": 270 }
+	}
+}

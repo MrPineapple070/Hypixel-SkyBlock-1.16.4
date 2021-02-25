@@ -1,0 +1,14 @@
+{
+    "parent": "item/handheld_rod",
+    "textures": {
+        "layer0": "hypixelskyblockmod:items/auger_rod"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "cast": 1
+            },
+            "model": "hypixelskyblockmod:item/auger_rod_cast"
+        }
+    ]
+}

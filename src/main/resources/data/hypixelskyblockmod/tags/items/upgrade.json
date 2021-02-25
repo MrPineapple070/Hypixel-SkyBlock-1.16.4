@@ -1,0 +1,13 @@
+{
+	"replace": false,
+	"values": [
+		"hypixelskyblockmod:auto_smelter",
+		"hypixelskyblockmod:compactor",
+		"hypixelskyblockmod:super_compactor_3000",
+		"hypixelskyblockmod:diamond_spreading",
+		"hypixelskyblockmod:minion_expander",
+		"hypixelskyblockmod:enchanted_egg",
+		"hypixelskyblockmod:flint_shovel",
+		"hypixelskyblockmod:flycatcher"
+	]
+}

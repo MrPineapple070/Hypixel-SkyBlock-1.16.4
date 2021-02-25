@@ -1,0 +1,62 @@
+# This is an example mods.toml file. It contains the data relating to the loading mods.
+# There are several mandatory fields (#mandatory), and many more that are optional (#optional).
+# The overall format is standard TOML format, v0.5.0.
+# Note that there are a couple of TOML lists in this file.
+# Find more information on toml format here:  https://github.com/toml-lang/toml
+
+modLoader="javafml" #mandatory
+
+loaderVersion="[35,)"
+
+license="All rights reserved"
+
+issueTrackerURL="https://hypixel.net/forums/skyblock-bug-reports.159/"
+
+logoFile="logo.png"
+
+[[mods]]
+
+modId="hypixelskyblockmod"
+
+version="${file.jarVersion}"
+
+displayName="Hypixel SkyBlock Mod"
+
+updateJSONURL="https://hypixel.net/forums/skyblock-patch-notes.158/"
+
+displayURL="https://hypixel.net/forums/skyblock.157/"
+
+credits="Hypixel SkyBlock Developers"
+
+authors="Hypixel SkyBlock Developers"
+
+description='''
+Hypixel SkyBlock
+
+Textures by ImperiaL_24.
+Get the pack here: https://packshq.com/content/packs/
+
+Models made with BlockBench
+Get is here: https://blockbench.net/downloads/
+'''
+
+# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
+[[dependencies.examplemod]] #optional
+    # the modid of the dependency
+    modId="forge" #mandatory
+    # Does this dependency have to exist - if not, ordering below must be specified
+    mandatory=true #mandatory
+    # The version range of the dependency
+    versionRange="[35,)" #mandatory
+    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+    ordering="NONE"
+    # Side this dependency is applied on - BOTH, CLIENT or SERVER
+    side="BOTH"
+# Here's another dependency
+[[dependencies.examplemod]]
+    modId="minecraft"
+    mandatory=true
+# This version range declares a minimum of the current minecraft version up to but not including the next major version
+    versionRange="[1.16.4,1.17)"
+    ordering="NONE"
+    side="BOTH"

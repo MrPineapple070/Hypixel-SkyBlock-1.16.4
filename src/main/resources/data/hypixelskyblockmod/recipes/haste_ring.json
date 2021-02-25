@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "# #",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "hypixelskyblockmod:enchanted_cobblestone",
+            "count": 32
+        }
+    },
+    "result": {
+        "item": "hypixelskyblockmod:haste_ring",
+        "count": 1
+    }
+}

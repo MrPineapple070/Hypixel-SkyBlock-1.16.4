@@ -1,0 +1,8 @@
+{
+	"variants": {
+		"facing=north": { "model": "hypixelskyblockmod:block/acacia_minion_6" },
+		"facing=south": { "model": "hypixelskyblockmod:block/acacia_minion_6", "y": 180 },
+		"facing=east": { "model": "hypixelskyblockmod:block/acacia_minion_6", "y": 90 },
+		"facing=west": { "model": "hypixelskyblockmod:block/acacia_minion_6", "y": 270 }
+	}
+}
