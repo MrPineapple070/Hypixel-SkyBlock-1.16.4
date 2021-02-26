@@ -44,7 +44,7 @@ public class ClientEventBusSubscriber {
 		ScreenManager.registerFactory(ModContainerTypes.acacia_minion_9.get(), AbstractMinionScreen::new);
 		ScreenManager.registerFactory(ModContainerTypes.acacia_minion_a.get(), AbstractMinionScreen::new);
 		ScreenManager.registerFactory(ModContainerTypes.acacia_minion_b.get(), AbstractMinionScreen::new);
-		
+
 		ScreenManager.registerFactory(ModContainerTypes.coal_minion_1.get(), AbstractMinionScreen::new);
 		ScreenManager.registerFactory(ModContainerTypes.coal_minion_2.get(), AbstractMinionScreen::new);
 		ScreenManager.registerFactory(ModContainerTypes.coal_minion_3.get(), AbstractMinionScreen::new);
@@ -84,7 +84,7 @@ public class ClientEventBusSubscriber {
 		ScreenManager.registerFactory(ModContainerTypes.small_mcc.get(), SmallMCS::new);
 		ScreenManager.registerFactory(ModContainerTypes.medium_mcc.get(), MediumMCS::new);
 		ScreenManager.registerFactory(ModContainerTypes.large_mcc.get(), LargeMCS::new);
-		
+
 		RenderTypeLookup.setRenderLayer(MinionBlockInit.acacia_minion_1.get(), RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(MinionBlockInit.acacia_minion_2.get(), RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(MinionBlockInit.acacia_minion_3.get(), RenderType.getCutoutMipped());
@@ -96,7 +96,7 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(MinionBlockInit.acacia_minion_9.get(), RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(MinionBlockInit.acacia_minion_a.get(), RenderType.getCutoutMipped());
 		RenderTypeLookup.setRenderLayer(MinionBlockInit.acacia_minion_b.get(), RenderType.getCutoutMipped());
-		
+
 		RenderTypeLookup.setRenderLayer(MinionBlockInit.coal_minion_1.get(), RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(MinionBlockInit.coal_minion_2.get(), RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(MinionBlockInit.coal_minion_3.get(), RenderType.getTranslucent());
@@ -132,9 +132,9 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(MinionBlockInit.wheat_minion_9.get(), RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(MinionBlockInit.wheat_minion_a.get(), RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(MinionBlockInit.wheat_minion_b.get(), RenderType.getTranslucent());
-		
+
 		RenderTypeLookup.setRenderLayer(BlockInit.hard_glass.get(), RenderType.getTranslucent());
-		
+
 		ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.small_mcte.get(), ChestTileEntityRenderer::new);
 		ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.medium_mcte.get(), ChestTileEntityRenderer::new);
 		ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.large_mcte.get(), ChestTileEntityRenderer::new);

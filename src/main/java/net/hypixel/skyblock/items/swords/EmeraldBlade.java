@@ -22,13 +22,17 @@ import net.minecraft.world.World;
  * @since 02 August 2019
  */
 public class EmeraldBlade extends ModSwordItem {
+	private static final StringTextComponent tooltip = new StringTextComponent(
+			"This blade becomes stronger as you carry more coins in your purse.");
+
 	public EmeraldBlade() {
 		super(ModSwordTier.Emerald_Blade, ItemProperties.m1, ModItemRarity.Epic);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent("This blade becomes stronger as you carry more coins in your purse."));
+		tooltip.add(EmeraldBlade.tooltip);
+		tooltip.add(StringTextComponent.EMPTY);
 	}
 
 	@Override

@@ -118,7 +118,7 @@ public abstract class MinionChestContainer extends Container {
 		}
 		return itemstack;
 	}
-	
+
 	public static class SmallMCC extends MinionChestContainer {
 		public SmallMCC(int windowId, PlayerInventory pInvIn) {
 			super(ModContainerTypes.small_mcc.get(), windowId, pInvIn, MinionChestType.Small);
@@ -128,7 +128,7 @@ public abstract class MinionChestContainer extends Container {
 			this(windowId, pInvIn);
 		}
 	}
-	
+
 	public static class MediumMCC extends MinionChestContainer {
 		public MediumMCC(int windowId, PlayerInventory pInvIn) {
 			super(ModContainerTypes.medium_mcc.get(), windowId, pInvIn, MinionChestType.Medium);
@@ -138,7 +138,7 @@ public abstract class MinionChestContainer extends Container {
 			this(windowId, pInvIn);
 		}
 	}
-	
+
 	public static class LargeMCC extends MinionChestContainer {
 		public LargeMCC(int windowId, PlayerInventory pInvIn) {
 			super(ModContainerTypes.large_mcc.get(), windowId, pInvIn, MinionChestType.Large);

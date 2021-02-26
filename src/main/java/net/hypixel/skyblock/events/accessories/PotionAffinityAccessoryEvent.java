@@ -40,10 +40,11 @@ public class PotionAffinityAccessoryEvent {
 		if (!(entity instanceof PlayerEntity))
 			return;
 		final PlayerEntity player = (PlayerEntity) entity;
-		final ExtendedPlayerInventory inv; 
+		final ExtendedPlayerInventory inv;
 		if (player.inventory instanceof ExtendedPlayerInventory)
 			inv = (ExtendedPlayerInventory) player.inventory;
-		else return;
+		else
+			return;
 		int duration = effect.getDuration();
 		if (inv.hasItemStack(Artifact))
 			duration *= 1.5;

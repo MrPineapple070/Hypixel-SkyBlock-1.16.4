@@ -26,7 +26,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
  * @since 14 June 2019
  */
 @OnlyIn(Dist.CLIENT)
-public abstract class MinionChestScreen extends ContainerScreen<MinionChestContainer> implements IHasContainer<MinionChestContainer> {
+public abstract class MinionChestScreen extends ContainerScreen<MinionChestContainer>
+		implements IHasContainer<MinionChestContainer> {
 	/**
 	 * Background Texture for Small Minion Chest
 	 */
@@ -65,8 +66,7 @@ public abstract class MinionChestScreen extends ContainerScreen<MinionChestConta
 	}
 
 	@Override
-	protected void drawGuiContainerBackgroundLayer(MatrixStack stack, float partialTicks, int mouseX,
-			int mouseY) {
+	protected void drawGuiContainerBackgroundLayer(MatrixStack stack, float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.blendColor(1f, 1f, 1f, 1f);
 		switch (this.type) {
 		case Small:

@@ -38,9 +38,9 @@ public enum ModItemRarity {
 	 * The {@link TextFormatting} of this {@code ModItemRarity}
 	 */
 	public final TextFormatting color;
-	
+
 	public final int rank;
-	
+
 	private ModItemRarity(TextFormatting color, int rank) {
 		this.color = color;
 		this.rank = rank;

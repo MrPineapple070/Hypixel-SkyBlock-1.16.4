@@ -102,7 +102,8 @@ public class CoalMinionTileEntity extends AbstractMiningMTE {
 		}
 	}
 
-	private static final ImmutableSet<Block> validBlocks = ImmutableSet.copyOf(Arrays.asList(Blocks.AIR, Blocks.COAL_ORE));
+	private static final ImmutableSet<Block> validBlocks = ImmutableSet
+			.copyOf(Arrays.asList(Blocks.AIR, Blocks.COAL_ORE));
 
 	private static final Item[] comp = new Item[] { Items.COAL, Items.DIAMOND };
 	private static final Item[] sup = new Item[] { Items.COAL, Items.COAL_BLOCK, Items.DIAMOND, Items.DIAMOND_BLOCK,

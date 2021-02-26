@@ -122,9 +122,10 @@ public class FormatingCodes {
 	 * <u>Underline</u>
 	 */
 	public static final String underline = "\u00A7n";
-	
+
 	/**
 	 * Convert {@link TextFormatting} into its {@link String} representation.
+	 * 
 	 * @param format {@link TextFormatting} to convert.
 	 * @return {@link String} converted from {@link TextFormatting}
 	 */
@@ -178,7 +179,7 @@ public class FormatingCodes {
 			throw new IllegalStateException("Illegal TextFormating:\t" + format.name());
 		}
 	}
-	
+
 	public static final TextFormatting getColorCode(DyeColor color) {
 		switch (color) {
 		case BLACK:

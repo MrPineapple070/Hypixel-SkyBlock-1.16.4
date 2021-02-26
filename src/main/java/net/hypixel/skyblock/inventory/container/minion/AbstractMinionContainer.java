@@ -133,7 +133,7 @@ public abstract class AbstractMinionContainer extends Container {
 					return ItemStack.EMPTY;
 			} else if (!this.mergeItemStack(itemstack1, 0, this.minion.getSizeInventory(), false))
 				return ItemStack.EMPTY;
-			
+
 			if (itemstack1.isEmpty())
 				slot.putStack(ItemStack.EMPTY);
 			else

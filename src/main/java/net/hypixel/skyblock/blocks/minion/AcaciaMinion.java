@@ -13,15 +13,17 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockReader;
 
 /**
- * The <a href="https://hypixel-skyblock.fandom.com/wiki/Acacia_Minion">Acacia Minion</a>.
+ * The <a href="https://hypixel-skyblock.fandom.com/wiki/Acacia_Minion">Acacia
+ * Minion</a>.
  * 
  * @author MrPineapple070
  * @version 31 December 2020
  * @since 11 July 2019
  */
 public class AcaciaMinion extends AbstractMinionBlock {
-	public static final ImmutableList<Integer> speed = ImmutableList.copyOf(Arrays.asList(960, 960, 900, 900, 840, 840, 760, 760, 660, 660, 540));
-	
+	public static final ImmutableList<Integer> speed = ImmutableList
+			.copyOf(Arrays.asList(960, 960, 900, 900, 840, 840, 760, 760, 660, 660, 540));
+
 	public AcaciaMinion(MinionTier tier) {
 		super(Properties.create(Material.WOOD).sound(SoundType.WOOD), tier);
 	}

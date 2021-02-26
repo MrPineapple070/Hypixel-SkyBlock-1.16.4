@@ -98,9 +98,10 @@ public enum ModArmorMaterial implements IArmorMaterial {
 		this.name = nameIn;
 		this.damageReducionAmountArray = damageReductionAmountIn;
 	}
-	
+
 	/**
 	 * Determine if a {@link IArmorMaterial} is one of the Perfect Materials.
+	 * 
 	 * @param material {@link IArmorMaterial} for the Armor to check.
 	 * @return true/false
 	 */

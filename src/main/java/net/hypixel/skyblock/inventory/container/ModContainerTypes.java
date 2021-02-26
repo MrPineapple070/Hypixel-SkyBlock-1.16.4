@@ -66,31 +66,32 @@ import net.minecraftforge.registries.ForgeRegistries;
  * @version 5 June 2020
  */
 public class ModContainerTypes {
-	public static final DeferredRegister<ContainerType<?>> container_types = DeferredRegister.create(ForgeRegistries.CONTAINERS, HypixelSkyBlockMod.MOD_ID);
-	
-	public static final RegistryObject<ContainerType<AcaciaMC1>> acacia_minion_1 = container_types.register("acacia_minion_1",
-			() -> IForgeContainerType.create(AcaciaMC1::new));
-	public static final RegistryObject<ContainerType<AcaciaMC2>> acacia_minion_2 = container_types.register("acacia_minion_2",
-			() -> IForgeContainerType.create(AcaciaMC2::new));
-	public static final RegistryObject<ContainerType<AcaciaMC3>> acacia_minion_3 = container_types.register("acacia_minion_3",
-			() -> IForgeContainerType.create(AcaciaMC3::new));
-	public static final RegistryObject<ContainerType<AcaciaMC4>> acacia_minion_4 = container_types.register("acacia_minion_4",
-			() -> IForgeContainerType.create(AcaciaMC4::new));
-	public static final RegistryObject<ContainerType<AcaciaMC5>> acacia_minion_5 = container_types.register("acacia_minion_5",
-			() -> IForgeContainerType.create(AcaciaMC5::new));
-	public static final RegistryObject<ContainerType<AcaciaMC6>> acacia_minion_6 = container_types.register("acacia_minion_6",
-			() -> IForgeContainerType.create(AcaciaMC6::new));
-	public static final RegistryObject<ContainerType<AcaciaMC7>> acacia_minion_7 = container_types.register("acacia_minion_7",
-			() -> IForgeContainerType.create(AcaciaMC7::new));
-	public static final RegistryObject<ContainerType<AcaciaMC8>> acacia_minion_8 = container_types.register("acacia_minion_8",
-			() -> IForgeContainerType.create(AcaciaMC8::new));
-	public static final RegistryObject<ContainerType<AcaciaMC9>> acacia_minion_9 = container_types.register("acacia_minion_9",
-			() -> IForgeContainerType.create(AcaciaMC9::new));
-	public static final RegistryObject<ContainerType<AcaciaMCa>> acacia_minion_a = container_types.register("acacia_minion_a",
-			() -> IForgeContainerType.create(AcaciaMCa::new));
-	public static final RegistryObject<ContainerType<AcaciaMCb>> acacia_minion_b = container_types.register("acacia_minion_b",
-			() -> IForgeContainerType.create(AcaciaMCb::new));
-	
+	public static final DeferredRegister<ContainerType<?>> container_types = DeferredRegister
+			.create(ForgeRegistries.CONTAINERS, HypixelSkyBlockMod.MOD_ID);
+
+	public static final RegistryObject<ContainerType<AcaciaMC1>> acacia_minion_1 = container_types
+			.register("acacia_minion_1", () -> IForgeContainerType.create(AcaciaMC1::new));
+	public static final RegistryObject<ContainerType<AcaciaMC2>> acacia_minion_2 = container_types
+			.register("acacia_minion_2", () -> IForgeContainerType.create(AcaciaMC2::new));
+	public static final RegistryObject<ContainerType<AcaciaMC3>> acacia_minion_3 = container_types
+			.register("acacia_minion_3", () -> IForgeContainerType.create(AcaciaMC3::new));
+	public static final RegistryObject<ContainerType<AcaciaMC4>> acacia_minion_4 = container_types
+			.register("acacia_minion_4", () -> IForgeContainerType.create(AcaciaMC4::new));
+	public static final RegistryObject<ContainerType<AcaciaMC5>> acacia_minion_5 = container_types
+			.register("acacia_minion_5", () -> IForgeContainerType.create(AcaciaMC5::new));
+	public static final RegistryObject<ContainerType<AcaciaMC6>> acacia_minion_6 = container_types
+			.register("acacia_minion_6", () -> IForgeContainerType.create(AcaciaMC6::new));
+	public static final RegistryObject<ContainerType<AcaciaMC7>> acacia_minion_7 = container_types
+			.register("acacia_minion_7", () -> IForgeContainerType.create(AcaciaMC7::new));
+	public static final RegistryObject<ContainerType<AcaciaMC8>> acacia_minion_8 = container_types
+			.register("acacia_minion_8", () -> IForgeContainerType.create(AcaciaMC8::new));
+	public static final RegistryObject<ContainerType<AcaciaMC9>> acacia_minion_9 = container_types
+			.register("acacia_minion_9", () -> IForgeContainerType.create(AcaciaMC9::new));
+	public static final RegistryObject<ContainerType<AcaciaMCa>> acacia_minion_a = container_types
+			.register("acacia_minion_a", () -> IForgeContainerType.create(AcaciaMCa::new));
+	public static final RegistryObject<ContainerType<AcaciaMCb>> acacia_minion_b = container_types
+			.register("acacia_minion_b", () -> IForgeContainerType.create(AcaciaMCb::new));
+
 	public static final RegistryObject<ContainerType<CoalMC1>> coal_minion_1 = container_types.register("coal_minion_1",
 			() -> IForgeContainerType.create(CoalMC1::new));
 	public static final RegistryObject<ContainerType<CoalMC2>> coal_minion_2 = container_types.register("coal_minion_2",
@@ -159,7 +160,7 @@ public class ModContainerTypes {
 			.register("wheat_minion_a", () -> IForgeContainerType.create(WheatMCa::new));
 	public static final RegistryObject<ContainerType<WheatMCb>> wheat_minion_b = container_types
 			.register("wheat_minion_b", () -> IForgeContainerType.create(WheatMCb::new));
-	
+
 	public static final RegistryObject<ContainerType<SmallBC>> small_backpack = container_types
 			.register("small_backpack", () -> IForgeContainerType.create(SmallBC::new));
 	public static final RegistryObject<ContainerType<MediumBC>> medium_backpack = container_types

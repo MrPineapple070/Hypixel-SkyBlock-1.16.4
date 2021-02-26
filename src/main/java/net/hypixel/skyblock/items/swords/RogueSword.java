@@ -1,5 +1,6 @@
 package net.hypixel.skyblock.items.swords;
 
+import java.util.Arrays;
 import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
@@ -23,14 +24,19 @@ import net.minecraft.world.World;
  * @since 11 July 2019
  */
 public class RogueSword extends ModSwordItem {
+	private static final List<StringTextComponent> tooltip = Arrays.asList(
+			new StringTextComponent(FormatingCodes.gold + "Item Ability: Speed Boost"),
+			new StringTextComponent(FormatingCodes.gray + "Increases your movement Speed by +20% for 30 seconds."),
+			new StringTextComponent(FormatingCodes.gray + "Only gives +10 if already active."));
+
 	public RogueSword() {
 		super(ModSwordTier.Rogue_Sword, ItemProperties.c1, ModItemRarity.Common);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent(FormatingCodes.gold + "Item Ability: Speed Boost\n" + FormatingCodes.gray
-				+ "Increases your movement Speed by +20% for 30 seconds.\n" + "Only gives +10 if already active."));
+		tooltip.addAll(RogueSword.tooltip);
+		tooltip.add(StringTextComponent.EMPTY);
 	}
 
 	@Override

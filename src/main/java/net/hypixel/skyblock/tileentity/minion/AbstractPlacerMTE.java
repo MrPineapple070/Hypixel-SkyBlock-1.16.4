@@ -1,5 +1,7 @@
 package net.hypixel.skyblock.tileentity.minion;
 
+import java.util.Objects;
+
 import javax.annotation.Nonnull;
 
 import com.google.common.collect.ImmutableSet;
@@ -45,32 +47,34 @@ public abstract class AbstractPlacerMTE extends AbstractMinionTileEntity {
 	 */
 	@Nonnull
 	protected static final int[] expanded_size = { -3, -2, -1, 0, 1, 2, 3 };
-	
+
 	public AbstractPlacerMTE(TileEntityType<? extends AbstractMinionTileEntity> typeIn, MinionTier tier) {
 		super(typeIn, tier);
 	}
-	
+
 	/**
-	 * Determines {@link SoundEvent} when {@link #interact(BlockPos)} results in placing {@link Block}
+	 * Determines {@link SoundEvent} when {@link #interact(BlockPos)} results in
+	 * placing {@link Block}
 	 * 
 	 * @return {@link SoundEvent} to play when placing a {@link Block}.
 	 */
 	protected abstract SoundEvent getSoundEvent();
-	
+
 	/**
-	 * Determines {@link BlockState} when {@link #interact(BlockPos)} results in placing {@link Block}
+	 * Determines {@link BlockState} when {@link #interact(BlockPos)} results in
+	 * placing {@link Block}
 	 * 
 	 * @return {@link BlockState} to place when interacting.
 	 */
 	protected abstract BlockState getState();
-	
+
 	/**
 	 * Determines all {@link Block} that this can place.
 	 * 
-	 * @return an {@link ImmutableSet} of {@link Block}. 
+	 * @return an {@link ImmutableSet} of {@link Block}.
 	 */
 	protected abstract ImmutableSet<Block> getValidBlocks();
-	
+
 	@Override
 	protected boolean interact(BlockPos pos) {
 		if (pos == null)
@@ -88,32 +92,32 @@ public abstract class AbstractPlacerMTE extends AbstractMinionTileEntity {
 		}
 		return true;
 	}
-	
+
 	/**
 	 * Determine if {@link Block} can be added to {@link #validSurround}.<br>
 	 * Help {@link #setValidSurround()} in adding.<br>
 	 * {@code AbstractMinionTileEntity} can interact with {@code Block} in 3
 	 * dimensions
 	 *
-	 * @param block       The {@code Block} to check.
-	 * @param validBlocks A {@link ImmutableSet} of valid {@code Block} that this can
-	 *                    interact with
+	 * @param block The {@code Block} to check.
 	 * @return {@code true} if {@code Block} is valid.<br>
 	 *         {@code false} otherwise.
 	 */
-	protected final boolean isBlockValid(@Nonnull Block block) {
+	protected final boolean isBlockValid(Block block) {
 		ImmutableSet<Block> blocks = this.getValidBlocks();
+		Objects.requireNonNull(block, "Inputed block cannot be null");
 		if (blocks.size() < 1)
 			throw new IllegalArgumentException("validBlocks must have at least one element");
 		return blocks.contains(block);
 	}
-	
+
 	/**
 	 * Picks a random {@link BlockPos} to interact with using {@link #rand}.
+	 * 
 	 * @return a random {@link BlockPos}
 	 */
 	protected final BlockPos pickBlockPos() {
-		HypixelSkyBlockMod.LOGGER.info("Picking a BlockPos");	
+		HypixelSkyBlockMod.LOGGER.info("Picking a BlockPos");
 		this.setValidSurround();
 		this.setAirSurround();
 		if (!this.airSurround.isEmpty())

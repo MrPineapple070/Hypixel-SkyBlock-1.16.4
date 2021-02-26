@@ -1,5 +1,6 @@
 package net.hypixel.skyblock.items.swords;
 
+import java.util.Arrays;
 import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
@@ -24,14 +25,19 @@ import net.minecraft.world.World;
  * @since 11 October 2019
  */
 public class OrnateZombieSword extends ModSwordItem {
+	private static final List<StringTextComponent> tooltip = Arrays.asList(
+			new StringTextComponent(FormatingCodes.gold + "Item Ability: Instant Heal"),
+			new StringTextComponent(FormatingCodes.gray
+					+ "Heal yourself for 29 + 5% max Health and Players within 7 blocks for 10 Health."));
+
 	public OrnateZombieSword() {
 		super(ModSwordTier.Ornate_Zombie_Sword, ItemProperties.c1, ModItemRarity.Epic);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent(FormatingCodes.gold + "Item Ability: Instant Heal\n" + FormatingCodes.gray
-				+ "Heal yourself for 29 + 5% max Health and Players within 7 blocks for 10 Health."));
+		tooltip.addAll(OrnateZombieSword.tooltip);
+		tooltip.add(StringTextComponent.EMPTY);
 	}
 
 	@Override

@@ -10,6 +10,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class PetItemInit {
 	public static final DeferredRegister<Item> pets = DeferredRegister.create(ForgeRegistries.ITEMS,
 			HypixelSkyBlockMod.MOD_ID);
-	
+
 	public static final RegistryObject<Item> bat_pet = pets.register("bat_pet", BatPetItem::new);
 }

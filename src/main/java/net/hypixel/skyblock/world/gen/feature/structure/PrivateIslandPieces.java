@@ -91,7 +91,7 @@ public class PrivateIslandPieces {
 			tagCompound.putString("Template", this.resourceLocation.toString());
 			tagCompound.putString("Rot", this.rotation.name());
 		}
-		
+
 		@Override
 		protected boolean createDispenser(ISeedReader worldIn, MutableBoundingBox sbb, Random rand, int x, int y, int z,
 				Direction facing, ResourceLocation lootTableIn) {
@@ -102,7 +102,7 @@ public class PrivateIslandPieces {
 					new BlockPos(0 - blockpos.getX(), 0, 0 - blockpos.getZ())));
 			return super.createDispenser(worldIn, sbb, rand, x, y, z, facing, lootTableIn);
 		}
-		
+
 		@Override
 		protected void handleDataMarker(String function, BlockPos pos, IServerWorld worldIn, Random rand,
 				MutableBoundingBox sbb) {

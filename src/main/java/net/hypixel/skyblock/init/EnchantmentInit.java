@@ -24,7 +24,8 @@ public class EnchantmentInit {
 	/**
 	 * A {@code DeferredRegister} for {@code Enchantment}
 	 */
-	public static final DeferredRegister<Enchantment> enchantments = DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, HypixelSkyBlockMod.MOD_ID);
+	public static final DeferredRegister<Enchantment> enchantments = DeferredRegister
+			.create(ForgeRegistries.ENCHANTMENTS, HypixelSkyBlockMod.MOD_ID);
 
 	// Sword
 	// public static final RegistryObject<Enchantment> critical =
@@ -112,6 +113,6 @@ public class EnchantmentInit {
 	// enchantments.register("vampirism" , () -> new Enchantment());
 	// public static final RegistryObject<Enchantment> venomous =
 	// enchantments.register("venomous" , () -> new Enchantment());
-	
+
 	public static final RegistryObject<Enchantment> bank = enchantments.register("bank", Bank::new);
 }

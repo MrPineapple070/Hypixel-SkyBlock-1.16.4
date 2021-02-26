@@ -39,11 +39,20 @@ public abstract class AbstractMiningMTE extends AbstractPlacerMTE {
 		switch (this.count(ItemInit.minion_expander.get())) {
 		case 0:
 		default:
-			xStart = 2; xEnd = 7; zStart = 2; zEnd = 7;
+			xStart = 2;
+			xEnd = 7;
+			zStart = 2;
+			zEnd = 7;
 		case 1:
-			xStart = 1; xEnd = 8; zStart = 1; zEnd = 8;
+			xStart = 1;
+			xEnd = 8;
+			zStart = 1;
+			zEnd = 8;
 		case 2:
-			xStart = 0; xEnd = 9; zStart = 0; zEnd = 9;
+			xStart = 0;
+			xEnd = 9;
+			zStart = 0;
+			zEnd = 9;
 		}
 		for (int x = xStart; x < xEnd; ++x)
 			for (int z = zStart; z < zEnd; ++z) {

@@ -55,7 +55,7 @@ public class ReforgeStone extends Item {
 	public boolean isEnchantable(ItemStack stack) {
 		return false;
 	}
-	
+
 	public void consume(ReforgableItem item) {
 		item.setReforge(this.reforge);
 	}

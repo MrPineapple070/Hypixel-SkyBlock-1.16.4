@@ -51,7 +51,8 @@ import net.minecraftforge.items.wrapper.InvWrapper;
  * @version 5 July 2020
  */
 @OnlyIn(value = Dist.CLIENT, _interface = IChestLid.class)
-public abstract class AbstractMinionChestTileEntity extends LockableLootTileEntity implements IChestLid, ITickableTileEntity {
+public abstract class AbstractMinionChestTileEntity extends LockableLootTileEntity
+		implements IChestLid, ITickableTileEntity {
 	@Nullable
 	protected LazyOptional<IItemHandler> chestHandler = LazyOptional.of(() -> new InvWrapper(this));
 

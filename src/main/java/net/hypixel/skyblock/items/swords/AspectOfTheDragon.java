@@ -1,5 +1,6 @@
 package net.hypixel.skyblock.items.swords;
 
+import java.util.Arrays;
 import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
@@ -24,15 +25,19 @@ import net.minecraft.world.World;
  * @since 02 August 2019
  */
 public class AspectOfTheDragon extends ModSwordItem {
+	private static final List<StringTextComponent> tooltip = Arrays.asList(
+			new StringTextComponent(FormatingCodes.gold + "Item Ability: Dragon Rage"),
+			new StringTextComponent(FormatingCodes.gray + "Deal 12000 Damage to all Monsters in front of you."),
+			new StringTextComponent(FormatingCodes.gray + "Damaged Monsters take huge Knockback."));
+
 	public AspectOfTheDragon() {
 		super(ModSwordTier.AOTD, ItemProperties.c1, ModItemRarity.Legendary);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent(FormatingCodes.gold + "Item Ability: Dragon Rage"));
-		tooltip.add(new StringTextComponent(FormatingCodes.gray	+ "Deal 12000 Damage to all Monsters in front of you."));
-		tooltip.add(new StringTextComponent(FormatingCodes.gray + "Damaged Monsters take huge Knockback."));
+		tooltip.addAll(AspectOfTheDragon.tooltip);
+		tooltip.add(StringTextComponent.EMPTY);
 	}
 
 	@Override

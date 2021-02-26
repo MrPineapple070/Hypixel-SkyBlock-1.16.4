@@ -24,12 +24,15 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class ItemInit {
 	public static final DeferredRegister<Item> items = DeferredRegister.create(ForgeRegistries.ITEMS,
 			HypixelSkyBlockMod.MOD_ID);
-	
-	public static final RegistryObject<Item> enchanted_acacia = items.register("enchanted_acacia", () -> new EnchantedItem(ItemProperties.fg64));
-	
-	public static final RegistryObject<Item> enchanted_bread = items.register("enchanted_bread", () -> new Item(ItemProperties.f64));
-	public static final RegistryObject<Item> enchanted_egg = items.register("enchanted_egg", () -> new Item(ItemProperties.f64));
-	
+
+	public static final RegistryObject<Item> enchanted_acacia = items.register("enchanted_acacia",
+			() -> new EnchantedItem(ItemProperties.fg64));
+
+	public static final RegistryObject<Item> enchanted_bread = items.register("enchanted_bread",
+			() -> new Item(ItemProperties.f64));
+	public static final RegistryObject<Item> enchanted_egg = items.register("enchanted_egg",
+			() -> new Item(ItemProperties.f64));
+
 	public static final RegistryObject<Item> auto_smelter = items.register("auto_smelter",
 			() -> new UpgradeItem(ItemProperties.m64));
 	public static final RegistryObject<Item> enchanted_cobblestone = items.register("enchanted_cobblestone",
@@ -43,7 +46,8 @@ public class ItemInit {
 			() -> new EnchantedItem(ItemProperties.m64));
 	public static final RegistryObject<Item> enchanted_hopper = items.register("enchanted_hopper",
 			() -> new EnchantedItem(ItemProperties.m64));
-	public static final RegistryObject<Item> perfect_hopper = items.register("perfect_hopper", () -> new Item(ItemProperties.m64));
+	public static final RegistryObject<Item> perfect_hopper = items.register("perfect_hopper",
+			() -> new Item(ItemProperties.m64));
 
 	public static final RegistryObject<Item> enchanted_charcoal = items.register("enchanted_charcoal",
 			() -> new EnchantedFuelItem(ItemProperties.m64, 2592000, .8));

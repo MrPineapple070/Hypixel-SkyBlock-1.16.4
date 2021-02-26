@@ -15,7 +15,8 @@ import net.minecraft.world.World;
  * An {@link Accessory} that adds buffs.<br>
  * <a href="https://hypixel-skyblock.fandom.com/wiki/Bat_Artifact">Bat
  * Artifact</a>.<br>
- * <a href="http://textures.minecraft.net/texture/382fc3f71b41769376a9e92fe3adbaac3772b999b219c9d6b4680ba9983e527">Texture</a>.
+ * <a href=
+ * "http://textures.minecraft.net/texture/382fc3f71b41769376a9e92fe3adbaac3772b999b219c9d6b4680ba9983e527">Texture</a>.
  *
  * @author MrPineapple070
  * @version 25 July 2020

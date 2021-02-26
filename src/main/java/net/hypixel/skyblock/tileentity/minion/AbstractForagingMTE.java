@@ -23,19 +23,22 @@ public abstract class AbstractForagingMTE extends AbstractPlacerMTE {
 	 * Array of {@link Item} that {@link #getCompactor()} will return.
 	 */
 	protected static final Item[] comp = new Item[] { Items.DIAMOND };
-	
+
 	/**
-	 * Array of differentials when {@link #count(Item)} of {@link ItemInit#minion_expander} == 0
+	 * Array of differentials when {@link #count(Item)} of
+	 * {@link ItemInit#minion_expander} == 0
 	 */
 	protected static final int[] default_size = { -2, 0, 2 };
-	
+
 	/**
-	 * Array of differentials when {@link #count(Item)} of {@link ItemInit#minion_expander} == 1
+	 * Array of differentials when {@link #count(Item)} of
+	 * {@link ItemInit#minion_expander} == 1
 	 */
 	protected static final int[] expanded_size = { -3, -1, 1, 3 };
-	
+
 	/**
-	 * Array of differentials when {@link #count(Item)} of {@link ItemInit#minion_expander} == 2
+	 * Array of differentials when {@link #count(Item)} of
+	 * {@link ItemInit#minion_expander} == 2
 	 */
 	protected static final int[] expanded_1_size = { -4, -2, 0, 2, 4 };
 
@@ -76,7 +79,7 @@ public abstract class AbstractForagingMTE extends AbstractPlacerMTE {
 			}
 			index_x += 1;
 		}
-		
+
 		for (BlockPos[] row : this.surround[0])
 			HypixelSkyBlockMod.LOGGER.info(Arrays.deepToString(row));
 	}

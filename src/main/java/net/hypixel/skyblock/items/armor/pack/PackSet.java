@@ -18,7 +18,7 @@ import net.minecraft.inventory.EquipmentSlotType;
  */
 public class PackSet implements FullSetInformation {
 	static final PackSet instance = new PackSet();
-	
+
 	private static final int helmet = 29;
 	private static final int chestplate = 35;
 	private static final int leggings = 30;
@@ -26,30 +26,29 @@ public class PackSet implements FullSetInformation {
 
 	@Override
 	public double[] getBootsBuffs() throws IllegalAccessException {
-		return new double[] {0, 0, 0, helmet, 0, 0, 0};
+		return new double[] { 0, 0, 0, helmet, 0, 0, 0 };
 	}
 
 	@Override
 	public double[] getChestplateBuffs() throws IllegalAccessException {
-		return new double[] {0, 0, 0, chestplate, 0, 0, 0};
+		return new double[] { 0, 0, 0, chestplate, 0, 0, 0 };
 	}
 
 	@Override
 	public String getFullSetBonus() {
-		return FormatingCodes.gold + "Full Set Bonus: Armor of the PackSet\n" + FormatingCodes.gray
-				+ "Gain +35 " + StatString.strength + FormatingCodes.gray + " and +80 "
-				+ StatString.defense + FormatingCodes.gray
+		return FormatingCodes.gold + "Full Set Bonus: Armor of the PackSet\n" + FormatingCodes.gray + "Gain +35 "
+				+ StatString.strength + FormatingCodes.gray + " and +80 " + StatString.defense + FormatingCodes.gray
 				+ " for each Armor of the PackSet wearers within 30 blocks. Max of 3 players.";
 	}
 
 	@Override
 	public double[] getHelmetBuffs() throws IllegalAccessException {
-		return new double[] {0, 0, 0, leggings, 0, 0, 0};
+		return new double[] { 0, 0, 0, leggings, 0, 0, 0 };
 	}
 
 	@Override
 	public double[] getLeggingsBuffs() throws IllegalAccessException {
-		return new double[] {0, 0, 0, boots, 0, 0, 0};
+		return new double[] { 0, 0, 0, boots, 0, 0, 0 };
 	}
 
 	@Override

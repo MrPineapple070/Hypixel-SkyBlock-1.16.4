@@ -80,7 +80,7 @@ public class HypixelSkyBlockMod {
 		// DimensionInit.dimensions.register(bus);
 		// FeatureInit.features.register(bus);
 		// FeatureInit.strucutres.register(bus);
-		
+
 		// PortalBlockInit.portal_blocks.register(bus);
 
 		instance = this;

@@ -102,7 +102,7 @@ public class TimeSaverScreen extends ContainerScreen<TimeSaverContainer> {
 	@OnlyIn(Dist.CLIENT)
 	class CancelButton extends SpriteButton {
 		private final StringTextComponent tooltip = new StringTextComponent(I18n.format("gui.cancel"));
-		
+
 		public CancelButton(int xIn, int yIn) {
 			super(xIn, yIn, 112, 220);
 		}
@@ -130,7 +130,7 @@ public class TimeSaverScreen extends ContainerScreen<TimeSaverContainer> {
 	@OnlyIn(Dist.CLIENT)
 	class ConfirmButton extends SpriteButton {
 		private final StringTextComponent tooltip = new StringTextComponent(I18n.format("gui.done"));
-		
+
 		public ConfirmButton(int xIn, int yIn) {
 			super(xIn, yIn, 90, 220);
 		}
@@ -196,7 +196,8 @@ public class TimeSaverScreen extends ContainerScreen<TimeSaverContainer> {
 
 		@Override
 		public void renderToolTip(MatrixStack stack, int x, int y) {
-			TimeSaverScreen.this.renderTooltip(stack, new StringTextComponent(I18n.format(String.valueOf(this.time))), x, y);
+			TimeSaverScreen.this.renderTooltip(stack, new StringTextComponent(I18n.format(String.valueOf(this.time))),
+					x, y);
 		}
 	}
 
@@ -247,8 +248,7 @@ public class TimeSaverScreen extends ContainerScreen<TimeSaverContainer> {
 	protected void drawGuiContainerBackgroundLayer(MatrixStack stack, float partialTicks, int x, int y) {
 		RenderSystem.blendColor(1f, 1f, 1f, 1f);
 		this.minecraft.getTextureManager().bindTexture(background_texture);
-		this.blit(stack, (this.width - this.xSize) / 2, (this.height - this.ySize) / 2, 0, 0, this.xSize,
-				this.ySize);
+		this.blit(stack, (this.width - this.xSize) / 2, (this.height - this.ySize) / 2, 0, 0, this.xSize, this.ySize);
 		this.itemRenderer.zLevel = 100f;
 		for (int t = 0; t < 9; t++)
 			this.itemRenderer.renderItemAndEffectIntoGUI(new ItemStack(Items.DAYLIGHT_DETECTOR), 48 + 18 * t, 51);

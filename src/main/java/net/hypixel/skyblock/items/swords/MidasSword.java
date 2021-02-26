@@ -1,5 +1,6 @@
 package net.hypixel.skyblock.items.swords;
 
+import java.util.Arrays;
 import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
@@ -23,15 +24,20 @@ import net.minecraft.world.World;
  * @since 02 July 2019
  */
 public class MidasSword extends ModSwordItem {
+	private static final List<StringTextComponent> tooltip = Arrays.asList(
+			new StringTextComponent(FormatingCodes.gold + "Item Ability: Greed"),
+			new StringTextComponent(
+					"The Strength and Damge bonus of this item is dependant on the price paid for it at the Dark Auction."),
+			new StringTextComponent("The maximum bonus of this item is 120 if the bid was 50 million or more."));
+
 	public MidasSword() {
 		super(ModSwordTier.Midas_Sword, ItemProperties.c1, ModItemRarity.Legendary);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent(FormatingCodes.gold + "Item Ability: Greed\n" + FormatingCodes.gray
-				+ "The Strength and Damge bonus of this item is dependant on the price paid for it at the Dark Auction.\n"
-				+ "The maximum bonus of this item is 120 if the bid was 50 million or more."));
+		tooltip.addAll(MidasSword.tooltip);
+		tooltip.add(StringTextComponent.EMPTY);
 	}
 
 	@Override

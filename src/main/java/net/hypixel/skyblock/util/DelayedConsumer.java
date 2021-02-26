@@ -17,9 +17,10 @@ import com.google.common.collect.Lists;
 public abstract class DelayedConsumer<T> {
 	private List<Consumer<T>> tasks = Lists.newArrayList();
 	private T key = null;
-	
+
 	/**
 	 * Consume when ready
+	 * 
 	 * @param task {@link Consumer}
 	 */
 	public void consumeWhenReady(Consumer<T> task) {
@@ -29,9 +30,10 @@ public abstract class DelayedConsumer<T> {
 			task.accept(key);
 		}
 	}
-	
+
 	/**
 	 * Key ready
+	 * 
 	 * @param key for {@link Consumer}
 	 */
 	public void keyReady(T key) {

@@ -42,7 +42,7 @@ public final class AbstractMinionScreen extends ContainerScreen<AbstractMinionCo
 	 */
 	@Nonnull
 	protected static final Logger LOGGER = LogManager.getLogger();
-	
+
 	/**
 	 * The texture for this screen.
 	 */
@@ -156,13 +156,13 @@ public final class AbstractMinionScreen extends ContainerScreen<AbstractMinionCo
 	/**
 	 * When this {@link Button} is pressed, automatically upgrade this
 	 * {@link AbstractMinionBlock} to the next {@link MinionTier}.<br>
-	 * This {@link Button} will not do anything if the {@link AbstractMinionBlock} is at the
-	 * maximum {@link MinionTier}<br>
+	 * This {@link Button} will not do anything if the {@link AbstractMinionBlock}
+	 * is at the maximum {@link MinionTier}<br>
 	 * or if the {@link PlayerEntity} does not have the required materials.
 	 */
 	class UpgradeButton extends Button {
 		private final StringTextComponent tooltip = new StringTextComponent("Upgrade to next Tier");
-		
+
 		public UpgradeButton(int x, int y) {
 			super(x + 90, y, "\u2191");
 		}
@@ -183,12 +183,13 @@ public final class AbstractMinionScreen extends ContainerScreen<AbstractMinionCo
 	/**
 	 * When this {@link Button} is pressed, automatically empty all {@link Item}
 	 * from this {@link AbstractMinionBlock}.<br>
-	 * Also empties {@link MinionChestBlock} if the {@link AbstractMinionBlock} has one.
-	 * This {@link Button} will not do anything is the {@link AbstractMinionBlock} is empty.
+	 * Also empties {@link MinionChestBlock} if the {@link AbstractMinionBlock} has
+	 * one. This {@link Button} will not do anything is the
+	 * {@link AbstractMinionBlock} is empty.
 	 */
 	class EmptyButton extends Button {
 		private final StringTextComponent tooltip = new StringTextComponent("Empty the Minion of contents");
-		
+
 		public EmptyButton(int x, int y) {
 			super(x + 126, y, "\u2193");
 		}

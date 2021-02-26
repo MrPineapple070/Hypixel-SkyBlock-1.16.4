@@ -266,7 +266,7 @@ public abstract class ModSwordItem extends SwordItem implements ReforgableItem, 
 
 	@Override
 	public ITextComponent getDisplayName(ItemStack stack) {
-		return ((IFormattableTextComponent)super.getDisplayName(stack)).mergeStyle(this.rarity.color);
+		return ((IFormattableTextComponent) super.getDisplayName(stack)).mergeStyle(this.rarity.color);
 	}
 
 	@Override
@@ -283,7 +283,7 @@ public abstract class ModSwordItem extends SwordItem implements ReforgableItem, 
 	public boolean isDamageable() {
 		return false;
 	}
-	
+
 	@Override
 	public boolean isEnchantable(ItemStack stack) {
 		return true;

@@ -38,7 +38,7 @@ public class AccessoryTossEvent {
 			spd.applyNonPersistentModifier(
 					new AttributeModifier(Attributes.MOVEMENT_SPEED.getAttributeName(), -.001, Operation.ADDITION));
 	}
-	
+
 	@SubscribeEvent
 	public static void farmingTalismanEvent(ItemTossEvent event) {
 		event.getEntityItem().getItem().getItem();

@@ -16,8 +16,10 @@ public class BrewingRecipeRegistrar extends DelayedConsumer<Registar> {
 	public static void init(IEventBus bus) {
 		registerPotion(PotionInit.absorption_00.get(), Items.COCOA_BEANS, Potions.AWKWARD);
 		registerPotion(PotionInit.absorption_01.get(), Items.REDSTONE, PotionInit.absorption_00.get());
-		registerPotion(PotionInit.absorption_02.get(), ItemInit.enchanted_redstone.get(), PotionInit.absorption_01.get());
-		registerPotion(PotionInit.absorption_03.get(), ItemInit.enchanted_redstone_block.get(), PotionInit.absorption_02.get());
+		registerPotion(PotionInit.absorption_02.get(), ItemInit.enchanted_redstone.get(),
+				PotionInit.absorption_01.get());
+		registerPotion(PotionInit.absorption_03.get(), ItemInit.enchanted_redstone_block.get(),
+				PotionInit.absorption_02.get());
 	}
 
 	private static void registerPotion(Potion potion, Item ingredient, Potion base) {

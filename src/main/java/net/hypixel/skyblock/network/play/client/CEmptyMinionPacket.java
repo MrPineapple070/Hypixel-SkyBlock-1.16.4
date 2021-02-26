@@ -15,7 +15,7 @@ import net.minecraft.network.play.IServerPlayNetHandler;
 public class CEmptyMinionPacket implements IPacket<IServerPlayNetHandler> {
 	public CEmptyMinionPacket() {
 	}
-	
+
 	@Override
 	public void readPacketData(PacketBuffer buf) throws IOException {
 		HypixelSkyBlockMod.LOGGER.info(buf.toString());

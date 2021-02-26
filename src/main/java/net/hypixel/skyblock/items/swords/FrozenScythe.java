@@ -1,5 +1,6 @@
 package net.hypixel.skyblock.items.swords;
 
+import java.util.Arrays;
 import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
@@ -23,15 +24,19 @@ import net.minecraft.world.World;
  * @since 18 December 2019
  */
 public class FrozenScythe extends ModSwordItem {
+	public static final List<StringTextComponent> tooltip = Arrays.asList(
+			new StringTextComponent(FormatingCodes.gold + "Item Ability: Ice Bold"),
+			new StringTextComponent(FormatingCodes.gray
+					+ "Shoots 1 Ice Bold that deals 1000 damage and slows enimies hit for 5 seconds."));
+
 	public FrozenScythe() {
 		super(ModSwordTier.Frozen_Scythe, ItemProperties.c1, ModItemRarity.Rare);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent(FormatingCodes.gold + "Item Ability: Ice Bold"));
-		tooltip.add(new StringTextComponent(
-				FormatingCodes.gray + "Shoots 1 Ice Bold that deals 1000 damage and slows enimies hit for 5 seconds."));
+		tooltip.addAll(FrozenScythe.tooltip);
+		tooltip.add(StringTextComponent.EMPTY);
 	}
 
 	@Override

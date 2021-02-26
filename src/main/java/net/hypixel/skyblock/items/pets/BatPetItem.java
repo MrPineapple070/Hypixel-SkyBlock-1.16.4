@@ -27,12 +27,14 @@ public final class BatPetItem extends PetItem {
 	private static final ITextComponent nightmare = new StringTextComponent(FormatingCodes.gold + "Nightmare");
 	private static final ITextComponent wings = new StringTextComponent(FormatingCodes.gold + "Wings of Steel");
 	private static final ITextComponent sonar = new StringTextComponent(FormatingCodes.gold + "Sonar");
-	
+
 	private static final String intel = StatString.intelligence + ": %.1f";
 	private static final String speed = StatString.speed + ": %.1f";
 	private static final String seacc = StatString.sea_creature_chance + ": %.1f";
-	private static final String candy = "Increases drop chance of candies from mobs by " + FormatingCodes.green + "%.1f%%";
-	private static final String night = "During night, gain %.1f" + StatString.intelligence + ", %.1f" + StatString.speed + ", and night vision";
+	private static final String candy = "Increases drop chance of candies from mobs by " + FormatingCodes.green
+			+ "%.1f%%";
+	private static final String night = "During night, gain %.1f" + StatString.intelligence + ", %.1f"
+			+ StatString.speed + ", and night vision";
 
 	public BatPetItem() {
 		super(ItemProperties.m1, Pets.bat);
@@ -61,7 +63,6 @@ public final class BatPetItem extends PetItem {
 			tooltip.add(blank);
 			tooltip.add(wings);
 		}
-
 
 		if (rarity.rank >= ModItemRarity.Mythic.rank) {
 			tooltip.add(blank);

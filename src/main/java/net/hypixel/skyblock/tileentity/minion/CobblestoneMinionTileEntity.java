@@ -110,7 +110,8 @@ public abstract class CobblestoneMinionTileEntity extends AbstractMiningMTE {
 	/**
 	 * {@link ImmutableSet} of {@link Block} that this places.
 	 */
-	protected static final ImmutableSet<Block> validBlocks = ImmutableSet.copyOf(Arrays.asList(Blocks.AIR, Blocks.COBBLESTONE));
+	protected static final ImmutableSet<Block> validBlocks = ImmutableSet
+			.copyOf(Arrays.asList(Blocks.AIR, Blocks.COBBLESTONE));
 
 	/**
 	 * Constructs {@code this}
@@ -176,11 +177,11 @@ public abstract class CobblestoneMinionTileEntity extends AbstractMiningMTE {
 	protected final Item[] getSuperCompactor() {
 		return new Item[] { Items.COBBLESTONE, Items.DIAMOND, Items.DIAMOND_BLOCK, ItemInit.enchanted_diamond.get() };
 	}
-	
+
 	protected final int getSpeed(MinionTier tier) {
 		return CobblestoneMinion.speed.get(tier.asInt);
 	}
-	
+
 	public final ImmutableSet<Block> getValidBlocks() {
 		return validBlocks;
 	}

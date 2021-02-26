@@ -33,7 +33,7 @@ public class AbstractBackpackContainer extends Container implements INamedContai
 			this(id, pInvIn);
 		}
 	}
-	
+
 	public static class MediumBC extends AbstractBackpackContainer {
 		public MediumBC(int id, PlayerInventory pInvIn) {
 			super(ModContainerTypes.medium_backpack.get(), id, pInvIn, BackpackType.Medium);
@@ -43,7 +43,7 @@ public class AbstractBackpackContainer extends Container implements INamedContai
 			this(id, pInvIn);
 		}
 	}
-	
+
 	public static class LargeBC extends AbstractBackpackContainer {
 		public LargeBC(int id, PlayerInventory pInvIn) {
 			super(ModContainerTypes.large_backpack.get(), id, pInvIn, BackpackType.Large);
@@ -53,7 +53,7 @@ public class AbstractBackpackContainer extends Container implements INamedContai
 			this(id, pInvIn);
 		}
 	}
-	
+
 	public static class GreaterBC extends AbstractBackpackContainer {
 		public GreaterBC(int id, PlayerInventory pInvIn) {
 			super(ModContainerTypes.greater_backpack.get(), id, pInvIn, BackpackType.Greater);
@@ -63,12 +63,12 @@ public class AbstractBackpackContainer extends Container implements INamedContai
 			this(id, pInvIn);
 		}
 	}
-	
+
 	public static class JumboBC extends AbstractBackpackContainer {
 		public JumboBC(int id, PlayerInventory pInvIn) {
 			super(ModContainerTypes.jumbo_backpack.get(), id, pInvIn, BackpackType.Jumbo);
 		}
-		
+
 		public JumboBC(int id, PlayerInventory pInvIn, PacketBuffer data) {
 			this(id, pInvIn);
 		}

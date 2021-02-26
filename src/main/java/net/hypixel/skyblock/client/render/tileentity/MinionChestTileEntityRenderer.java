@@ -44,17 +44,17 @@ public class MinionChestTileEntityRenderer<T extends TileEntity & IChestLid> ext
 	 * {@link ModelRenderer} for the lid
 	 */
 	private final ModelRenderer singleLid;
-	
+
 	/**
 	 * {@link ModelRenderer} for the bottom
 	 */
 	private final ModelRenderer singleBottom;
-	
+
 	/**
 	 * {@link ModelRenderer} for the latch
 	 */
 	private final ModelRenderer singleLatch;
-	
+
 	/**
 	 * Is the day Christmas?
 	 */
@@ -75,7 +75,7 @@ public class MinionChestTileEntityRenderer<T extends TileEntity & IChestLid> ext
 		this.singleLatch.addBox(7f, -1f, 15f, 2f, 4f, 1f, 0f);
 		this.singleLatch.rotationPointY = 8f;
 	}
-	
+
 	@Override
 	public void render(T tileEntityIn, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn,
 			int combinedLightIn, int combinedOverlayIn) {
@@ -101,23 +101,24 @@ public class MinionChestTileEntityRenderer<T extends TileEntity & IChestLid> ext
 			int i = wrapper.apply(new DualBrightnessCallback<>()).applyAsInt(combinedLightIn);
 			RenderMaterial material = this.getMaterial(tileEntityIn, type);
 			IVertexBuilder vertex_builder = material.getBuffer(bufferIn, RenderType::getEntityCutout);
-			this.renderModels(matrixStackIn, vertex_builder, this.singleLid, this.singleLatch, this.singleBottom, lid_angle, i,
-					combinedOverlayIn);
+			this.renderModels(matrixStackIn, vertex_builder, this.singleLid, this.singleLatch, this.singleBottom,
+					lid_angle, i, combinedOverlayIn);
 			matrixStackIn.pop();
 		}
 	}
-	
+
 	/**
-	 * Renders the lid, base, and latch of this onto the {@link AbstractMinionChestTileEntity}
+	 * Renders the lid, base, and latch of this onto the
+	 * {@link AbstractMinionChestTileEntity}
 	 * 
-	 * @param matrixStackIn		{@link MatrixStack}
-	 * @param bufferIn			{@link IVertexBuilder}
-	 * @param chestLid			{@link ModelRenderer} for Chest Lid
-	 * @param chestLatch		{@link ModelRenderer} for Chest Latch
-	 * @param chestBottom		{@link ModelRenderer} for Chest Bottom
-	 * @param lidAngle			the angle of the lid in radians
-	 * @param combinedLightIn	the amount of light hitting this
-	 * @param combinedOverlayIn	the amount of overlay hitting this
+	 * @param matrixStackIn     {@link MatrixStack}
+	 * @param bufferIn          {@link IVertexBuilder}
+	 * @param chestLid          {@link ModelRenderer} for Chest Lid
+	 * @param chestLatch        {@link ModelRenderer} for Chest Latch
+	 * @param chestBottom       {@link ModelRenderer} for Chest Bottom
+	 * @param lidAngle          the angle of the lid in radians
+	 * @param combinedLightIn   the amount of light hitting this
+	 * @param combinedOverlayIn the amount of overlay hitting this
 	 */
 	private void renderModels(MatrixStack matrixStackIn, IVertexBuilder bufferIn, ModelRenderer chestLid,
 			ModelRenderer chestLatch, ModelRenderer chestBottom, float lidAngle, int combinedLightIn,
@@ -128,13 +129,14 @@ public class MinionChestTileEntityRenderer<T extends TileEntity & IChestLid> ext
 		chestLatch.render(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn);
 		chestBottom.render(matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn);
 	}
-	
+
 	/**
-	 * Retrieves {@link RenderMaterial} from a {@link TileEntity} and {@link ChestType}.<br>
+	 * Retrieves {@link RenderMaterial} from a {@link TileEntity} and
+	 * {@link ChestType}.<br>
 	 * Renders the special chest when {@link #isChristmas}
 	 * 
-	 * @param tileEntity	{@link TileEntity} to render
-	 * @param chestType		{@link ChestType} of tileEntity
+	 * @param tileEntity {@link TileEntity} to render
+	 * @param chestType  {@link ChestType} of tileEntity
 	 * @return {@link Atlases#getChestMaterial(TileEntity, ChestType, boolean)}
 	 */
 	protected RenderMaterial getMaterial(T tileEntity, ChestType chestType) {

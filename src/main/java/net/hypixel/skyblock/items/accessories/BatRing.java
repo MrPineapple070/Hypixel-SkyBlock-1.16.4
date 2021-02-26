@@ -14,7 +14,8 @@ import net.minecraft.world.World;
 /**
  * An {@link Accessory} that buffs.<br>
  * <a href="https://hypixel-skyblock.fandom.com/wiki/Bat_Ring">Bat Ring</a>.<br>
- * <a href="http://textures.minecraft.net/texture/93c8aa3fde295fa9f9c27f734bdbab11d33a2e43e855accd7465352377413b">Texture</a>.
+ * <a href=
+ * "http://textures.minecraft.net/texture/93c8aa3fde295fa9f9c27f734bdbab11d33a2e43e855accd7465352377413b">Texture</a>.
  *
  * @author MrPineapple070
  * @version 25 July 2020

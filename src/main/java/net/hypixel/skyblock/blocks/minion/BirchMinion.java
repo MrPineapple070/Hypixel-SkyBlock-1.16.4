@@ -9,7 +9,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockReader;
 
 /**
- * The <a href="https://hypixel-skyblock.fandom.com/wiki/Birch_Minion">Birch Minion</a>.
+ * The <a href="https://hypixel-skyblock.fandom.com/wiki/Birch_Minion">Birch
+ * Minion</a>.
  * 
  * @author MrPineapple070
  * @version 04 January 2021

@@ -5,7 +5,8 @@ import net.hypixel.skyblock.items.ModItemRarity;
 import net.minecraft.entity.player.PlayerEntity;
 
 /**
- * The <a href="https://hypixel-skyblock.fandom.com/wiki/Chicken_Pet">Chicken Pet</a>.
+ * The <a href="https://hypixel-skyblock.fandom.com/wiki/Chicken_Pet">Chicken
+ * Pet</a>.
  * 
  * @author MrPineapple070
  * @version 21 February 2020

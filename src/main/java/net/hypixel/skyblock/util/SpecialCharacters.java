@@ -1,5 +1,7 @@
 package net.hypixel.skyblock.util;
 
+import net.hypixel.skyblock.items.swords.ScorpionFoil;
+
 /**
  * Holds special characters to display in the tooltip.
  *
@@ -24,17 +26,17 @@ public class SpecialCharacters {
 	 * &#x1fa93;
 	 */
 	public static final char[] axe = { 0xd83e, 0xde93 };
-	
+
 	/**
 	 * &#x269a;
 	 */
 	public static final char boss = 0x269a;
-	
+
 	/**
 	 * &#xfd3e;
 	 */
 	public static final char boss_name_start = 0xfd3e;
-	
+
 	/**
 	 * &#xfd3f;
 	 */
@@ -102,6 +104,17 @@ public class SpecialCharacters {
 	public static final char[] fishing_rod = { 0xd83c, 0xdfa3 };
 
 	/**
+	 * <a href="https://hypixel-skyblock.fandom.com/wiki/Foraging_Fortune">Foraging
+	 * Fortune</a>,
+	 * <a href="https://hypixel-skyblock.fandom.com/wiki/Farming_Fortune">Farming
+	 * Fortune</a>, and
+	 * <a href="https://hypixel-skyblock.fandom.com/wiki/Mining_Fortune">Mining
+	 * Fortune</a> statistic character.<br>
+	 * &#x2618;
+	 */
+	public static final char fortune = 0x2618;
+
+	/**
 	 * <a href="https://hypixel-skyblock.fandom.com/wiki/Health">Health</a>
 	 * statistic character.<br>
 	 * &#x2764;
@@ -146,6 +159,13 @@ public class SpecialCharacters {
 	public static final char magic_find = 0x272f;
 
 	/**
+	 * <a href="https://hypixel-skyblock.fandom.com/wiki/Mana">Mana</a> statistic
+	 * character.<br>
+	 * &#x270E;
+	 */
+	public static final char mana = 0x270E;
+
+	/**
 	 * Used to indicate night-time.<br>
 	 * &#x263d;
 	 */
@@ -162,6 +182,13 @@ public class SpecialCharacters {
 	 * &#x26cf;
 	 */
 	public static final char pick = 0x26cf;
+
+	/**
+	 * <a href="https://hypixel-skyblock.fandom.com/wiki/Mining_Speed">Mining
+	 * Speed</a> statistic character.<br>
+	 * &#x2e15;
+	 */
+	public static final char pick2 = 0x2e15;
 
 	/**
 	 * Used to indicate a requirement for an effect or ability to activate.<br>
@@ -215,6 +242,11 @@ public class SpecialCharacters {
 	 * &#x1f5e1;
 	 */
 	public static final char[] sword = { 0xd83d, 0xdde1 };
+
+	/**
+	 * Special character for {@link ScorpionFoil} tickers.
+	 */
+	public static final char ticker = 0x24ea;
 
 	/**
 	 * &#x1f531;

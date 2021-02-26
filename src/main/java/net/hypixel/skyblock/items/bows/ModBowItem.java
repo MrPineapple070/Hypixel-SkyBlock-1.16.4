@@ -236,7 +236,7 @@ public abstract class ModBowItem extends BowItem implements ReforgableItem, Upgr
 
 	@Override
 	public final ITextComponent getDisplayName(ItemStack stack) {
-		return ((IFormattableTextComponent)super.getDisplayName(stack)).mergeStyle(this.rarity.color);
+		return ((IFormattableTextComponent) super.getDisplayName(stack)).mergeStyle(this.rarity.color);
 	}
 
 	@Override

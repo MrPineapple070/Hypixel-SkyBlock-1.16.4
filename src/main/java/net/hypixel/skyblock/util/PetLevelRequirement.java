@@ -61,7 +61,7 @@ public class PetLevelRequirement {
 			179700, 192700, 206700, 221700, 237700, 254700, 272700, 291700, 311700, 333700, 357700, 383700, 411700,
 			441700, 476700, 516700, 561700, 611700, 666700, 726700, 791700, 861700, 936700, 1016700, 1101700, 1191700,
 			1286700, 1386700, 1496700, 1616700, 1746700, 1886700));
-	
+
 	@Nonnull
 	public static final ImmutableList<Integer> getRequirement(@Nonnull ModItemRarity rarity) {
 		switch (rarity) {
@@ -79,7 +79,7 @@ public class PetLevelRequirement {
 			throw new IllegalStateException("Illegal ModItemRarity " + rarity.name());
 		}
 	}
-	
+
 	@Nonnegative
 	public static final int getRequirement(@Nonnull ModItemRarity rarity, @Nonnegative int lvl) {
 		if (lvl < 0 || lvl > 100)

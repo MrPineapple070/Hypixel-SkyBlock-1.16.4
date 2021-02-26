@@ -1,10 +1,12 @@
 package net.hypixel.skyblock.items.swords;
 
+import java.util.Arrays;
 import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.ItemProperties;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -23,14 +25,19 @@ import net.minecraft.world.World;
  * @since 11 October 2019
  */
 public class ZombieSword extends ModSwordItem {
+	private static final List<StringTextComponent> tooltip = Arrays.asList(
+			new StringTextComponent(FormatingCodes.gold + "Item Ability: Instant Heal"),
+			new StringTextComponent(FormatingCodes.gray + "Heal yourself for 24 + 5% max " + StatString.health
+					+ " and Players within 7 blocks for 10 " + StatString.health + "."));
+
 	public ZombieSword() {
 		super(ModSwordTier.Zombie_Sword, ItemProperties.c1, ModItemRarity.Rare);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent(FormatingCodes.gold + "Item Ability: Instant Heal\n" + FormatingCodes.gray
-				+ "Heal yourself for 24 + 5% max Health and Players within 7 blocks for 10 Health."));
+		tooltip.addAll(ZombieSword.tooltip);
+		tooltip.add(StringTextComponent.EMPTY);
 	}
 
 	@Override

@@ -161,10 +161,11 @@ public abstract class Pet {
 	public ModItemRarity getRarity() {
 		return this.rarity;
 	}
-	
+
 	/**
 	 * Determine if this Pet is similar to another Pet.<br>
 	 * Checks if {@link #petType} of the two pets are the same.
+	 * 
 	 * @param other {@link Pet} to compare with.
 	 * @return true / false
 	 */

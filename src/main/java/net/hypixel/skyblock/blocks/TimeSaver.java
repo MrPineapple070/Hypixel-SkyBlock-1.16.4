@@ -57,9 +57,9 @@ public abstract class TimeSaver extends Block {
 				ItemStack stack) {
 			IWorldInfo info = worldIn.getWorldInfo();
 			if (info instanceof IServerWorldInfo)
-				((IServerWorldInfo)info).setGameTime(TimeConverter.hours.get(0));
+				((IServerWorldInfo) info).setGameTime(TimeConverter.hours.get(0));
 			else if (info instanceof ClientWorldInfo)
-				((ClientWorldInfo)info).setGameTime(TimeConverter.hours.get(0));
+				((ClientWorldInfo) info).setGameTime(TimeConverter.hours.get(0));
 			return;
 		}
 	}
@@ -87,9 +87,9 @@ public abstract class TimeSaver extends Block {
 				ItemStack stack) {
 			IWorldInfo info = worldIn.getWorldInfo();
 			if (info instanceof IServerWorldInfo)
-				((IServerWorldInfo)info).setGameTime(TimeConverter.hours.get(0));
+				((IServerWorldInfo) info).setGameTime(TimeConverter.hours.get(0));
 			else if (info instanceof ClientWorldInfo)
-				((ClientWorldInfo)info).setGameTime(TimeConverter.hours.get(0));
+				((ClientWorldInfo) info).setGameTime(TimeConverter.hours.get(0));
 			return;
 		}
 	}

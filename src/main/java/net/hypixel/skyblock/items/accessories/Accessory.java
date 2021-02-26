@@ -278,7 +278,7 @@ public abstract class Accessory extends Item implements ReforgableItem, Upgradab
 
 	@Override
 	public ITextComponent getDisplayName(ItemStack stack) {
-		return ((IFormattableTextComponent)super.getDisplayName(stack)).mergeStyle(this.rarity.color);
+		return ((IFormattableTextComponent) super.getDisplayName(stack)).mergeStyle(this.rarity.color);
 	}
 
 	@Override

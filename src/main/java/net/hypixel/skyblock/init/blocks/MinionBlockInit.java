@@ -24,7 +24,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class MinionBlockInit {
 	public static final DeferredRegister<Block> minionBlocks = DeferredRegister.create(ForgeRegistries.BLOCKS,
 			HypixelSkyBlockMod.MOD_ID);
-	
+
 	public static final RegistryObject<Block> acacia_minion_1 = minionBlocks.register("acacia_minion_1",
 			() -> new AcaciaMinion(MinionTier.I));
 	public static final RegistryObject<Block> acacia_minion_2 = minionBlocks.register("acacia_minion_2",
@@ -944,7 +944,7 @@ public class MinionBlockInit {
 			() -> new Block(Properties.from(Blocks.STONE)));
 	public static final RegistryObject<Block> redstone_minion_b = minionBlocks.register("redstone_minion_b",
 			() -> new Block(Properties.from(Blocks.STONE)));
-	
+
 	public static final RegistryObject<Block> revenant_minion_1 = minionBlocks.register("revenant_minion_1",
 			() -> new Block(Properties.from(Blocks.STONE)));
 	public static final RegistryObject<Block> revenant_minion_2 = minionBlocks.register("revenant_minion_2",
@@ -1151,7 +1151,7 @@ public class MinionBlockInit {
 			() -> new Block(Properties.from(Blocks.STONE)));
 	public static final RegistryObject<Block> sugar_cane_minion_b = minionBlocks.register("sugar_cane_minion_b",
 			() -> new Block(Properties.from(Blocks.STONE)));
-	
+
 	public static final RegistryObject<Block> tarantula_minion_1 = minionBlocks.register("tarantula_minion_1",
 			() -> new Block(Properties.from(Blocks.STONE)));
 	public static final RegistryObject<Block> tarantula_minion_2 = minionBlocks.register("tarantula_minion_2",

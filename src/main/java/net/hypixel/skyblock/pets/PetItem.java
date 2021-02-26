@@ -33,12 +33,12 @@ public abstract class PetItem extends Item {
 	 * {@link ITextComponent} containing an empty {@link String}.
 	 */
 	protected static final ITextComponent blank = new StringTextComponent("");
-	
+
 	/**
 	 * {@link String} containing the level of this pet.<br>
 	 */
 	protected static final String level = "\u00A77[Lvl %d]\u00A7r ";
-	
+
 	/**
 	 * {@link String} containing the default progress to the next level.<br>
 	 * By default this contains 20 '-' with {@link FormatingCodes#white}.<br>
@@ -65,7 +65,8 @@ public abstract class PetItem extends Item {
 	@Override
 	public ITextComponent getDisplayName(ItemStack stack) {
 		StringTextComponent lvl = new StringTextComponent(String.format(level, this.pet.getLevel()));
-		return lvl.append(((IFormattableTextComponent)super.getDisplayName(stack)).mergeStyle(this.getPetRarity().color));
+		return lvl.append(
+				((IFormattableTextComponent) super.getDisplayName(stack)).mergeStyle(this.getPetRarity().color));
 	}
 
 	/**
@@ -81,18 +82,18 @@ public abstract class PetItem extends Item {
 	public Collection getPetCollection() {
 		return this.pet.collection;
 	}
-	
+
 	@Override
 	public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
 		if (worldIn.isRemote)
 			return;
 		if (!(entityIn instanceof PlayerEntity))
 			return;
-		PlayerEntity player = (PlayerEntity)entityIn;
+		PlayerEntity player = (PlayerEntity) entityIn;
 		Item item = stack.getItem();
 		if (!(item instanceof PetItem))
 			return;
-		PetItem pet = (PetItem)item;
+		PetItem pet = (PetItem) item;
 		pet.pet.effect(player);
 	}
 

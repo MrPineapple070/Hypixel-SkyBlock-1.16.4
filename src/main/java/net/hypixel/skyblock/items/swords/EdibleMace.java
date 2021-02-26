@@ -1,5 +1,6 @@
 package net.hypixel.skyblock.items.swords;
 
+import java.util.Arrays;
 import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
@@ -23,15 +24,18 @@ import net.minecraft.world.World;
  * @since 13 August 2020
  */
 public class EdibleMace extends ModSwordItem {
+	private static final List<StringTextComponent> tooltip = Arrays.asList(
+			new StringTextComponent(FormatingCodes.gold + "Item Ability: ME SMASH HEAD"),
+			new StringTextComponent(FormatingCodes.gray + "The next attack deals double damage and weakens animals."));
+
 	public EdibleMace() {
 		super(ModSwordTier.Edible_Mace, ItemProperties.c1, ModItemRarity.Rare);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent(FormatingCodes.gold + "Item Ability: ME SMASH HEAD"));
-		tooltip.add(new StringTextComponent(
-				FormatingCodes.gray + "The next attack deals double damage and weakens animals."));
+		tooltip.addAll(EdibleMace.tooltip);
+		tooltip.add(StringTextComponent.EMPTY);
 	}
 
 	@Override

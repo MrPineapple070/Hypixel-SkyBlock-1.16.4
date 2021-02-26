@@ -1,5 +1,6 @@
 package net.hypixel.skyblock.items.swords;
 
+import java.util.Arrays;
 import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
@@ -13,8 +14,6 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 /**
  * The <a href="https://hypixel-skyblock.fandom.com/wiki/Golem_Sword">Golem
@@ -25,21 +24,27 @@ import net.minecraftforge.api.distmarker.OnlyIn;
  * @since 11 June 2019
  */
 public class GolemSword extends ModSwordItem {
+	private static final List<StringTextComponent> tooltip = Arrays.asList(
+			new StringTextComponent(FormatingCodes.gold + "Item Ability: Iron Punch"),
+			new StringTextComponent(FormatingCodes.gray
+					+ "Punch the ground, damaging enemies in a hexagon around you for 250 base magic damage."));
+
 	public GolemSword() {
 		super(ModSwordTier.Golem_Sword, ItemProperties.m1, ModItemRarity.Rare);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent(FormatingCodes.gold + "Item Ability: Iron Punch"));
-		tooltip.add(new StringTextComponent(FormatingCodes.gray
-				+ "Punch the ground, damaging enemies in a hexagon around you for 250 base magic damage."));
+		tooltip.addAll(GolemSword.tooltip);
+		tooltip.add(StringTextComponent.EMPTY);
 	}
 
-	@OnlyIn(Dist.DEDICATED_SERVER)
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
+		ItemStack held = playerIn.getHeldItem(handIn);
+		if (worldIn.isRemote)
+			return ActionResult.resultPass(held);
 		playerIn.getCooldownTracker().setCooldown(this, 60);
-		return ActionResult.resultSuccess(playerIn.getHeldItem(handIn));
+		return ActionResult.resultSuccess(held);
 	}
 }

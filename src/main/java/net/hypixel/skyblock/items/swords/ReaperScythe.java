@@ -1,10 +1,12 @@
 package net.hypixel.skyblock.items.swords;
 
+import java.util.Arrays;
 import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.ItemProperties;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -23,15 +25,20 @@ import net.minecraft.world.World;
  * @since 11 October 2019
  */
 public class ReaperScythe extends ModSwordItem {
+	private static final List<StringTextComponent> tooltip = Arrays.asList(
+			new StringTextComponent(FormatingCodes.gold + "Item Ability: Desecration"),
+			new StringTextComponent(FormatingCodes.gray
+					+ "Within 3 seconds of killing an enemy, Desecrate their grave to spawn a zombie."),
+			new StringTextComponent("Zombies lose 2% " + StatString.health + "/s"));
+
 	public ReaperScythe() {
 		super(ModSwordTier.Reaper_Scythe, ItemProperties.c1, ModItemRarity.Legendary);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent(FormatingCodes.gold + "Item Ability: Desecration\n" + FormatingCodes.gray
-				+ "Within 3 seconds of killing an enemy, Desecrate their grave to spawn a zombie.\n"
-				+ "Zombies lose 2% Health/s"));
+		tooltip.addAll(ReaperScythe.tooltip);
+		tooltip.add(StringTextComponent.EMPTY);
 	}
 
 	@Override

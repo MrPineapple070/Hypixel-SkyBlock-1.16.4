@@ -88,8 +88,8 @@ import net.minecraftforge.registries.ForgeRegistries;
  * @since 11 June 2019
  */
 public class ModTileEntityTypes {
-	public static final DeferredRegister<TileEntityType<?>> tile_entity_types = DeferredRegister.create(
-			ForgeRegistries.TILE_ENTITIES, HypixelSkyBlockMod.MOD_ID);
+	public static final DeferredRegister<TileEntityType<?>> tile_entity_types = DeferredRegister
+			.create(ForgeRegistries.TILE_ENTITIES, HypixelSkyBlockMod.MOD_ID);
 
 	public static final RegistryObject<TileEntityType<AcaciaMTE1>> acacia_minion_1 = tile_entity_types.register(
 			"acacia_minion_1",
@@ -147,7 +147,7 @@ public class ModTileEntityTypes {
 			"birch_minion_a", () -> Builder.create(BirchMTEa::new, MinionBlockInit.birch_minion_a.get()).build(null));
 	public static final RegistryObject<TileEntityType<BirchMTEb>> birch_minion_b = tile_entity_types.register(
 			"birch_minion_b", () -> Builder.create(BirchMTEb::new, MinionBlockInit.birch_minion_b.get()).build(null));
-	
+
 	public static final RegistryObject<TileEntityType<BlazeMTE1>> blaze_minion_1 = tile_entity_types.register(
 			"blaze_minion_1", () -> Builder.create(BlazeMTE1::new, MinionBlockInit.blaze_minion_1.get()).build(null));
 	public static final RegistryObject<TileEntityType<BlazeMTE2>> blaze_minion_2 = tile_entity_types.register(

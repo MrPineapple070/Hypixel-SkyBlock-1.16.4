@@ -56,10 +56,11 @@ public class ItemMap {
 	public static final ImmutableMap<Item, Item> smeltMap = ImmutableMap.copyOf(smeltMapMake());
 
 	/**
-	 * Help determine how many coins to give the player when selling an item to an NPC.
+	 * Help determine how many coins to give the player when selling an item to an
+	 * NPC.
 	 */
 	public static final ImmutableMap<Item, Integer> sell = ImmutableMap.copyOf(sellMap());
-	
+
 	/**
 	 * Create {@link #compCountMap}
 	 *
@@ -187,15 +188,16 @@ public class ItemMap {
 		temp.put(Items.OAK_LOG, Items.COAL);
 		return temp;
 	}
-	
+
 	/**
 	 * Create {@link #sell}
+	 * 
 	 * @return {@link #sell}
 	 */
 	private static Map<Item, Integer> sellMap() {
 		final Map<Item, Integer> temp = new HashMap<>();
 		temp.put(AccessoriesInit.bait_ring.get(), 0);
-		
+
 		temp.put(WeaponInit.aotd.get(), 100000);
 		temp.put(WeaponInit.aote.get(), 50000);
 		temp.put(WeaponInit.aotj.get(), 0);

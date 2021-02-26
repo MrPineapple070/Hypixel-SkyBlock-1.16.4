@@ -41,15 +41,14 @@ public class PrivateIslandStructure extends Structure<NoFeatureConfig> {
 	}
 
 	public static class Start extends StructureStart<NoFeatureConfig> {
-		public Start(Structure<NoFeatureConfig> structure, int chunkX, int chunkZ, MutableBoundingBox boundingBox, int reference,
-				long seed) {
+		public Start(Structure<NoFeatureConfig> structure, int chunkX, int chunkZ, MutableBoundingBox boundingBox,
+				int reference, long seed) {
 			super(structure, chunkX, chunkZ, boundingBox, reference, seed);
 		}
 
 		@Override
 		public void func_230364_a_(DynamicRegistries p_230364_1_, ChunkGenerator generator,
-				TemplateManager templateManagerIn, int chunkX, int chunkY, Biome biomeIn,
-				NoFeatureConfig p_230364_7_) {
+				TemplateManager templateManagerIn, int chunkX, int chunkY, Biome biomeIn, NoFeatureConfig p_230364_7_) {
 			Rotation rotation = Rotation.values()[this.rand.nextInt(Rotation.values().length)];
 			int x = (chunkX << 4) + 7;
 			int z = (chunkX << 4) + 7;

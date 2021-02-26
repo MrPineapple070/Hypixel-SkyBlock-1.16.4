@@ -16,7 +16,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class FeatureInit {
-	public static final DeferredRegister<Structure<?>> features = DeferredRegister.create(ForgeRegistries.STRUCTURE_FEATURES, HypixelSkyBlockMod.MOD_ID);
+	public static final DeferredRegister<Structure<?>> features = DeferredRegister
+			.create(ForgeRegistries.STRUCTURE_FEATURES, HypixelSkyBlockMod.MOD_ID);
 
 	public static IStructurePieceType private_island_piece = PrivateIslandPieces.Piece::new;
 

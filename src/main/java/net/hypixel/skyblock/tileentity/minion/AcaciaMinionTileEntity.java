@@ -30,7 +30,7 @@ public class AcaciaMinionTileEntity extends AbstractForagingMTE {
 			super(ModTileEntityTypes.acacia_minion_1.get(), MinionTier.I);
 		}
 	}
-	
+
 	public static class AcaciaMTE2 extends AcaciaMinionTileEntity {
 		public AcaciaMTE2() {
 			super(ModTileEntityTypes.acacia_minion_2.get(), MinionTier.II);
@@ -66,67 +66,67 @@ public class AcaciaMinionTileEntity extends AbstractForagingMTE {
 			super(ModTileEntityTypes.acacia_minion_7.get(), MinionTier.VII);
 		}
 	}
-	
+
 	public static class AcaciaMTE8 extends AcaciaMinionTileEntity {
 		public AcaciaMTE8() {
 			super(ModTileEntityTypes.acacia_minion_8.get(), MinionTier.VIII);
 		}
 	}
-	
+
 	public static class AcaciaMTE9 extends AcaciaMinionTileEntity {
 		public AcaciaMTE9() {
 			super(ModTileEntityTypes.acacia_minion_9.get(), MinionTier.IX);
 		}
 	}
-	
+
 	public static class AcaciaMTEa extends AcaciaMinionTileEntity {
 		public AcaciaMTEa() {
 			super(ModTileEntityTypes.acacia_minion_a.get(), MinionTier.X);
 		}
 	}
-	
+
 	public static class AcaciaMTEb extends AcaciaMinionTileEntity {
 		public AcaciaMTEb() {
 			super(ModTileEntityTypes.acacia_minion_b.get(), MinionTier.XI);
 		}
 	}
-	
+
 	protected static final ImmutableSet<Block> validBlocks = ImmutableSet.copyOf(Arrays.asList(Blocks.ACACIA_LOG));
-	
+
 	public AcaciaMinionTileEntity(TileEntityType<? extends AbstractMinionTileEntity> typeIn, MinionTier tier) {
 		super(typeIn, tier);
 	}
-	
+
 	@Override
 	protected Container createMenu(int id, PlayerInventory player) {
 		return null;
 	}
-	
+
 	@Override
 	protected SoundEvent getSoundEvent() {
 		return SoundEvents.BLOCK_WOOD_BREAK;
 	}
-	
+
 	@Override
 	protected int getSpeed(MinionTier tier) {
 		return AcaciaMinion.speed.get(tier.asInt);
 	}
-	
+
 	@Override
 	protected BlockState getState() {
 		return Blocks.ACACIA_SAPLING.getDefaultState();
 	}
-	
+
 	@Override
 	protected Item[] getSuperCompactor() {
-		return new Item[] {Items.DIAMOND, Items.ACACIA_LOG, ItemInit.enchanted_acacia.get()};
+		return new Item[] { Items.DIAMOND, Items.ACACIA_LOG, ItemInit.enchanted_acacia.get() };
 	}
-	
+
 	@Override
 	protected ImmutableSet<Block> getValidBlocks() {
 		return validBlocks;
 	}
-	
+
 	@Override
 	public StringTextComponent initDisplayName() {
 		return new StringTextComponent("Acacia Minion Tier " + this.tier.name());

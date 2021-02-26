@@ -81,7 +81,7 @@ public abstract class AbstractBackpack extends Item {
 	public static final List<RegistryObject<Item>> black = Arrays.asList(BackpackInit.black_small_backpack,
 			BackpackInit.black_medium_backpack, BackpackInit.black_large_backpack, BackpackInit.black_greater_backpack,
 			BackpackInit.black_jumbo_backpack);
-	
+
 	public static class SmallBackpack extends AbstractBackpack {
 		public SmallBackpack(DyeColor color) {
 			super(BackpackType.Small, color);
@@ -111,7 +111,7 @@ public abstract class AbstractBackpack extends Item {
 			super(BackpackType.Greater, color);
 		}
 	}
-	
+
 	public static enum BackpackType {
 		Small(9), Medium(18), Large(27), Greater(36), Jumbo(54);
 
@@ -124,7 +124,7 @@ public abstract class AbstractBackpack extends Item {
 			this.size = size;
 		}
 	}
-	
+
 	/**
 	 * The {@link DyeColor} of this.
 	 */
@@ -149,7 +149,7 @@ public abstract class AbstractBackpack extends Item {
 		this.color = color;
 		this.items = NonNullList.withSize(type.size, ItemStack.EMPTY);
 	}
-	
+
 	public static Item getBackpack(BackpackType type, DyeColor color) {
 		int size;
 		switch (type) {
@@ -171,7 +171,7 @@ public abstract class AbstractBackpack extends Item {
 		default:
 			throw new IllegalStateException("Illegal BackpackType:\t" + type.name());
 		}
-		
+
 		if (color == null)
 			return none.get(size).get();
 

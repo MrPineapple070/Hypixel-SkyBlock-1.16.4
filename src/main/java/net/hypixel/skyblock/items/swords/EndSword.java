@@ -22,13 +22,17 @@ import net.minecraft.world.World;
  * @since 11 June 2019
  */
 public class EndSword extends ModSwordItem {
+	private static final StringTextComponent tooltip = new StringTextComponent(
+			"Deals double damage to Endermits, Endermen, and Ender Dragons.");
+
 	public EndSword() {
 		super(ModSwordTier.End_Sword, ItemProperties.c1, ModItemRarity.Uncommon);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent("Deals double damage to Endermits, Endermen, and Ender Dragons."));
+		tooltip.add(EndSword.tooltip);
+		tooltip.add(StringTextComponent.EMPTY);
 	}
 
 	@Override

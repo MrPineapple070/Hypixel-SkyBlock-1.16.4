@@ -56,8 +56,10 @@ public abstract class MinionChestBlock extends AbstractChestBlock<AbstractMinion
 	public static final ITextComponent container_name_s = new TranslationTextComponent("container.small_minion_chest");
 	public static final ITextComponent container_name_m = new TranslationTextComponent("container.medium_minion_chest");
 	public static final ITextComponent container_name_l = new TranslationTextComponent("container.large_minion_chest");
-	//public static final ITextComponent container_name_xl = new TranslationTextComponent("container.x_large_minion_chest");
-	//public static final ITextComponent container_name_xxl = new TranslationTextComponent("container.xx_large_minion_chest");
+	// public static final ITextComponent container_name_xl = new
+	// TranslationTextComponent("container.x_large_minion_chest");
+	// public static final ITextComponent container_name_xxl = new
+	// TranslationTextComponent("container.xx_large_minion_chest");
 
 	/**
 	 * {@link DirectionProperty}
@@ -93,12 +95,12 @@ public abstract class MinionChestBlock extends AbstractChestBlock<AbstractMinion
 		this.type = Objects.requireNonNull(type, "ChestType cannot be null.");
 		this.setDefaultState(this.stateContainer.getBaseState().with(facing, Direction.NORTH));
 	}
-	
+
 	@Override
 	public boolean allowsMovement(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) {
 		return false;
 	}
-	
+
 	@Override
 	public ICallbackWrapper<? extends ChestTileEntity> combine(BlockState state, World world, BlockPos pos,
 			boolean override) {
@@ -193,7 +195,8 @@ public abstract class MinionChestBlock extends AbstractChestBlock<AbstractMinion
 				player.openContainer(container);
 				return ActionResultType.CONSUME;
 			}
-		} if (worldIn.isRemote)
+		}
+		if (worldIn.isRemote)
 			return ActionResultType.SUCCESS;
 		return ActionResultType.PASS;
 	}
@@ -203,7 +206,7 @@ public abstract class MinionChestBlock extends AbstractChestBlock<AbstractMinion
 	public BlockState rotate(BlockState state, Rotation rot) {
 		return state.with(facing, rot.rotate(state.get(facing)));
 	}
-	
+
 	public enum MinionChestType {
 		/**
 		 * Gives 3 extra slots.
@@ -242,7 +245,7 @@ public abstract class MinionChestBlock extends AbstractChestBlock<AbstractMinion
 		}
 	}
 
-	public static class MediumMCB extends MinionChestBlock {	
+	public static class MediumMCB extends MinionChestBlock {
 		public MediumMCB(Properties properties) {
 			super(properties, MinionChestType.Medium);
 		}
@@ -253,23 +256,23 @@ public abstract class MinionChestBlock extends AbstractChestBlock<AbstractMinion
 			super(properties, MinionChestType.Large);
 		}
 	}
-	
+
 	@OnlyIn(Dist.CLIENT)
 	public static ICallback<ChestTileEntity, Float2FloatFunction> getLidRotationCallback(IChestLid lid) {
 		return new ICallback<ChestTileEntity, Float2FloatFunction>() {
-	         public Float2FloatFunction func_225539_a_(ChestTileEntity p_225539_1_, ChestTileEntity p_225539_2_) {
-	            return (angle) -> {
-	               return Math.max(p_225539_1_.getLidAngle(angle), p_225539_2_.getLidAngle(angle));
-	            };
-	         }
+			public Float2FloatFunction func_225539_a_(ChestTileEntity p_225539_1_, ChestTileEntity p_225539_2_) {
+				return (angle) -> {
+					return Math.max(p_225539_1_.getLidAngle(angle), p_225539_2_.getLidAngle(angle));
+				};
+			}
 
-	         public Float2FloatFunction func_225538_a_(ChestTileEntity p_225538_1_) {
-	            return p_225538_1_::getLidAngle;
-	         }
+			public Float2FloatFunction func_225538_a_(ChestTileEntity p_225538_1_) {
+				return p_225538_1_::getLidAngle;
+			}
 
-	         public Float2FloatFunction func_225537_b_() {
-	            return lid::getLidAngle;
-	         }
-	      };
+			public Float2FloatFunction func_225537_b_() {
+				return lid::getLidAngle;
+			}
+		};
 	}
 }

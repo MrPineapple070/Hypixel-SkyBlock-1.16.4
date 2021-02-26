@@ -1,5 +1,6 @@
 package net.hypixel.skyblock.items.swords;
 
+import java.util.Arrays;
 import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
@@ -23,15 +24,20 @@ import net.minecraft.world.World;
  * @since 18 December 2019
  */
 public class YetiSword extends ModSwordItem {
+	private static final List<StringTextComponent> tooltip = Arrays.asList(
+			new StringTextComponent(FormatingCodes.gold + "Item Ability: Terrain Toss"),
+			new StringTextComponent(FormatingCodes.gray + "Throws a chunk of terrain in the direction you are facing."),
+			new StringTextComponent("Deals up to 4000 damage."),
+			new StringTextComponent("Maximum range of 32 blocks."));
+
 	public YetiSword() {
 		super(ModSwordTier.Yeti_Sowrd, ItemProperties.c1, ModItemRarity.Legendary);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent(FormatingCodes.gold + "Item Ability: Terrain Toss\n" + FormatingCodes.gray
-				+ "Throws a chunk of terrain in the direction you are facing.\n"
-				+ "Deals up to 4000 damage.\nMaximum range of 32 blocks."));
+		tooltip.addAll(YetiSword.tooltip);
+		tooltip.add(StringTextComponent.EMPTY);
 	}
 
 	@Override

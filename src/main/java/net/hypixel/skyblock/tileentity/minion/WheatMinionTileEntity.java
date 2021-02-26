@@ -164,7 +164,8 @@ public class WheatMinionTileEntity extends AbstractPlacerMTE {
 
 	@Override
 	protected Item[] getSuperCompactor() {
-		return new Item[] { Items.WHEAT, Items.HAY_BLOCK, Items.WHEAT_SEEDS, Items.DIAMOND, Items.DIAMOND_BLOCK, ItemInit.enchanted_diamond.get() };
+		return new Item[] { Items.WHEAT, Items.HAY_BLOCK, Items.WHEAT_SEEDS, Items.DIAMOND, Items.DIAMOND_BLOCK,
+				ItemInit.enchanted_diamond.get() };
 	}
 
 	@Override

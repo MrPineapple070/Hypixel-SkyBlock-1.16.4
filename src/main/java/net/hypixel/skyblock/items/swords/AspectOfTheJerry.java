@@ -1,5 +1,6 @@
 package net.hypixel.skyblock.items.swords;
 
+import java.util.Arrays;
 import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
@@ -24,14 +25,18 @@ import net.minecraft.world.World;
  * @since 14 August 2020
  */
 public class AspectOfTheJerry extends ModSwordItem {
+	private static final List<StringTextComponent> tooltip = Arrays.asList(
+			new StringTextComponent(FormatingCodes.gold + "Item Ability: Parley"),
+			new StringTextComponent(FormatingCodes.gray + "Channel your inner Jerry."));
+
 	public AspectOfTheJerry() {
 		super(ModSwordTier.AOTJ, ItemProperties.c1, ModItemRarity.Common);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent(FormatingCodes.gold + "Item Ability: Parley"));
-		tooltip.add(new StringTextComponent(FormatingCodes.gray + "Channel your inner Jerry."));
+		tooltip.addAll(AspectOfTheJerry.tooltip);
+		tooltip.add(StringTextComponent.EMPTY);
 	}
 
 	@Override

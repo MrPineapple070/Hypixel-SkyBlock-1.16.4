@@ -41,7 +41,7 @@ public class AcaciaMinionContainer extends AbstractMinionContainer {
 			this(windowId, pInvIn, new AcaciaMTE2());
 		}
 	}
-	
+
 	public static class AcaciaMC3 extends AcaciaMinionContainer {
 		public AcaciaMC3(int windowId, PlayerInventory pInvIn, AcaciaMinionTileEntity minion) {
 			super(ModContainerTypes.acacia_minion_3.get(), windowId, pInvIn, minion);

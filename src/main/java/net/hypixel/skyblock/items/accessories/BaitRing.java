@@ -20,8 +20,10 @@ import net.minecraft.world.World;
 
 /**
  * An {@link Accessory} that have a 5% chance to not consume {@link Bait}.<br>
- * <a href="https://hypixel-skyblock.fandom.com/wiki/Bait_Ring">Bait Ring</a>.<br>
- * <a href="http://textures.minecraft.net/texture/5a316d585b789b582f2d99e8e6cb2d70433e8996fab024a74bc790e22aedcdeb">Texture</a>.
+ * <a href="https://hypixel-skyblock.fandom.com/wiki/Bait_Ring">Bait
+ * Ring</a>.<br>
+ * <a href=
+ * "http://textures.minecraft.net/texture/5a316d585b789b582f2d99e8e6cb2d70433e8996fab024a74bc790e22aedcdeb">Texture</a>.
  *
  * @author MrPineapple070
  * @version 26 July 2020

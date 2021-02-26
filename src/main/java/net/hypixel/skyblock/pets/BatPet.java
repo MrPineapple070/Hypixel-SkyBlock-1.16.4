@@ -20,7 +20,7 @@ public final class BatPet extends Pet {
 	private int n_speed;
 	private int wings;
 	private int sonar;
-	
+
 	public BatPet() {
 		super(ModItemRarity.Common, Collection.Mining, PetType.Bat);
 	}
@@ -70,9 +70,10 @@ public final class BatPet extends Pet {
 		this.wings = w * this.level;
 		this.sonar = s * this.level;
 	}
-	
+
 	@Override
 	public double[] getBuffs() {
-		return new double[] {this.scc, this.intel, this.speed, this.candy, this.n_intel, this.n_speed, this.wings, this.sonar};
+		return new double[] { this.scc, this.intel, this.speed, this.candy, this.n_intel, this.n_speed, this.wings,
+				this.sonar };
 	}
 }
