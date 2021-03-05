@@ -17,7 +17,7 @@ Also visit the unofficial Wiki here:
 [![GitHub](https://img.shields.io/badge/-Forge%20Credits-green)](./FORGE_CREDITS.md)
 
 ## Read the Documentation
-[![Read the Docs](https://img.shields.io/badge/-Documentation-blue)](https://mrpineapple070.github.io/Hypixel-SkyBlock-1.15.2/doc/)
+[![Read the Docs](https://img.shields.io/badge/-Documentation-blue)](https://mrpineapple070.github.io/Hypixel-SkyBlock-1.16.4/doc/)
 
 ## Contributing
 [![GitHub](https://img.shields.io/badge/-Contributing-blue)](./CONTRIBUTING.md)
