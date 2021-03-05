@@ -1,7 +1,6 @@
-package net.hypixel.skyblock.init;
+package net.hypixel.skyblock.potion;
 
 import net.hypixel.skyblock.HypixelSkyBlockMod;
-import net.hypixel.skyblock.potion.ModEffect;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.EffectType;

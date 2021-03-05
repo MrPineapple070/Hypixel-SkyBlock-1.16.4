@@ -5,7 +5,6 @@ import javax.annotation.Nonnull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 
-import net.hypixel.skyblock.init.RecipeSerializerInit;
 import net.hypixel.skyblock.util.ListUtil;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeSerializer;

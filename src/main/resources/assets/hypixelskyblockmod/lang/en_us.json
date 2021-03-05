@@ -81,6 +81,7 @@
 	"item.hypixelskyblockmod.personal_compactor_4000": "Personal Compactor 4000",
 	"item.hypixelskyblockmod.personal_compactor_5000": "Personal Compactor 5000",
 	"item.hypixelskyblockmod.personal_compactor_6000": "Personal Compactor 6000",
+	"item.hypixelskyblockmod.personal_compactor_7000": "Personal Compactor 7000",
 	"item.hypixelskyblockmod.pig_foot": "Pig's Foot",
 	"item.hypixelskyblockmod.piggy_bank": "Piggy Bank",
 	"item.hypixelskyblockmod.potato_talisman": "Potato Talisman",
@@ -1717,7 +1718,6 @@
 	"enchantment.hypixelskyblockmod.ender_slayer": "Ender Slayer",
 	"enchantment.hypixelskyblockmod.execute": "Execute",
 	"enchantment.hypixelskyblockmod.experience": "Experience",
-	"enchantment.hypixelskyblockmod.fire_aspect": "Fire Aspect",
 	"enchantment.hypixelskyblockmod.first_strike": "First Strike",
 	"enchantment.hypixelskyblockmod.giant_killer": "Giant Killer",
 	"enchantment.hypixelskyblockmod.impaling": "Impaling",
@@ -1736,7 +1736,7 @@
 	
 	"enchantment.hypixelskyblockmod.aiming": "Aiming",
 	"enchantment.hypixelskyblockmod.chance": "Chance",
-	"enchantment.hypixelskyblockmod.infinite_quiver": "Infinite Quiver",
+	"enchantment.hypixelskyblockmod.infinite_quiver": "∞ Quiver",
 	"enchantment.hypixelskyblockmod.piercing": "Piercing",
 	"enchantment.hypixelskyblockmod.overload": "Overload",
 	"enchantment.hypixelskyblockmod.snipe": "Snipe",
@@ -1751,7 +1751,7 @@
 	
 	"enchantment.hypixelskyblockmod.compact": "Compact",
 	"enchantment.hypixelskyblockmod.harvesting": "Harvesting",
-	"enchantment.hypixelskyblockmod.rainbow": "Rainbow",
+	"enchantment.hypixelskyblockmod.rainbow": "§cR§6a§ei§an§9b§do§5w",
 	"enchantment.hypixelskyblockmod.replenish": "Replenish",
 	"enchantment.hypixelskyblockmod.turbo_crop_cactus": "Turbo-Crop Cactus",
 	"enchantment.hypixelskyblockmod.turbo_crop_carrot": "Turbo-Crop Carrot",
@@ -1795,5 +1795,65 @@
 	"itemGroup.Alchemy": "§eAlchemy§r",
 	"itemGroup.Minions": "§bMinions§r",
 	"itemGroup.Dungeon": "§1Dungeon§r",
-	"itemGroup.Miscellaneous": "§fMiscellaneous§r"
+	"itemGroup.Miscellaneous": "§fMiscellaneous§r",
+
+	"npc.andrew": "Andrew",
+	"npc.andrew.0": "This game is still under heavy development, don't forget to check the §aforums§r often for updates!",
+	"npc.andrew.1": "If you'd like to discuss SkyBlock with other players then check out the SkyBlock section of the §aforums§f!",
+
+	"npc.duke": "Duke",
+	"npc.duke.0": "Are you new here? As you can see there is a lot to explore!",
+	"npc.duke.1": "My advice is to start by visiting the §bFarm§r, or the §bCoal Mine§r both North of here.",
+	"npc.duke.2": "If you do need some wood, the best place to get some is West of the §bVillage§r!",
+
+	"npc.felix": "Felix",
+	"npc.felix.0": "You can access your §aEnder Chest§r in your §aSkyBlock Menu§r.",
+	"npc.felix.1": "Store items in this chest and access them at any time!",
+
+	"npc.leo": "Leo",
+	"npc.leo.0": "You can unlock §aLeaflet Armor§r by progressing through your §aOak Log Collection§r.",
+	"npc.lep.1": "There is a §bForest§r west of the §bVillage§r where you can gather Oak Logs.",
+	"npc.leo.2": "To check your Collection progress and rewards, open the §aCollection Menu§r in your §aSkyBlock Menu§r.",
+
+	"npc.liam": "Liam",
+	"npc.liam.0": "One day those houses in the §bVillage§r will be rentable for Coins!",
+	"npc.liam.1": "Anyone will be able to rent them, players, co-ops, even Guilds!",
+
+	"npc.lynn": "Lynn",
+	"npc.lynn.0": "If you ever get lost during a quest, open your §bQuest Log§r in your §aSkyBlock Menu§r!",
+
+	"npc.jack": "Jack",
+	"npc.jack.0": "Your §2SkyBlock Profile§r in your §2SkyBlock Menu§r shows details about your current stats!",
+	"npc.jack.1": "There are 7 stats in total, including §4❤ Health§r, §4❁ Strength§r, and §2❈ Defense§r.",
+	"npc.jack.2": "Equipped armor, weapons, and accessories in your inventory all improve your stats.",
+	"npc.jack.3": "Additionally, leveling your Skills can permanently boost some of your stats!",
+
+	"npc.jamie": "Jamie",
+	"npc.jamie.0": "You might have noticed that you have a Mana bar!",
+	"npc.jamie.1": "Some items have mysterious properties, called Abilities.",
+	"npc.jamie.2": "Abilities use your Mana as a resource. Here, take this Rogue Sword. I don't need it!",
+
+	"npc.tom": "Tom",
+	"npc.tom.0": "I will teach you the Promising Axe Recipe to get you started!",
+	"npc.tom.1": "All SkyBlock recipes can be found by opening the Recipe Book in your SkyBlock Menu.",
+
+	"npc.ryu": "Ryu",
+	"npc.ryu.0": "There are 9 Skills in SkyBlock!",
+	"npc.ryu.1": "Farming, Mining, Foraging, Fishing, Combat, Enchanting, Alchemy, Carpentry and Runecrafting.",
+	"npc:ryu.2": "You can learn all about them in the Skill Menu, located in your SkyBlock Menu.",
+
+	"npc.stella": "Stella",
+	"npc.stella.0": "At any time you can create a Co-op with your friends!",
+	"npc.stella.1": "Simply go in your SkyBlock Menu where you can find the Profile Menu.",
+	"npc.stella.2": "This is where you can create, delete or switch SkyBlock Profiles.",
+	"npc.stella.3": "Enter /coop followed by the name of all the friends you want to invite!",
+	"npc.stella.4": "All your friends have to be online to accept!",
+
+	"npc.vex": "Vex",
+	"npc.vex.welcome.0": "You can shift click any player to trade with them!",
+	"npc.vex.welcome.1": "Once both players are ready to trade, click on Accept trade!",
+	"npc.vex.welcome.2": "Make sure you don't give away all of your belongings!",
+	"npc.vex.interract": "Shift then click on me to Trade!",
+	"npc.vex.general.0": "You can disable Player Trading your SkyBlock Settings!",
+	"npc.vex.general.1": "Your settings can found in the SkyBlock Menu"
 }

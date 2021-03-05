@@ -1,7 +1,6 @@
 package net.hypixel.skyblock.potion;
 
-import net.hypixel.skyblock.init.PotionInit;
-import net.hypixel.skyblock.init.items.ItemInit;
+import net.hypixel.skyblock.items.init.ItemInit;
 import net.hypixel.skyblock.potion.BrewingRecipeRegistrar.Registar;
 import net.hypixel.skyblock.util.DelayedConsumer;
 import net.minecraft.item.Item;

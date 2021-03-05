@@ -10,7 +10,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 
 import it.unimi.dsi.fastutil.ints.IntList;
-import net.hypixel.skyblock.init.RecipeSerializerInit;
 import net.hypixel.skyblock.items.enchanted_items.EnchantedItem;
 import net.hypixel.skyblock.util.ListUtil;
 import net.minecraft.inventory.CraftingInventory;

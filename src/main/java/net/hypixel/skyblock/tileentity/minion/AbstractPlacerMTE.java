@@ -7,7 +7,7 @@ import javax.annotation.Nonnull;
 import com.google.common.collect.ImmutableSet;
 
 import net.hypixel.skyblock.HypixelSkyBlockMod;
-import net.hypixel.skyblock.init.items.ItemInit;
+import net.hypixel.skyblock.items.init.ItemInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

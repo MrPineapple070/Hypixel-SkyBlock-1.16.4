@@ -1,8 +1,8 @@
 package net.hypixel.skyblock.tileentity;
 
 import net.hypixel.skyblock.HypixelSkyBlockMod;
-import net.hypixel.skyblock.init.blocks.BlockInit;
-import net.hypixel.skyblock.init.blocks.MinionBlockInit;
+import net.hypixel.skyblock.blocks.init.BlockInit;
+import net.hypixel.skyblock.blocks.init.MinionBlockInit;
 import net.hypixel.skyblock.tileentity.TimeSaverTileEntity.DaySaverTileEntity;
 import net.hypixel.skyblock.tileentity.TimeSaverTileEntity.NightSaverTileEntity;
 import net.hypixel.skyblock.tileentity.minion.AbstractMinionChestTileEntity.LargeMCTE;

@@ -1,6 +1,6 @@
 package net.hypixel.skyblock.items.itemgroup;
 
-import net.hypixel.skyblock.init.blocks.MinionBlockInit;
+import net.hypixel.skyblock.blocks.init.MinionBlockInit;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;

@@ -2,8 +2,8 @@ package net.hypixel.skyblock.items.accessories;
 
 import java.util.List;
 
-import net.hypixel.skyblock.init.items.ItemInit;
 import net.hypixel.skyblock.items.ModItemRarity;
+import net.hypixel.skyblock.items.init.ItemInit;
 import net.hypixel.skyblock.util.ItemProperties;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;

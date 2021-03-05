@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 import com.google.common.collect.ImmutableSet;
 
-import net.hypixel.skyblock.init.items.ItemInit;
+import net.hypixel.skyblock.items.init.ItemInit;
 import net.hypixel.skyblock.tileentity.ModTileEntityTypes;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

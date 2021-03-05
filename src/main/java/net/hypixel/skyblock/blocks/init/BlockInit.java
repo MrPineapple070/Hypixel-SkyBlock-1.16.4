@@ -1,4 +1,4 @@
-package net.hypixel.skyblock.init.blocks;
+package net.hypixel.skyblock.blocks.init;
 
 import net.hypixel.skyblock.HypixelSkyBlockMod;
 import net.hypixel.skyblock.blocks.TimeSaver.DaySaver;

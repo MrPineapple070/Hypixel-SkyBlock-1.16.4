@@ -1,7 +1,7 @@
 package net.hypixel.skyblock.inventory.container.minion;
 
-import net.hypixel.skyblock.init.blocks.MinionBlockInit;
-import net.hypixel.skyblock.inventory.container.ModContainerTypes;
+import net.hypixel.skyblock.blocks.init.MinionBlockInit;
+import net.hypixel.skyblock.inventory.container.init.MinionContainerTypes;
 import net.hypixel.skyblock.tileentity.minion.AbstractMinionTileEntity;
 import net.hypixel.skyblock.tileentity.minion.CobblestoneMinionTileEntity;
 import net.hypixel.skyblock.tileentity.minion.CobblestoneMinionTileEntity.CobbleMTE1;
@@ -31,7 +31,7 @@ import net.minecraft.network.PacketBuffer;
 public abstract class CobblestoneMinionContainer extends AbstractMinionContainer {
 	public static class CobbleMC1 extends CobblestoneMinionContainer {
 		public CobbleMC1(int windowId, PlayerInventory pInvIn, CobblestoneMinionTileEntity minion) {
-			super(ModContainerTypes.cobblestone_minion_1.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.cobblestone_minion_1.get(), windowId, pInvIn, minion);
 		}
 
 		public CobbleMC1(int windowId, PlayerInventory pInvIn, PacketBuffer data) {
@@ -41,7 +41,7 @@ public abstract class CobblestoneMinionContainer extends AbstractMinionContainer
 
 	public static class CobbleMC2 extends CobblestoneMinionContainer {
 		public CobbleMC2(int windowId, PlayerInventory pInvIn, CobblestoneMinionTileEntity minion) {
-			super(ModContainerTypes.cobblestone_minion_2.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.cobblestone_minion_2.get(), windowId, pInvIn, minion);
 		}
 
 		public CobbleMC2(int windowId, PlayerInventory pInvIn, PacketBuffer data) {
@@ -51,7 +51,7 @@ public abstract class CobblestoneMinionContainer extends AbstractMinionContainer
 
 	public static class CobbleMC3 extends CobblestoneMinionContainer {
 		public CobbleMC3(int windowId, PlayerInventory pInvIn, CobblestoneMinionTileEntity minion) {
-			super(ModContainerTypes.cobblestone_minion_3.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.cobblestone_minion_3.get(), windowId, pInvIn, minion);
 		}
 
 		public CobbleMC3(int windowId, PlayerInventory pInvIn, PacketBuffer data) {
@@ -61,7 +61,7 @@ public abstract class CobblestoneMinionContainer extends AbstractMinionContainer
 
 	public static class CobbleMC4 extends CobblestoneMinionContainer {
 		public CobbleMC4(int windowId, PlayerInventory pInvIn, CobblestoneMinionTileEntity minion) {
-			super(ModContainerTypes.cobblestone_minion_4.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.cobblestone_minion_4.get(), windowId, pInvIn, minion);
 		}
 
 		public CobbleMC4(int windowId, PlayerInventory pInvIn, PacketBuffer data) {
@@ -71,7 +71,7 @@ public abstract class CobblestoneMinionContainer extends AbstractMinionContainer
 
 	public static class CobbleMC5 extends CobblestoneMinionContainer {
 		public CobbleMC5(int windowId, PlayerInventory pInvIn, CobblestoneMinionTileEntity minion) {
-			super(ModContainerTypes.cobblestone_minion_5.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.cobblestone_minion_5.get(), windowId, pInvIn, minion);
 		}
 
 		public CobbleMC5(int windowId, PlayerInventory pInvIn, PacketBuffer data) {
@@ -81,7 +81,7 @@ public abstract class CobblestoneMinionContainer extends AbstractMinionContainer
 
 	public static class CobbleMC6 extends CobblestoneMinionContainer {
 		public CobbleMC6(int windowId, PlayerInventory pInvIn, CobblestoneMinionTileEntity minion) {
-			super(ModContainerTypes.cobblestone_minion_6.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.cobblestone_minion_6.get(), windowId, pInvIn, minion);
 		}
 
 		public CobbleMC6(int windowId, PlayerInventory pInvIn, PacketBuffer data) {
@@ -91,7 +91,7 @@ public abstract class CobblestoneMinionContainer extends AbstractMinionContainer
 
 	public static class CobbleMC7 extends CobblestoneMinionContainer {
 		public CobbleMC7(int windowId, PlayerInventory pInvIn, CobblestoneMinionTileEntity minion) {
-			super(ModContainerTypes.cobblestone_minion_7.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.cobblestone_minion_7.get(), windowId, pInvIn, minion);
 		}
 
 		public CobbleMC7(int windowId, PlayerInventory pInvIn, PacketBuffer data) {
@@ -101,7 +101,7 @@ public abstract class CobblestoneMinionContainer extends AbstractMinionContainer
 
 	public static class CobbleMC8 extends CobblestoneMinionContainer {
 		public CobbleMC8(int windowId, PlayerInventory pInvIn, CobblestoneMinionTileEntity minion) {
-			super(ModContainerTypes.cobblestone_minion_8.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.cobblestone_minion_8.get(), windowId, pInvIn, minion);
 		}
 
 		public CobbleMC8(int windowId, PlayerInventory pInvIn, PacketBuffer data) {
@@ -111,7 +111,7 @@ public abstract class CobblestoneMinionContainer extends AbstractMinionContainer
 
 	public static class CobbleMC9 extends CobblestoneMinionContainer {
 		public CobbleMC9(int windowId, PlayerInventory pInvIn, CobblestoneMinionTileEntity minion) {
-			super(ModContainerTypes.cobblestone_minion_9.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.cobblestone_minion_9.get(), windowId, pInvIn, minion);
 		}
 
 		public CobbleMC9(int windowId, PlayerInventory pInvIn, PacketBuffer data) {
@@ -121,7 +121,7 @@ public abstract class CobblestoneMinionContainer extends AbstractMinionContainer
 
 	public static class CobbleMCa extends CobblestoneMinionContainer {
 		public CobbleMCa(int windowId, PlayerInventory pInvIn, CobblestoneMinionTileEntity minion) {
-			super(ModContainerTypes.cobblestone_minion_a.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.cobblestone_minion_a.get(), windowId, pInvIn, minion);
 		}
 
 		public CobbleMCa(int windowId, PlayerInventory pInvIn, PacketBuffer data) {
@@ -131,7 +131,7 @@ public abstract class CobblestoneMinionContainer extends AbstractMinionContainer
 
 	public static class CobbleMCb extends CobblestoneMinionContainer {
 		public CobbleMCb(int windowId, PlayerInventory pInvIn, CobblestoneMinionTileEntity minion) {
-			super(ModContainerTypes.cobblestone_minion_b.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.cobblestone_minion_b.get(), windowId, pInvIn, minion);
 		}
 
 		public CobbleMCb(int windowId, PlayerInventory pInvIn, PacketBuffer data) {

@@ -1,10 +1,6 @@
-package net.hypixel.skyblock.init;
+package net.hypixel.skyblock.enchantment;
 
 import net.hypixel.skyblock.HypixelSkyBlockMod;
-import net.hypixel.skyblock.enchantment.Bank;
-import net.hypixel.skyblock.enchantment.LifeSteal;
-import net.hypixel.skyblock.enchantment.SmeltingTouch;
-import net.hypixel.skyblock.enchantment.Telekinesis;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;
 import net.minecraftforge.fml.RegistryObject;

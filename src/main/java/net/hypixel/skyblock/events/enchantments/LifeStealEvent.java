@@ -1,7 +1,7 @@
 package net.hypixel.skyblock.events.enchantments;
 
 import net.hypixel.skyblock.HypixelSkyBlockMod;
-import net.hypixel.skyblock.init.EnchantmentInit;
+import net.hypixel.skyblock.enchantment.EnchantmentInit;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;

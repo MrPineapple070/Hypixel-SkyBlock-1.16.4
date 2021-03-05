@@ -5,11 +5,12 @@ import javax.annotation.Nonnull;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import net.hypixel.skyblock.init.EnchantmentInit;
-import net.hypixel.skyblock.init.RecipeSerializerInit;
-import net.hypixel.skyblock.init.blocks.MasterBlockInit;
-import net.hypixel.skyblock.init.items.MasterItemInit;
-import net.hypixel.skyblock.inventory.container.ModContainerTypes;
+import net.hypixel.skyblock.blocks.init.MasterBlockInit;
+import net.hypixel.skyblock.enchantment.EnchantmentInit;
+import net.hypixel.skyblock.entity.ModEntityTypes;
+import net.hypixel.skyblock.inventory.container.init.MasterContainerInit;
+import net.hypixel.skyblock.items.crafting.RecipeSerializerInit;
+import net.hypixel.skyblock.items.init.MasterItemInit;
 import net.hypixel.skyblock.proxy.ClientProxy;
 import net.hypixel.skyblock.proxy.CommonProxy;
 import net.hypixel.skyblock.proxy.ServerProxy;
@@ -72,12 +73,11 @@ public class HypixelSkyBlockMod {
 		RecipeSerializerInit.recipe_serializer.register(bus);
 		// FluidInit.fluids.register(bus);
 		MasterBlockInit.register(bus);
-
+		
+		ModEntityTypes.entities.register(bus);
 		ModTileEntityTypes.tile_entity_types.register(bus);
-		ModContainerTypes.container_types.register(bus);
-
-		// BiomeInit.biomes.register(bus);
-		// DimensionInit.dimensions.register(bus);
+		MasterContainerInit.register(bus);
+		
 		// FeatureInit.features.register(bus);
 		// FeatureInit.strucutres.register(bus);
 

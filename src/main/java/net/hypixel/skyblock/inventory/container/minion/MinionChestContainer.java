@@ -3,7 +3,7 @@ package net.hypixel.skyblock.inventory.container.minion;
 import javax.annotation.Nonnull;
 
 import net.hypixel.skyblock.blocks.minion.MinionChestBlock.MinionChestType;
-import net.hypixel.skyblock.inventory.container.ModContainerTypes;
+import net.hypixel.skyblock.inventory.container.init.ModContainerTypes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.IInventory;

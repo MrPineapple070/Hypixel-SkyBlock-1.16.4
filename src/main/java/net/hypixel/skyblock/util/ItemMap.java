@@ -5,9 +5,9 @@ import java.util.Map;
 
 import com.google.common.collect.ImmutableMap;
 
-import net.hypixel.skyblock.init.items.AccessoriesInit;
-import net.hypixel.skyblock.init.items.ItemInit;
-import net.hypixel.skyblock.init.items.WeaponInit;
+import net.hypixel.skyblock.items.init.AccessoriesInit;
+import net.hypixel.skyblock.items.init.ItemInit;
+import net.hypixel.skyblock.items.init.WeaponInit;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 

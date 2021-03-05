@@ -18,9 +18,16 @@ public class SpecialCharacters {
 	/**
 	 * <a href="https://hypixel-skyblock.fandom.com/wiki/Bonus_Attack_Speed">Attack
 	 * Speed</a> statistic character.<br>
-	 * &#2694;
+	 * &#x2694;
 	 */
 	public static final char attack_speed = 0x2694;
+
+	/**
+	 * <a href="https://hypixel-skyblock.fandom.com/wiki/Ability_Damage">Ability
+	 * Damage</a> statistic character.<br>
+	 * &#x2739;
+	 */
+	public static final char ability_damage = 0x2739;
 
 	/**
 	 * &#x1fa93;

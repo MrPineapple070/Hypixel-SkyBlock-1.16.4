@@ -5,7 +5,6 @@ import java.util.Arrays;
 import com.google.common.collect.ImmutableSet;
 
 import net.hypixel.skyblock.blocks.minion.CobblestoneMinion;
-import net.hypixel.skyblock.init.items.ItemInit;
 import net.hypixel.skyblock.inventory.container.minion.CobblestoneMinionContainer.CobbleMC1;
 import net.hypixel.skyblock.inventory.container.minion.CobblestoneMinionContainer.CobbleMC2;
 import net.hypixel.skyblock.inventory.container.minion.CobblestoneMinionContainer.CobbleMC3;
@@ -17,6 +16,7 @@ import net.hypixel.skyblock.inventory.container.minion.CobblestoneMinionContaine
 import net.hypixel.skyblock.inventory.container.minion.CobblestoneMinionContainer.CobbleMC9;
 import net.hypixel.skyblock.inventory.container.minion.CobblestoneMinionContainer.CobbleMCa;
 import net.hypixel.skyblock.inventory.container.minion.CobblestoneMinionContainer.CobbleMCb;
+import net.hypixel.skyblock.items.init.ItemInit;
 import net.hypixel.skyblock.tileentity.ModTileEntityTypes;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

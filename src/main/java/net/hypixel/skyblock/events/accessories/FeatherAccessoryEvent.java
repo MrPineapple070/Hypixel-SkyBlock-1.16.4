@@ -1,10 +1,10 @@
 package net.hypixel.skyblock.events.accessories;
 
 import net.hypixel.skyblock.HypixelSkyBlockMod;
-import net.hypixel.skyblock.init.items.AccessoriesInit;
 import net.hypixel.skyblock.items.accessories.FeatherArtifact;
 import net.hypixel.skyblock.items.accessories.FeatherRing;
 import net.hypixel.skyblock.items.accessories.FeatherTalisman;
+import net.hypixel.skyblock.items.init.AccessoriesInit;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;

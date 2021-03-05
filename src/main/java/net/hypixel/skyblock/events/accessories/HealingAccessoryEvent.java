@@ -1,10 +1,10 @@
 package net.hypixel.skyblock.events.accessories;
 
 import net.hypixel.skyblock.HypixelSkyBlockMod;
-import net.hypixel.skyblock.init.items.AccessoriesInit;
 import net.hypixel.skyblock.inventory.ExtendedPlayerInventory;
 import net.hypixel.skyblock.items.accessories.HealingRing;
 import net.hypixel.skyblock.items.accessories.HealingTalisman;
+import net.hypixel.skyblock.items.init.AccessoriesInit;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;

@@ -2,6 +2,7 @@ package net.hypixel.skyblock.inventory.container;
 
 import javax.annotation.Nonnull;
 
+import net.hypixel.skyblock.inventory.container.init.ModContainerTypes;
 import net.hypixel.skyblock.items.AbstractBackpack.BackpackType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;

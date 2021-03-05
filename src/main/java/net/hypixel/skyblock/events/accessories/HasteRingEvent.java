@@ -1,7 +1,7 @@
 package net.hypixel.skyblock.events.accessories;
 
 import net.hypixel.skyblock.HypixelSkyBlockMod;
-import net.hypixel.skyblock.init.items.AccessoriesInit;
+import net.hypixel.skyblock.items.init.AccessoriesInit;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;

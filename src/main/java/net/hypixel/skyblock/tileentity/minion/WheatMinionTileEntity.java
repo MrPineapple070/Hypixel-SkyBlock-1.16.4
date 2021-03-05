@@ -3,7 +3,6 @@ package net.hypixel.skyblock.tileentity.minion;
 import com.google.common.collect.ImmutableSet;
 
 import net.hypixel.skyblock.HypixelSkyBlockMod;
-import net.hypixel.skyblock.init.items.ItemInit;
 import net.hypixel.skyblock.inventory.container.minion.WheatMinionContainer.WheatMC1;
 import net.hypixel.skyblock.inventory.container.minion.WheatMinionContainer.WheatMC2;
 import net.hypixel.skyblock.inventory.container.minion.WheatMinionContainer.WheatMC3;
@@ -15,6 +14,7 @@ import net.hypixel.skyblock.inventory.container.minion.WheatMinionContainer.Whea
 import net.hypixel.skyblock.inventory.container.minion.WheatMinionContainer.WheatMC9;
 import net.hypixel.skyblock.inventory.container.minion.WheatMinionContainer.WheatMCa;
 import net.hypixel.skyblock.inventory.container.minion.WheatMinionContainer.WheatMCb;
+import net.hypixel.skyblock.items.init.ItemInit;
 import net.hypixel.skyblock.tileentity.ModTileEntityTypes;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

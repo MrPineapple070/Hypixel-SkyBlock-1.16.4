@@ -1,4 +1,4 @@
-package net.hypixel.skyblock.init.blocks;
+package net.hypixel.skyblock.blocks.init;
 
 import net.minecraft.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;

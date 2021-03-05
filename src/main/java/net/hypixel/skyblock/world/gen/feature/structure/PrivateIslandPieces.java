@@ -7,7 +7,7 @@ import java.util.Random;
 import com.google.common.collect.ImmutableMap;
 
 import net.hypixel.skyblock.HypixelSkyBlockMod;
-import net.hypixel.skyblock.init.FeatureInit;
+import net.hypixel.skyblock.world.gen.feature.FeatureInit;
 import net.minecraft.block.Blocks;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ChestTileEntity;

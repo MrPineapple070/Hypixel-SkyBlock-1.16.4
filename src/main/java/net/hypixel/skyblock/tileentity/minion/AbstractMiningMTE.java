@@ -3,7 +3,7 @@ package net.hypixel.skyblock.tileentity.minion;
 import java.util.Arrays;
 
 import net.hypixel.skyblock.HypixelSkyBlockMod;
-import net.hypixel.skyblock.init.items.ItemInit;
+import net.hypixel.skyblock.items.init.ItemInit;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntityType;

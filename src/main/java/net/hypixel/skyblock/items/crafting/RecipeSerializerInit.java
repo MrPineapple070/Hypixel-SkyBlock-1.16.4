@@ -1,12 +1,7 @@
-package net.hypixel.skyblock.init;
+package net.hypixel.skyblock.items.crafting;
 
 import net.hypixel.skyblock.HypixelSkyBlockMod;
 import net.hypixel.skyblock.items.crafting.EnchantedItemRecipe.Serializer;
-import net.hypixel.skyblock.items.crafting.EnchantmentRecipe;
-import net.hypixel.skyblock.items.crafting.IEnchantedItemRecipe;
-import net.hypixel.skyblock.items.crafting.IEnchantmentRecipe;
-import net.hypixel.skyblock.items.crafting.IPetRecipe;
-import net.hypixel.skyblock.items.crafting.PetItemRecipe;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.IRecipeType;

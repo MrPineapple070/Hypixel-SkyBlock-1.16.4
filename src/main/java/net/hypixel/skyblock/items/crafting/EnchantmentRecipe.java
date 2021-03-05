@@ -6,7 +6,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 
 import net.hypixel.skyblock.enchantment.ModEnchantment;
-import net.hypixel.skyblock.init.RecipeSerializerInit;
 import net.hypixel.skyblock.util.ListUtil;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemStack;

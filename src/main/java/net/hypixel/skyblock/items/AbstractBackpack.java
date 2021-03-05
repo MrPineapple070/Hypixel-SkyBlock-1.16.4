@@ -8,9 +8,9 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import net.hypixel.skyblock.HypixelSkyBlockMod;
-import net.hypixel.skyblock.init.items.BackpackInit;
 import net.hypixel.skyblock.inventory.container.AbstractBackpackContainer;
-import net.hypixel.skyblock.inventory.container.ModContainerTypes;
+import net.hypixel.skyblock.inventory.container.init.ModContainerTypes;
+import net.hypixel.skyblock.items.init.BackpackInit;
 import net.hypixel.skyblock.util.ItemProperties;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.DyeColor;

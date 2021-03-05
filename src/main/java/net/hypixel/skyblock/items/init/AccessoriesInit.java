@@ -1,4 +1,4 @@
-package net.hypixel.skyblock.init.items;
+package net.hypixel.skyblock.items.init;
 
 import net.hypixel.skyblock.HypixelSkyBlockMod;
 import net.hypixel.skyblock.items.accessories.Accessory;

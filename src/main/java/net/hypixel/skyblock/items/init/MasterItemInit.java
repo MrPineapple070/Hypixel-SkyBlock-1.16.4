@@ -1,4 +1,4 @@
-package net.hypixel.skyblock.init.items;
+package net.hypixel.skyblock.items.init;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;

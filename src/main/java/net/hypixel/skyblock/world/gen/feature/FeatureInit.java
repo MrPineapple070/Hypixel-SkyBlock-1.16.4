@@ -1,4 +1,4 @@
-package net.hypixel.skyblock.init;
+package net.hypixel.skyblock.world.gen.feature;
 
 import java.util.Locale;
 

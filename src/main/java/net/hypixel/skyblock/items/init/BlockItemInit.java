@@ -1,7 +1,7 @@
-package net.hypixel.skyblock.init.items;
+package net.hypixel.skyblock.items.init;
 
 import net.hypixel.skyblock.HypixelSkyBlockMod;
-import net.hypixel.skyblock.init.blocks.BlockInit;
+import net.hypixel.skyblock.blocks.init.BlockInit;
 import net.hypixel.skyblock.util.ItemProperties;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;

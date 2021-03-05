@@ -16,6 +16,7 @@ import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.inventory.container.SimpleNamedContainerProvider;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.pathfinding.PathType;
@@ -56,10 +57,8 @@ public abstract class MinionChestBlock extends AbstractChestBlock<AbstractMinion
 	public static final ITextComponent container_name_s = new TranslationTextComponent("container.small_minion_chest");
 	public static final ITextComponent container_name_m = new TranslationTextComponent("container.medium_minion_chest");
 	public static final ITextComponent container_name_l = new TranslationTextComponent("container.large_minion_chest");
-	// public static final ITextComponent container_name_xl = new
-	// TranslationTextComponent("container.x_large_minion_chest");
-	// public static final ITextComponent container_name_xxl = new
-	// TranslationTextComponent("container.xx_large_minion_chest");
+	public static final ITextComponent container_name_xl = new TranslationTextComponent("container.x_large_minion_chest");
+	public static final ITextComponent container_name_xxl = new TranslationTextComponent("container.xx_large_minion_chest");
 
 	/**
 	 * {@link DirectionProperty}
@@ -163,7 +162,7 @@ public abstract class MinionChestBlock extends AbstractChestBlock<AbstractMinion
 	@Override
 	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player,
 			Hand handIn, BlockRayTraceResult hit) {
-		SimpleNamedContainerProvider container;
+		INamedContainerProvider container;
 		switch (this.type) {
 		case Small:
 			container = new SimpleNamedContainerProvider((id, inventory, playerIn) -> {

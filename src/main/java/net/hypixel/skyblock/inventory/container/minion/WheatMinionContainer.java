@@ -1,7 +1,7 @@
 package net.hypixel.skyblock.inventory.container.minion;
 
-import net.hypixel.skyblock.init.blocks.MinionBlockInit;
-import net.hypixel.skyblock.inventory.container.ModContainerTypes;
+import net.hypixel.skyblock.blocks.init.MinionBlockInit;
+import net.hypixel.skyblock.inventory.container.init.MinionContainerTypes;
 import net.hypixel.skyblock.tileentity.minion.WheatMinionTileEntity;
 import net.hypixel.skyblock.tileentity.minion.WheatMinionTileEntity.WheatMTE1;
 import net.hypixel.skyblock.tileentity.minion.WheatMinionTileEntity.WheatMTE2;
@@ -32,7 +32,7 @@ public abstract class WheatMinionContainer extends AbstractMinionContainer {
 		}
 
 		public WheatMC1(int windowId, PlayerInventory pInvIn, WheatMinionTileEntity minion) {
-			super(ModContainerTypes.wheat_minion_1.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.wheat_minion_1.get(), windowId, pInvIn, minion);
 		}
 	}
 
@@ -42,7 +42,7 @@ public abstract class WheatMinionContainer extends AbstractMinionContainer {
 		}
 
 		public WheatMC2(int windowId, PlayerInventory pInvIn, WheatMinionTileEntity minion) {
-			super(ModContainerTypes.wheat_minion_2.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.wheat_minion_2.get(), windowId, pInvIn, minion);
 		}
 	}
 
@@ -52,7 +52,7 @@ public abstract class WheatMinionContainer extends AbstractMinionContainer {
 		}
 
 		public WheatMC3(int windowId, PlayerInventory pInvIn, WheatMinionTileEntity minion) {
-			super(ModContainerTypes.wheat_minion_3.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.wheat_minion_3.get(), windowId, pInvIn, minion);
 		}
 	}
 
@@ -62,7 +62,7 @@ public abstract class WheatMinionContainer extends AbstractMinionContainer {
 		}
 
 		public WheatMC4(int windowId, PlayerInventory pInvIn, WheatMinionTileEntity minion) {
-			super(ModContainerTypes.wheat_minion_4.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.wheat_minion_4.get(), windowId, pInvIn, minion);
 		}
 	}
 
@@ -72,7 +72,7 @@ public abstract class WheatMinionContainer extends AbstractMinionContainer {
 		}
 
 		public WheatMC5(int windowId, PlayerInventory pInvIn, WheatMinionTileEntity minion) {
-			super(ModContainerTypes.wheat_minion_5.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.wheat_minion_5.get(), windowId, pInvIn, minion);
 		}
 	}
 
@@ -82,7 +82,7 @@ public abstract class WheatMinionContainer extends AbstractMinionContainer {
 		}
 
 		public WheatMC6(int windowId, PlayerInventory pInvIn, WheatMinionTileEntity minion) {
-			super(ModContainerTypes.wheat_minion_6.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.wheat_minion_6.get(), windowId, pInvIn, minion);
 		}
 	}
 
@@ -92,7 +92,7 @@ public abstract class WheatMinionContainer extends AbstractMinionContainer {
 		}
 
 		public WheatMC7(int windowId, PlayerInventory pInvIn, WheatMinionTileEntity minion) {
-			super(ModContainerTypes.wheat_minion_7.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.wheat_minion_7.get(), windowId, pInvIn, minion);
 		}
 	}
 
@@ -102,7 +102,7 @@ public abstract class WheatMinionContainer extends AbstractMinionContainer {
 		}
 
 		public WheatMC8(int windowId, PlayerInventory pInvIn, WheatMinionTileEntity minion) {
-			super(ModContainerTypes.wheat_minion_8.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.wheat_minion_8.get(), windowId, pInvIn, minion);
 		}
 	}
 
@@ -112,7 +112,7 @@ public abstract class WheatMinionContainer extends AbstractMinionContainer {
 		}
 
 		public WheatMC9(int windowId, PlayerInventory pInvIn, WheatMinionTileEntity minion) {
-			super(ModContainerTypes.wheat_minion_9.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.wheat_minion_9.get(), windowId, pInvIn, minion);
 		}
 	}
 
@@ -122,7 +122,7 @@ public abstract class WheatMinionContainer extends AbstractMinionContainer {
 		}
 
 		public WheatMCa(int windowId, PlayerInventory pInvIn, WheatMinionTileEntity minion) {
-			super(ModContainerTypes.wheat_minion_a.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.wheat_minion_a.get(), windowId, pInvIn, minion);
 		}
 	}
 
@@ -132,7 +132,7 @@ public abstract class WheatMinionContainer extends AbstractMinionContainer {
 		}
 
 		public WheatMCb(int windowId, PlayerInventory pInvIn, WheatMinionTileEntity minion) {
-			super(ModContainerTypes.wheat_minion_b.get(), windowId, pInvIn, minion);
+			super(MinionContainerTypes.wheat_minion_b.get(), windowId, pInvIn, minion);
 		}
 	}
 
