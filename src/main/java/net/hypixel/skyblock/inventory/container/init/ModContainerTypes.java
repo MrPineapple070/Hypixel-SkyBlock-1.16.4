@@ -1,7 +1,6 @@
 package net.hypixel.skyblock.inventory.container.init;
 
 import net.hypixel.skyblock.HypixelSkyBlockMod;
-import net.hypixel.skyblock.inventory.container.AbstractBackpackContainer;
 import net.hypixel.skyblock.inventory.container.AbstractBackpackContainer.GreaterBC;
 import net.hypixel.skyblock.inventory.container.AbstractBackpackContainer.JumboBC;
 import net.hypixel.skyblock.inventory.container.AbstractBackpackContainer.LargeBC;

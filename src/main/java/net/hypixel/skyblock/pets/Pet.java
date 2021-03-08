@@ -154,6 +154,10 @@ public abstract class Pet {
 	public PetType getPetType() {
 		return this.petType;
 	}
+	
+	public float getProgress() {
+		return this.current_xp / this.req_xp;
+	}
 
 	/**
 	 * @return {@link #rarity}

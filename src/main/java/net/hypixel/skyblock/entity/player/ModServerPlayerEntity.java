@@ -5,8 +5,8 @@ import java.util.List;
 import com.mojang.authlib.GameProfile;
 
 import net.hypixel.skyblock.inventory.ExtendedPlayerInventory;
+import net.hypixel.skyblock.items.pets.PetItem;
 import net.hypixel.skyblock.pets.Pet;
-import net.hypixel.skyblock.pets.PetItem;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.management.PlayerInteractionManager;

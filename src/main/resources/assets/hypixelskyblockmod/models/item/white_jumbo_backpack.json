@@ -3,7 +3,7 @@
 	"parent": "block/cube_all",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "hypixelskyblockmod:items/white_jumbo_backpack"
+		"0": "hypixelskyblockmod:items/white_jumbo_backpack.png"
 	},
 	"elements": [
 		{

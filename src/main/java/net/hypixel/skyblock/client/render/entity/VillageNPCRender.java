@@ -16,7 +16,7 @@ import net.minecraft.util.ResourceLocation;
 public class VillageNPCRender extends EntityRenderer<VillageNPC> {
 	protected static final ResourceLocation texture = new ResourceLocation("textures/entity/villager/villager.png");
 	protected static final Logger LOGGER = LogManager.getLogger();
-	protected final VillageNPCModel model = new VillageNPCModel(0f);
+	protected final VillageNPCModel model = new VillageNPCModel();
 
 	public VillageNPCRender(EntityRendererManager renderManager) {
 		super(renderManager);

@@ -1,6 +1,7 @@
 package net.hypixel.skyblock.util;
 
 public class StatString {
+	public static final String atk_spd = "stat.attack_speed";
 	public static final String attack_speed = FormatingCodes.yellow + SpecialCharacters.attack_speed + " Attack Speed"
 			+ FormatingCodes.reset;
 	public static final String breaking_power = FormatingCodes.gray + "Breaking Power" + FormatingCodes.reset;

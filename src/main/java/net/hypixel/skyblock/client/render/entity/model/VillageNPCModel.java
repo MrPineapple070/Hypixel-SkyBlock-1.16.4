@@ -1,97 +1,73 @@
 package net.hypixel.skyblock.client.render.entity.model;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 
 import net.hypixel.skyblock.entity.npc.VillageNPC;
-import net.minecraft.client.renderer.entity.model.IHasHead;
-import net.minecraft.client.renderer.entity.model.IHeadToggle;
-import net.minecraft.client.renderer.entity.model.SegmentedModel;
+import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 
-public class VillageNPCModel extends SegmentedModel<VillageNPC> implements IHasHead, IHeadToggle {
-	protected static final Logger LOGGER = LogManager.getLogger();
-	
-	protected ModelRenderer villagerHead;
-	protected ModelRenderer hat;
-	protected final ModelRenderer hatBrim;
-	protected final ModelRenderer villagerBody;
-	protected final ModelRenderer clothing;
-	protected final ModelRenderer villagerArms;
-	protected final ModelRenderer rightVillagerLeg;
-	protected final ModelRenderer leftVillagerLeg;
-	protected final ModelRenderer villagerNose;
+// Made with Blockbench 3.7.4
+// Exported for Minecraft version 1.15
+// Paste this class into your mod and generate all required imports
 
-	public VillageNPCModel(float scale) {
-		this(scale, 64, 64);
+public class VillageNPCModel extends EntityModel<VillageNPC> {
+	private final ModelRenderer Head;
+	private final ModelRenderer Body;
+	private final ModelRenderer Legs;
+	private final ModelRenderer Arm;
+	private final ModelRenderer bb_main;
+	private final ModelRenderer hands_r1;
+
+	public VillageNPCModel() {
+		this.textureWidth = 64;
+		this.textureHeight = 64;
+
+		this.Head = new ModelRenderer(this);
+		this.Head.setRotationPoint(-4.0F, 0.5F, 1.0F);
+		this.Head.setTextureOffset(0, 0).addBox(-4.0F, -9.5F, -3.0F, 8.0F, 10.0F, 8.0F, 0.0F, false);
+		this.Head.setTextureOffset(24, 0).addBox(-1.0F, -3.5F, -4.0F, 2.0F, 4.0F, 2.0F, 0.0F, false);
+
+		this.Body = new ModelRenderer(this);
+		this.Body.setRotationPoint(0.0F, 24.0F, 0.0F);
+		this.Body.setTextureOffset(16, 20).addBox(-8.0F, -23.0F, -1.0F, 8.0F, 12.0F, 6.0F, 0.0F, false);
+		this.Body.setTextureOffset(0, 38).addBox(-8.0F, -23.0F, -1.0F, 8.0F, 20.0F, 6.0F, 0.0F, false);
+
+		this.Legs = new ModelRenderer(this);
+		this.Legs.setRotationPoint(-4.0F, 18.5F, 2.0F);
+		this.Legs.setTextureOffset(0, 23).addBox(-4.0F, -5.5F, -2.0F, 4.0F, 11.0F, 4.0F, 0.0F, false);
+		this.Legs.setTextureOffset(0, 23).addBox(0.0F, -5.5F, -2.0F, 4.0F, 11.0F, 4.0F, 0.0F, false);
+
+		this.Arm = new ModelRenderer(this);
+		this.Arm.setRotationPoint(-4.0F, 2.0F, 3.0F);
+		this.setRotationAngle(this.Arm, -0.7854F, 0.0F, 0.0F);
+		this.Arm.setTextureOffset(44, 22).addBox(-8.0F, 0.0F, -2.0F, 4.0F, 8.0F, 4.0F, 0.0F, false);
+		this.Arm.setTextureOffset(44, 22).addBox(4.0F, 0.0F, -2.0F, 4.0F, 8.0F, 4.0F, 0.0F, false);
+
+		this.bb_main = new ModelRenderer(this);
+		this.bb_main.setRotationPoint(0.0F, 24.0F, 0.0F);
+
+		this.hands_r1 = new ModelRenderer(this);
+		this.hands_r1.setRotationPoint(-4.0F, -17.4038F, -1.682F);
+		this.bb_main.addChild(this.hands_r1);
+		this.setRotationAngle(this.hands_r1, -0.7854F, 0.0F, 0.0F);
+		this.hands_r1.setTextureOffset(40, 38).addBox(-4.0F, -2.5607F, -1.9393F, 8.0F, 4.0F, 4.0F, 0.0F, false);
 	}
 
-	public VillageNPCModel(float scale, int textureWidth, int textureHeight) {
-		this.villagerHead = (new ModelRenderer(this)).setTextureSize(textureWidth, textureHeight);
-		this.villagerHead.setRotationPoint(0f, 0f, 0f);
-		this.villagerHead.setTextureOffset(0, 0).addBox(-4f, -10f, -4f, 8f, 10f, 8f, scale);
-		this.hat = (new ModelRenderer(this)).setTextureSize(textureWidth, textureHeight);
-		this.hat.setRotationPoint(0f, 0f, 0f);
-		this.hat.setTextureOffset(32, 0).addBox(-4f, -10f, -4f, 8f, 10f, 8f, scale + 0.5F);
-		this.villagerHead.addChild(this.hat);
-		this.hatBrim = (new ModelRenderer(this)).setTextureSize(textureWidth, textureHeight);
-		this.hatBrim.setRotationPoint(0f, 0f, 0f);
-		this.hatBrim.setTextureOffset(30, 47).addBox(-8f, -8f, -6f, 16f, 16f, 1f, scale);
-		this.hatBrim.rotateAngleX = (-(float)Math.PI / 2F);
-		this.hat.addChild(this.hatBrim);
-		this.villagerNose = (new ModelRenderer(this)).setTextureSize(textureWidth, textureHeight);
-		this.villagerNose.setRotationPoint(0f, -2f, 0f);
-		this.villagerNose.setTextureOffset(24, 0).addBox(-1f, -1f, -6f, 2f, 4f, 2f, scale);
-		this.villagerHead.addChild(this.villagerNose);
-		this.villagerBody = (new ModelRenderer(this)).setTextureSize(textureWidth, textureHeight);
-		this.villagerBody.setRotationPoint(0f, 0f, 0f);
-		this.villagerBody.setTextureOffset(16, 20).addBox(-4f, 0f, -3f, 8f, 12f, 6f, scale);
-		this.clothing = (new ModelRenderer(this)).setTextureSize(textureWidth, textureHeight);
-		this.clothing.setRotationPoint(0f, 0f, 0f);
-		this.clothing.setTextureOffset(0, 38).addBox(-4f, 0f, -3f, 8f, 18f, 6f, scale + 0.5F);
-		this.villagerBody.addChild(this.clothing);
-		this.villagerArms = (new ModelRenderer(this)).setTextureSize(textureWidth, textureHeight);
-		this.villagerArms.setRotationPoint(0f, 2f, 0f);
-		this.villagerArms.setTextureOffset(44, 22).addBox(-8f, -2f, -2f, 4f, 8f, 4f, scale);
-		this.villagerArms.setTextureOffset(44, 22).addBox(4f, -2f, -2f, 4f, 8f, 4f, scale, true);
-		this.villagerArms.setTextureOffset(40, 38).addBox(-4f, 2f, -2f, 8f, 4f, 4f, scale);
-		this.rightVillagerLeg = (new ModelRenderer(this, 0, 22)).setTextureSize(textureWidth, textureHeight);
-		this.rightVillagerLeg.setRotationPoint(-2f, 12f, 0f);
-		this.rightVillagerLeg.addBox(-2f, 0f, -2f, 4f, 12f, 4f, scale);
-		this.leftVillagerLeg = (new ModelRenderer(this, 0, 22)).setTextureSize(textureWidth, textureHeight);
-		this.leftVillagerLeg.mirror = true;
-		this.leftVillagerLeg.setRotationPoint(2f, 12f, 0f);
-		this.leftVillagerLeg.addBox(-2f, 0f, -2f, 4f, 12f, 4f, scale);
-		LOGGER.info("VillageNPCModel created");
-	}
-	
 	@Override
-	public void render(MatrixStack matrixStackIn, IVertexBuilder bufferIn, int packedLightIn, int packedOverlayIn,
-			float red, float green, float blue, float alpha) {
-		LOGGER.info(matrixStackIn.toString());
-		LOGGER.info(bufferIn.toString());
-		super.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
+	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red,
+			float green, float blue, float alpha) {
+		this.Head.render(matrixStack, buffer, packedLight, packedOverlay);
+		this.Body.render(matrixStack, buffer, packedLight, packedOverlay);
+		this.Legs.render(matrixStack, buffer, packedLight, packedOverlay);
+		this.Arm.render(matrixStack, buffer, packedLight, packedOverlay);
+		this.bb_main.render(matrixStack, buffer, packedLight, packedOverlay);
 	}
-	
-	@Override
-	public Iterable<ModelRenderer> getParts() {
-		return ImmutableList.of(this.villagerHead, this.villagerBody, this.rightVillagerLeg, this.leftVillagerLeg, this.villagerArms);
-	}
-	
-	@Override
-	public ModelRenderer getModelHead() {
-		return this.villagerHead;
-	}
-	
-	@Override
-	public void func_217146_a(boolean p_217146_1_) {
-		this.villagerHead.showModel = p_217146_1_;
-		this.hat.showModel = p_217146_1_;
-		this.hatBrim.showModel = p_217146_1_;
+
+	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+		modelRenderer.rotateAngleX = x;
+		modelRenderer.rotateAngleY = y;
+		modelRenderer.rotateAngleZ = z;
 	}
 
 	@Override

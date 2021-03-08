@@ -6,22 +6,15 @@ import net.minecraft.entity.INPC;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap.MutableAttribute;
 import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.ai.goal.GoalSelector;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.world.World;
 
 public abstract class VillageNPC extends Entity implements INPC {
-	protected final GoalSelector goalSelector;
-	protected final GoalSelector targetSelector;
-	
 	public VillageNPC(EntityType<? extends Entity> type, World worldIn) {
 		super(type, worldIn);
-		LOGGER.info(type.getTranslationKey() + " created");
-		this.goalSelector = new GoalSelector(worldIn.getWorldProfiler());
-		this.targetSelector = new GoalSelector(worldIn.getWorldProfiler());
-		this.setInvulnerable(true);
+		LOGGER.info(type.getRegistryName().toString() + " created");
 	}
 
 	public static MutableAttribute registerAttributes() {
@@ -30,6 +23,7 @@ public abstract class VillageNPC extends Entity implements INPC {
 
 	@Override
 	protected final void registerData() {
+		this.setInvulnerable(true);
 		this.setNoGravity(true);
 		this.setSilent(true);
 		this.setCustomNameVisible(true);

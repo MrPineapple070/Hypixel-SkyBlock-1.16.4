@@ -21,15 +21,15 @@ import net.minecraft.world.World;
  */
 public class Andrew extends VillageNPC {
 	public static final TranslationTextComponent name = new TranslationTextComponent("npc.andrew");
-	public static final List<TranslationTextComponent> speach = Arrays
-			.asList(new TranslationTextComponent("npc.andrew.0"), new TranslationTextComponent("npc.andrew.1"));
-	
+	public static final List<TranslationTextComponent> speach = Arrays.asList(
+			new TranslationTextComponent("npc.andrew.0"), new TranslationTextComponent("npc.andrew.1"));
+
 	public Andrew(EntityType<? extends Entity> type, World world) {
 		super(type, world);
 		this.setPosition(38, 68, -46);
 		this.setCustomName(name);
 	}
-	
+
 	public Andrew(World worldIn) {
 		this(ModEntityTypes.Andrew.get(), worldIn);
 	}
@@ -39,6 +39,7 @@ public class Andrew extends VillageNPC {
 		LOGGER.info(player.getName().getString() + " applyPlayerInteraction");
 		LOGGER.info(vec.toString());
 		LOGGER.info(hand.name());
-		return ActionResultType.PASS;
+		player.sendMessage(speach.get(rand.nextInt(speach.size())), this.entityUniqueID);
+		return ActionResultType.SUCCESS;
 	}
 }

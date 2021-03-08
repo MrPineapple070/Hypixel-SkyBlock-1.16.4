@@ -40,12 +40,12 @@ public enum ModSwordTier implements IItemTier {
 
 	@Override
 	public int getEnchantability() {
-		return 0x20;
+		return 32;
 	}
 
 	@Override
 	public int getHarvestLevel() {
-		return 4;
+		return -1;
 	}
 
 	@Override
