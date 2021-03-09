@@ -1,12 +1,17 @@
 package net.hypixel.skyblock.items.armor.sponge;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.hypixel.skyblock.util.FormatingCodes;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 
 /**
- *
+ *<a href="https://hypixel-skyblock.fandom.com/wiki/Sponge_Armor">Sponge Armor</a>.
  *
  * @author MrPineapple070
  * @version 09 August 2020
@@ -29,9 +34,9 @@ public class SpongeSet implements FullSetInformation {
 	}
 
 	@Override
-	public String getFullSetBonus() {
-		return FormatingCodes.gold + "Full Set Bonus: Absorb\n" + FormatingCodes.gray
-				+ "Doubles defense while in water.";
+	public List<ITextComponent> getFullSetBonus() {
+		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Absorb"),
+				new StringTextComponent("Doubles defense while in water."));
 	}
 
 	@Override

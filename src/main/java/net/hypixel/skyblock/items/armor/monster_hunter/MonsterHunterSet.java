@@ -1,9 +1,13 @@
 package net.hypixel.skyblock.items.armor.monster_hunter;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.util.text.ITextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the <a href=
@@ -37,8 +41,8 @@ public class MonsterHunterSet implements FullSetInformation {
 	}
 
 	@Override
-	public String getFullSetBonus() {
-		return "";
+	public List<ITextComponent> getFullSetBonus() {
+		return Arrays.asList();
 	}
 
 	@Override

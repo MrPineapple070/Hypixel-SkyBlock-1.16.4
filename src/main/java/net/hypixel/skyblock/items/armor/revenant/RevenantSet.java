@@ -1,10 +1,15 @@
 package net.hypixel.skyblock.items.armor.revenant;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -37,9 +42,10 @@ public class RevenantSet implements FullSetInformation {
 	}
 
 	@Override
-	public String getFullSetBonus() {
-		return FormatingCodes.gold + "Full Set Bonus: Trolling the Reaper\n" + FormatingCodes.gray
-				+ "Healing Wands are 50% more effective.\nGain +20 defense against Zombies.";
+	public List<ITextComponent> getFullSetBonus() {
+		return Arrays.asList(new StringTextComponent("Full Set Bonus: Trolling the Reaper").mergeStyle(TextFormatting.GOLD),
+				new StringTextComponent("Healing Wands are 50% more effective."),
+				new StringTextComponent("Gain +20 defense against Zombies."));
 	}
 
 	@Override

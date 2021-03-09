@@ -1,10 +1,16 @@
 package net.hypixel.skyblock.items.armor.frozen_blaze;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.hypixel.skyblock.util.FormatingCodes;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -42,12 +48,12 @@ public class FrozenBlazeSet implements FullSetInformation {
 	}
 
 	@Override
-	public String getFullSetBonus() {
-		return FormatingCodes.gold + "Full Set Bonus: Blazing Aura\n" + FormatingCodes.gray
-				+ "Damages mobs in a 5 block range for 300 base damage + 3% of their max " + FormatingCodes.red
-				+ "Health " + FormatingCodes.gray + "per second and applies Slowness 1 for 4 seconds.\n"
-				+ "Max damage per second increased by +100 per 5000 rods (5000 max damage cap).\n"
-				+ "Also grants permanent Fire and Lava immunity.";
+	public List<ITextComponent> getFullSetBonus() {
+		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Blazing Aura"),
+				new StringTextComponent("Damages mobs in a 5 block range for 300 base damage + 3% of their max "
+						+ StatString.health + "per second and applies Slowness 1 for 4 seconds."),
+				new StringTextComponent("Max damage per second increased by +100 per 5000 rods (5000 max damage cap)."),
+				new StringTextComponent("Also grants permanent Fire and Lava immunity."));
 	}
 
 	@Override

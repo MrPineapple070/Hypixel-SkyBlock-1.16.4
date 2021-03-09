@@ -1,18 +1,15 @@
 package net.hypixel.skyblock.util;
 
+import net.minecraft.util.text.TranslationTextComponent;
+
 public class StatString {
-	public static final String atk_spd = "stat.attack_speed";
-	public static final String attack_speed = FormatingCodes.yellow + SpecialCharacters.attack_speed + " Attack Speed"
-			+ FormatingCodes.reset;
-	public static final String breaking_power = FormatingCodes.gray + "Breaking Power" + FormatingCodes.reset;
+	public static final TranslationTextComponent attack_speed = new TranslationTextComponent("stat.attack_speed");
+	public static final TranslationTextComponent breaking_power = new TranslationTextComponent("stat.breaking_power");
 	public static final String complete = FormatingCodes.green + SpecialCharacters.complete + FormatingCodes.reset;
-	public static final String crit_chance = FormatingCodes.blue + SpecialCharacters.crit_chance + " Crit Chance"
-			+ FormatingCodes.reset;
-	public static final String crit_damage = FormatingCodes.blue + SpecialCharacters.crit_damage + " Crit Damage"
-			+ FormatingCodes.reset;
+	public static final TranslationTextComponent crit_chance = new TranslationTextComponent("stat.crit_chance");
+	public static final TranslationTextComponent crit_damage = new TranslationTextComponent("stat.crit_damage");
 	public static final String day = FormatingCodes.yellow + SpecialCharacters.day + FormatingCodes.reset;
-	public static final String defense = FormatingCodes.green + SpecialCharacters.defense + " Defense"
-			+ FormatingCodes.reset;
+	public static final TranslationTextComponent defense = new TranslationTextComponent("stat.defense");
 	public static final String dungeon_star_1 = FormatingCodes.gold + SpecialCharacters.dungeon_star
 			+ FormatingCodes.reset;
 	public static final String dungeon_star_2 = FormatingCodes.gold + SpecialCharacters.dungeon_star
@@ -25,38 +22,27 @@ public class StatString {
 	public static final String dungeon_star_5 = FormatingCodes.gold + SpecialCharacters.dungeon_star
 			+ SpecialCharacters.dungeon_star + SpecialCharacters.dungeon_star + SpecialCharacters.dungeon_star
 			+ SpecialCharacters.dungeon_star + FormatingCodes.reset;
-	public static final String farming_fortune = FormatingCodes.gold + SpecialCharacters.fortune + " Farming Fortune"
-			+ FormatingCodes.reset;
-	public static final String ferocity = FormatingCodes.red + SpecialCharacters.ferocity + " Ferocity"
-			+ FormatingCodes.reset;
-	public static final String fishing_speed = FormatingCodes.green + String.valueOf(SpecialCharacters.fishing_rod)
-			+ " Fishing Speed" + FormatingCodes.reset;
-	public static final String foraging_fortune = FormatingCodes.gold + SpecialCharacters.fortune + " Foraging Fortune"
-			+ FormatingCodes.reset;
-	public static final String health = FormatingCodes.red + SpecialCharacters.health + " Health"
-			+ FormatingCodes.reset;
+	public static final TranslationTextComponent farming_fortune = new TranslationTextComponent("stat.farming_fortune");
+	public static final TranslationTextComponent ferocity = new TranslationTextComponent("stat.ferocity");
+	public static final TranslationTextComponent fishing_speed = new TranslationTextComponent("stat.fishing_speed");
+	public static final TranslationTextComponent foraging_fortune = new TranslationTextComponent("stat.foraging_fortune");
+	public static final TranslationTextComponent health = new TranslationTextComponent("stat.health");
 	public static final String incomplete = FormatingCodes.red + SpecialCharacters.incomplete + FormatingCodes.reset;
-	public static final String intelligence = FormatingCodes.aqua + SpecialCharacters.intelligence + " Intelligence"
-			+ FormatingCodes.reset;
+	public static final TranslationTextComponent intelligence = new TranslationTextComponent("stat.intelligence");
 	public static final String level_up = FormatingCodes.dark_gray + SpecialCharacters.level_up;
-	public static final String magic_find = FormatingCodes.light_purple + SpecialCharacters.magic_find + " Magic Find"
-			+ FormatingCodes.reset;
-	public static final String mana = FormatingCodes.aqua + SpecialCharacters.mana + " Mana" + FormatingCodes.reset;
-	public static final String mining_fortune = FormatingCodes.gold + SpecialCharacters.fortune + " Mining Fortune"
-			+ FormatingCodes.reset;
+	public static final TranslationTextComponent magic_find = new TranslationTextComponent("stat.magic_find");
+	public static final TranslationTextComponent mana = new TranslationTextComponent("stat.mana");
+	public static final TranslationTextComponent mining_fortune = new TranslationTextComponent("stat.mining_fortune");
+	public static final TranslationTextComponent mining_speed = new TranslationTextComponent("stat.mining_speed");
 	public static final String night = FormatingCodes.aqua + SpecialCharacters.night + FormatingCodes.reset;
-	public static final String pet_luck = FormatingCodes.light_purple + SpecialCharacters.pet_luck + " Pet Luck"
-			+ FormatingCodes.reset;
+	public static final TranslationTextComponent pet_luck = new TranslationTextComponent("stat.pet_luck");
 	public static final String reqirement_slayer = FormatingCodes.dark_red + SpecialCharacters.requirement_slayer
 			+ " Required" + FormatingCodes.reset;
 	public static final String requirement = FormatingCodes.dark_red + SpecialCharacters.requirement + " Required"
 			+ FormatingCodes.reset;
-	public static final String sea_creature_chance = FormatingCodes.dark_aqua + SpecialCharacters.sea_creature_chance
-			+ " Sea Creature Chance" + FormatingCodes.reset;
-	public static final String speed = FormatingCodes.white + SpecialCharacters.speed + " Speed" + FormatingCodes.reset;
-	public static final String strength = FormatingCodes.red + SpecialCharacters.strength + " Strength"
-			+ FormatingCodes.reset;
+	public static final TranslationTextComponent sea_creature_chance = new TranslationTextComponent("stat.sea_creature_chance");
+	public static final TranslationTextComponent speed = new TranslationTextComponent("stat.speed");
+	public static final TranslationTextComponent strength = new TranslationTextComponent("stat.strength");
 	public static final String ticker = FormatingCodes.yellow + "%d " + SpecialCharacters.ticker;
-	public static final String true_def = FormatingCodes.white + SpecialCharacters.true_defense + " True Defense"
-			+ FormatingCodes.reset;
+	public static final TranslationTextComponent true_def = new TranslationTextComponent("stat.true_defense");
 }

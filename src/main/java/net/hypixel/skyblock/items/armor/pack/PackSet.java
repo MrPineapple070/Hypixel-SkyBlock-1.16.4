@@ -1,11 +1,16 @@
 package net.hypixel.skyblock.items.armor.pack;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.StatString;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -35,10 +40,12 @@ public class PackSet implements FullSetInformation {
 	}
 
 	@Override
-	public String getFullSetBonus() {
-		return FormatingCodes.gold + "Full Set Bonus: Armor of the PackSet\n" + FormatingCodes.gray + "Gain +35 "
-				+ StatString.strength + FormatingCodes.gray + " and +80 " + StatString.defense + FormatingCodes.gray
-				+ " for each Armor of the PackSet wearers within 30 blocks. Max of 3 players.";
+	public List<ITextComponent> getFullSetBonus() {
+		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Armor of the Pack"),
+				new StringTextComponent("Gain +35 ").append(StatString.strength).appendString(" and +80 ")
+						.append(StatString.defense)
+						.appendString(" for each Armor of the Pack wearers within 30 blocks."),
+				new StringTextComponent("Max of 3 players."));
 	}
 
 	@Override

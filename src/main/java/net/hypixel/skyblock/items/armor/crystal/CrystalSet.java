@@ -1,10 +1,15 @@
 package net.hypixel.skyblock.items.armor.crystal;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -32,9 +37,9 @@ public class CrystalSet implements FullSetInformation {
 	}
 
 	@Override
-	public String getFullSetBonus() {
-		return FormatingCodes.gold + "Full Set Bonus: Refraction\n" + FormatingCodes.gray
-				+ "The stats of this armor chance from 0% to 200% depending on the current light level.";
+	public List<ITextComponent> getFullSetBonus() {
+		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Refraction"),
+				new StringTextComponent(FormatingCodes.gray	+ "The stats of this armor change from 0% to 200% depending on the current light level."));
 	}
 
 	@Override

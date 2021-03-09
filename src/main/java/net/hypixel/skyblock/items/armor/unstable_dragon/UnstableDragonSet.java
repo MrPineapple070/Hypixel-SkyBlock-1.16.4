@@ -1,9 +1,14 @@
 package net.hypixel.skyblock.items.armor.unstable_dragon;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 
 /**
  * @author MrPineapple070
@@ -33,9 +38,9 @@ public class UnstableDragonSet implements FullSetInformation {
 	}
 
 	@Override
-	public String getFullSetBonus() {
-		return FormatingCodes.gold + "Full Set Bonus: Unstable Blood\n" + FormatingCodes.gray
-				+ "Every 10 seconds, skrike mobs with in 7 blocks with 3000 damage.";
+	public List<ITextComponent> getFullSetBonus() {
+		return Arrays.asList(new StringTextComponent("Full Set Bonus: Unstable Blood").mergeStyle(TextFormatting.GOLD),
+				new StringTextComponent("Every 10 seconds, skrike mobs with in 7 blocks with 3000 damage."));
 	}
 
 	@Override

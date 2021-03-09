@@ -1,10 +1,16 @@
 package net.hypixel.skyblock.items.armor.angler;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.hypixel.skyblock.util.FormatingCodes;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -37,11 +43,11 @@ public class AnglerSet implements FullSetInformation {
 	}
 
 	@Override
-	public String getFullSetBonus() {
-		return FormatingCodes.gold + "Full Set Bonus: Sea Creature Master\n" + FormatingCodes.gray
-				+ "Take 30% less damage from Sea Creatures.\n" + FormatingCodes.gold
-				+ "Full Set Bonus: Deepness Within\n" + FormatingCodes.gray + "Get +2 " + FormatingCodes.red + "Health "
-				+ FormatingCodes.gray + "per fishing level.";
+	public List<ITextComponent> getFullSetBonus() {
+		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Sea Creature Master"),
+				new StringTextComponent(FormatingCodes.gray + "Take 30% less damage from Sea Creatures."),
+				new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Deepness Within"),
+				new StringTextComponent(FormatingCodes.gray + "Get +2 " + StatString.health + " per fishing level."));
 	}
 
 	@Override

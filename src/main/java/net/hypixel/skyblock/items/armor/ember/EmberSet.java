@@ -1,10 +1,15 @@
 package net.hypixel.skyblock.items.armor.ember;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -32,9 +37,11 @@ public class EmberSet implements FullSetInformation {
 	}
 
 	@Override
-	public String getFullSetBonus() {
-		return FormatingCodes.gold + "Full Set Bonus: Nether Lord\n" + FormatingCodes.gray
-				+ "Obsidian will be created below you when walking on Lava.\nIt also increases the chance of Nether monsters dropping an item by 20%.\nWearing this full set will also prevent you from taking Lava and Fire Damage.";
+	public List<ITextComponent> getFullSetBonus() {
+		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Nether Lord"),
+				new StringTextComponent(FormatingCodes.gray	+ "Obsidian will be created below you when walking on Lava."),
+				new StringTextComponent(FormatingCodes.gray + "It also increases the chance of Nether monsters dropping an item by 20%."),
+				new StringTextComponent(FormatingCodes.gray + "Wearing this full set will also prevent you from taking Lava and Fire Damage."));
 	}
 
 	@Override

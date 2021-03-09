@@ -1,10 +1,15 @@
 package net.hypixel.skyblock.items.armor.golem;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -37,10 +42,10 @@ public class GolemSet implements FullSetInformation {
 	}
 
 	@Override
-	public String getFullSetBonus() {
-		return FormatingCodes.gold + "Full Set Bonus: Absorption\n" + FormatingCodes.gray + "Grants the wearer "
-				+ FormatingCodes.dark_green + "Absorption III " + FormatingCodes.gray
-				+ "for 20 seconds when they kill an entity.";
+	public List<ITextComponent> getFullSetBonus() {
+		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Absorption"),
+				new StringTextComponent(FormatingCodes.gray + "Grants the wearer " + FormatingCodes.dark_green
+						+ "Absorption III " + FormatingCodes.gray + "for 20 seconds when they kill an entity."));
 	}
 
 	@Override

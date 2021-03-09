@@ -1,10 +1,15 @@
 package net.hypixel.skyblock.items.armor.holy_dragon;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -37,9 +42,9 @@ public class HolyDragonSet implements FullSetInformation {
 	}
 
 	@Override
-	public String getFullSetBonus() {
-		return FormatingCodes.gold + "Full Set Bonus: Holy Blood\n" + FormatingCodes.gray
-				+ "Tripples the natural regneration rate of you and all players in a 6 block radius.";
+	public List<ITextComponent> getFullSetBonus() {
+		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Holy Blood"),
+				new StringTextComponent("Tripples the natural regneration rate of you and all players in a 6 block radius."));
 	}
 
 	@Override

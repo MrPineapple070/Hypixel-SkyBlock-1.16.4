@@ -1,10 +1,15 @@
 package net.hypixel.skyblock.items.armor.leaflet;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -38,9 +43,9 @@ public class LeafletSet implements FullSetInformation {
 	}
 
 	@Override
-	public String getFullSetBonus() {
-		return FormatingCodes.gold + "Full Set Bonus: Energy of the Forest\n" + FormatingCodes.gray
-				+ "Grants +10% damage reduction and +10% extra damage.";
+	public List<ITextComponent> getFullSetBonus() {
+		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Energy of the Forest"),
+				new StringTextComponent(FormatingCodes.gray	+ "Grants +10% damage reduction and +10% extra damage."));
 	}
 
 	@Override

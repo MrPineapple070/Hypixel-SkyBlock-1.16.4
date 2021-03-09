@@ -1,10 +1,16 @@
 package net.hypixel.skyblock.items.armor.mastiff;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.hypixel.skyblock.util.FormatingCodes;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -16,8 +22,13 @@ import net.minecraft.inventory.EquipmentSlotType;
  * @since 08 August 2020
  */
 public class MastiffSet implements FullSetInformation {
-
 	public static final MastiffSet instance = new MastiffSet();
+	
+	protected static final List<ITextComponent> fsb = Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Absolute Unit"),
+			new StringTextComponent("+10 ").append(StatString.health).appendString(" per ").append(StatString.crit_damage).appendString("."),
+			new StringTextComponent("Regain 2% of max hp when hit."),
+			new StringTextComponent("Receive -20% damage from wolves."),
+			StatString.crit_damage.appendString(" is 50% less effective"));
 
 	private final double boots_hp = 500;
 
@@ -42,12 +53,8 @@ public class MastiffSet implements FullSetInformation {
 	}
 
 	@Override
-	public String getFullSetBonus() {
-		return FormatingCodes.gold + "Full Set Bonus: Absolute Unit\n" + FormatingCodes.gray + "+10 "
-				+ FormatingCodes.red + "Health" + FormatingCodes.gray + " per " + FormatingCodes.dark_blue
-				+ "Crit Damage" + FormatingCodes.gray
-				+ ".\nRegain 2% of max hp when hit.\nReceive -20% damage from wolves.\n" + FormatingCodes.dark_blue
-				+ "Crit Damage" + FormatingCodes.gray + " is 50% less effective.";
+	public List<ITextComponent> getFullSetBonus() {
+		return fsb;
 	}
 
 	@Override

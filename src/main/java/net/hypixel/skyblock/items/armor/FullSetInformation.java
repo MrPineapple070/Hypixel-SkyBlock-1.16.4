@@ -10,7 +10,7 @@ import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.util.StatString;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Serve as a base for {@link EquipmentSlotType} specific information for all
@@ -21,7 +21,7 @@ import net.minecraft.util.text.StringTextComponent;
  * @since 11 June 2019
  */
 public interface FullSetInformation {
-	ImmutableList<String> buff = ImmutableList.copyOf(Arrays.asList(StatString.strength, StatString.crit_chance,
+	public static final ImmutableList<TranslationTextComponent> buff = ImmutableList.copyOf(Arrays.asList(StatString.strength, StatString.crit_chance,
 			StatString.crit_damage, StatString.health, StatString.speed, StatString.intelligence, StatString.true_def));
 
 	static double[] createBuffArray(double str, double cr_chn, double cr_dmg, double hp, double spd, double intel,
@@ -89,15 +89,15 @@ public interface FullSetInformation {
 			if (buffs[i] == 0)
 				continue;
 			else
-				description.add(new StringTextComponent(buff.get(i) + ": " + buffs[i]));
-		description.add(new StringTextComponent(this.getFullSetBonus()));
+				description.add(buff.get(i).appendString(Double.toString(buffs[i])));
+		description.addAll(this.getFullSetBonus());
 		return description;
 	}
 
 	/**
 	 * @return the description for the full set bonus of this set.
 	 */
-	String getFullSetBonus();
+	List<ITextComponent> getFullSetBonus();
 
 	/**
 	 * The order of this array is Strength, Crit Chance, Crit Damage, Health, Speed,

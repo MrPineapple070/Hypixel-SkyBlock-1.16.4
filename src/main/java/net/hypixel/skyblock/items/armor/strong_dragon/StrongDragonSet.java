@@ -1,9 +1,14 @@
 package net.hypixel.skyblock.items.armor.strong_dragon;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 
 /**
  * @author MrPineapple070
@@ -36,9 +41,10 @@ public class StrongDragonSet implements FullSetInformation {
 	}
 
 	@Override
-	public String getFullSetBonus() {
-		return FormatingCodes.gold + "Full Set Bonus: Strong Blood\n" + FormatingCodes.gray
-				+ "Gives +75 damage, +2 teleport distance, +3 seconds of duration, +5 strength of cast to the Aspect of the End.";
+	public List<ITextComponent> getFullSetBonus() {
+		return Arrays.asList(new StringTextComponent("Full Set Bonus: Strong Blood").mergeStyle(TextFormatting.GOLD),
+				new StringTextComponent(
+						"Gives +75 damage, +2 teleport distance, +3 seconds of duration, +5 strength of cast to the Aspect of the End."));
 	}
 
 	@Override

@@ -1,10 +1,15 @@
 package net.hypixel.skyblock.items.armor.adaptive;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -32,9 +37,10 @@ public class AdaptiveSet implements FullSetInformation {
 	}
 
 	@Override
-	public String getFullSetBonus() {
-		return FormatingCodes.gold + "Full Set Bonus: Efficient Training\n" + FormatingCodes.gray
-				+ "Every 5 Catacombs levels, this armor piece gains +2% stats.";
+	public List<ITextComponent> getFullSetBonus() {
+
+		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Efficient Training"),
+				new StringTextComponent("Every 5 Catacombs levels, this armor piece gains +2% stats."));
 	}
 
 	@Override

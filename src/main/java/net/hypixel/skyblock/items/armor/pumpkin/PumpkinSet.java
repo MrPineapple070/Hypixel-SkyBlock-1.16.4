@@ -1,10 +1,15 @@
 package net.hypixel.skyblock.items.armor.pumpkin;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -37,9 +42,9 @@ public class PumpkinSet implements FullSetInformation {
 	}
 
 	@Override
-	public String getFullSetBonus() {
-		return FormatingCodes.gold + "Full Set Bonus: Pumpkin Buff\n" + FormatingCodes.gray
-				+ "Grants +10% damage reduction from all sources and +10% damage.";
+	public List<ITextComponent> getFullSetBonus() {
+		return Arrays.asList(new StringTextComponent("Full Set Bonus: Pumpkin Buff").mergeStyle(TextFormatting.GOLD),
+				new StringTextComponent("Grants +10% damage reduction from all sources and +10% damage."));
 	}
 
 	@Override

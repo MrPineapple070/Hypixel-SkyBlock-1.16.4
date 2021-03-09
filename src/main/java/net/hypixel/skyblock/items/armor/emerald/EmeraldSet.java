@@ -1,9 +1,15 @@
 package net.hypixel.skyblock.items.armor.emerald;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.hypixel.skyblock.util.FormatingCodes;
+import net.hypixel.skyblock.util.StatString;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 
 public class EmeraldSet implements FullSetInformation {
 	private static int boots = 0;
@@ -27,10 +33,11 @@ public class EmeraldSet implements FullSetInformation {
 	}
 
 	@Override
-	public String getFullSetBonus() {
-		return FormatingCodes.gold + "Full Set Bonus: Tank\n" + FormatingCodes.gray + "Increases the wearer's max "
-				+ FormatingCodes.red + "Health" + FormatingCodes.gray + " and " + FormatingCodes.green + "Defense"
-				+ FormatingCodes.gray + " by 1 for every 3000 Emeralds in your collection. Max 350 each.";
+	public List<ITextComponent> getFullSetBonus() {
+		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Tank"),
+				new StringTextComponent(FormatingCodes.gray + "Increases the wearer's max " + StatString.health
+						+ " and " + StatString.defense + " by 1 for every 3000 Emeralds in your collection."),
+				new StringTextComponent("Max 350 each."));
 	}
 
 	@Override

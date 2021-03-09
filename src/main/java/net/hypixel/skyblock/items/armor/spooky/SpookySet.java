@@ -1,10 +1,15 @@
 package net.hypixel.skyblock.items.armor.spooky;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -32,9 +37,9 @@ public class SpookySet implements FullSetInformation {
 	}
 
 	@Override
-	public String getFullSetBonus() {
-		return FormatingCodes.gold + "Full Set Bonus: Candy Man\n" + FormatingCodes.gray
-				+ "Grants a +5% chance to find rare candy.";
+	public List<ITextComponent> getFullSetBonus() {
+		return Arrays.asList(new StringTextComponent("Full Set Bonus: Candy Man").mergeStyle(TextFormatting.GOLD),
+				new StringTextComponent("Grants a +5% chance to find rare candy."));
 	}
 
 	@Override

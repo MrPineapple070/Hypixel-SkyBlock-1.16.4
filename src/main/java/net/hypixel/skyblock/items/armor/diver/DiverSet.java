@@ -1,10 +1,15 @@
 package net.hypixel.skyblock.items.armor.diver;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -32,9 +37,10 @@ public class DiverSet implements FullSetInformation {
 	}
 
 	@Override
-	public String getFullSetBonus() {
-		return FormatingCodes.gold + "Full Set Bonus: One with the Fish\n" + FormatingCodes.gray
-				+ "While toughing the water you move increadibly fast.\nYou also have permanent water breathing.";
+	public List<ITextComponent> getFullSetBonus() {
+		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: One with the Fish"),
+				new StringTextComponent(FormatingCodes.gray + "While toughing the water you move increadibly fast."),
+				new StringTextComponent(FormatingCodes.gray + "You also have permanent water breathing."));
 	}
 
 	@Override

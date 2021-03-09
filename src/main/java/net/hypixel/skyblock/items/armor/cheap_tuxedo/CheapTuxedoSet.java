@@ -1,9 +1,14 @@
 package net.hypixel.skyblock.items.armor.cheap_tuxedo;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.hypixel.skyblock.util.FormatingCodes;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 
 public class CheapTuxedoSet implements FullSetInformation {
 	public static CheapTuxedoSet instance = new CheapTuxedoSet();
@@ -22,9 +27,9 @@ public class CheapTuxedoSet implements FullSetInformation {
 	}
 
 	@Override
-	public String getFullSetBonus() {
-		return FormatingCodes.gold + "Full Set Bonus: Dashing!\n" + FormatingCodes.gray
-				+ "Max health is set to 75. Deal +50% more damaage.";
+	public List<ITextComponent> getFullSetBonus() {
+		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Dashing!"),
+				new StringTextComponent(FormatingCodes.gray + "Max health is set to 75. Deal +50% more damaage."));
 	}
 
 	@Override

@@ -1,10 +1,16 @@
 package net.hypixel.skyblock.items.armor.farm_suit;
 
+import java.util.Arrays;
+import java.util.List;
+
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.hypixel.skyblock.util.FormatingCodes;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -37,12 +43,12 @@ public class FarmSuitSet implements FullSetInformation {
 	}
 
 	@Override
-	public String getFullSetBonus() {
-		return FormatingCodes.gold + "Full Set Bonus: Bonus Speed\n" + FormatingCodes.gray + "Increases"
-				+ FormatingCodes.white + " Speed" + FormatingCodes.gray
-				+ " by 20% while worn near Farming Minions or in the Farm, Barn, and Mushroom Desert.\n"
-				+ FormatingCodes.gold + "Full Set Bonus: Farmer Aura\n" + FormatingCodes.gray
-				+ "Increases te regrowth rate of nearby crops on public islands.";
+	public List<ITextComponent> getFullSetBonus() {
+		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Bonus Speed"),
+				new StringTextComponent("Increases " + StatString.speed
+						+ " by 20% while worn near Farming Minions or in the Farm, Barn, and Mushroom Desert."),
+				new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Farmer Aura"),
+				new StringTextComponent("Increases te regrowth rate of nearby crops on public islands."));
 	}
 
 	@Override
