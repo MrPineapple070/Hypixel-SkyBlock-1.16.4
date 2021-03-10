@@ -6,11 +6,11 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.StatString;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -22,15 +22,15 @@ import net.minecraft.util.text.StringTextComponent;
  * @since 11 June 2019
  */
 public class FarmSet implements FullSetInformation {
-	private static double boots_hp = 4;
+	public static final FarmSet instance = new FarmSet();
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.farm.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.farm.fsb.discription", StatString.speed));
 
+	private static double boots_hp = 4;
 	private static double chestplate_hp = 4;
 	private static double helmet_hp = 4;
-	public static final FarmSet instance = new FarmSet();
 	private static double leggings_hp = 4;
-
-	public FarmSet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() {
@@ -44,8 +44,7 @@ public class FarmSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Bonus Speed"),
-				new StringTextComponent("Increases" + StatString.speed + " by 25% while worn near Farming Minions or in the Farm, Barn, and Mushroom Desert"));
+		return fsb;
 	}
 
 	@Override

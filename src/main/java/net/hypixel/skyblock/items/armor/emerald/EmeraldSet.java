@@ -6,21 +6,26 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.StatString;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class EmeraldSet implements FullSetInformation {
-	private static int boots = 0;
+	public static final EmeraldSet instance = new EmeraldSet();
+	private static final List<ITextComponent> fsb = Arrays.asList(
+			full_set_bonus.deepCopy().append(new TranslationTextComponent("armor.emerald.fsb"))
+					.mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.emerald.fsb.discription.0", StatString.health, StatString.defense,
+					Items.EMERALD.getDisplayName(new ItemStack(Items.EMERALD))),
+			new TranslationTextComponent("armor.emerald.fsb.discription.1"));
 
+	private static int boots = 0;
 	private static int chestplate = 0;
 	private static int helmet = 0;
-	public static final EmeraldSet instance = new EmeraldSet();
 	private static int leggings = 0;
-
-	public EmeraldSet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() {
@@ -34,10 +39,7 @@ public class EmeraldSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Tank"),
-				new StringTextComponent(FormatingCodes.gray + "Increases the wearer's max " + StatString.health
-						+ " and " + StatString.defense + " by 1 for every 3000 Emeralds in your collection."),
-				new StringTextComponent("Max 350 each."));
+		return fsb;
 	}
 
 	@Override

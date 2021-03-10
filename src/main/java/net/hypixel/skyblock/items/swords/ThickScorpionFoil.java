@@ -15,6 +15,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 /**
@@ -27,12 +28,10 @@ import net.minecraft.world.World;
  * @since 15 August 2020
  */
 public class ThickScorpionFoil extends ModSwordItem {
-	private static final List<StringTextComponent> before = Arrays
-			.asList(new StringTextComponent(FormatingCodes.gold + "Item Ability: Heartstopper"));
-	private static final List<StringTextComponent> after = Arrays.asList(
-			new StringTextComponent(
-					FormatingCodes.gray + "Blocking clears 1 of them and heals 12 " + StatString.health),
-			new StringTextComponent(FormatingCodes.gray + "Tickers refill after 5 seconds."));
+	private static final ITextComponent before = new StringTextComponent("Item Ability: Heartstopper").mergeStyle(TextFormatting.GOLD);
+	private static final List<ITextComponent> after = Arrays.asList(
+			new StringTextComponent("Blocking clears 1 of them and heals 12 ").append(StatString.health),
+			new StringTextComponent("Tickers refill after 5 seconds."));
 
 	private int tick = 0;
 	private int tickers = 4;
@@ -44,7 +43,7 @@ public class ThickScorpionFoil extends ModSwordItem {
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.addAll(before);
+		tooltip.add(before);
 		tooltip.add(new StringTextComponent(String.format(this.ticker, this.tickers)));
 		tooltip.addAll(after);
 		tooltip.add(StringTextComponent.EMPTY);

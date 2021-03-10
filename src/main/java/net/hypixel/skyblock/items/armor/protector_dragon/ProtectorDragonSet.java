@@ -6,10 +6,11 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the <a href=
@@ -22,14 +23,14 @@ import net.minecraft.util.text.TextFormatting;
  */
 public class ProtectorDragonSet implements FullSetInformation {
 	public static final ProtectorDragonSet instance = new ProtectorDragonSet();
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.protector.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.protector.fsb.discription", StatString.defense, StatString.health));
 
 	public double boots_hp = 12;
 	public double chestplate_hp = 24;
 	public double helmet_hp = 14;
 	public double leggings_hp = 20;
-
-	public ProtectorDragonSet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() throws IllegalAccessException {
@@ -43,8 +44,7 @@ public class ProtectorDragonSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent("Full Set Bonus: Protective Blood").mergeStyle(TextFormatting.GOLD),
-				new StringTextComponent("Increases the Defense bonus of each armor piece by 1% for each percent of missing Health."));
+		return fsb;
 	}
 
 	@Override

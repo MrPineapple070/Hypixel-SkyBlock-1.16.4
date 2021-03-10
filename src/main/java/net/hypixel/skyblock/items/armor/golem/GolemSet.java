@@ -6,10 +6,14 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.potion.Effects;
+import net.minecraft.util.text.Color;
+import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.Style;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -21,15 +25,19 @@ import net.minecraft.util.text.StringTextComponent;
  * @since 11 June 2019
  */
 public class GolemSet implements FullSetInformation {
-	public static double boots_hp = 8;
+	public static final GolemSet instance = new GolemSet();
+	private static final List<ITextComponent> fsb = Arrays.asList(
+			full_set_bonus.deepCopy().append(new TranslationTextComponent("armor.golem.fsb"))
+					.mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.golem.fsb.discription.0",
+					((IFormattableTextComponent) Effects.ABSORPTION.getDisplayName())
+							.mergeStyle(Style.EMPTY.setColor(Color.fromInt(Effects.ABSORPTION.getLiquidColor())))),
+			new TranslationTextComponent("armor.golem.fsb.discription.1"));
 
+	public static double boots_hp = 8;
 	public static double chestplate_hp = 13;
 	public static double helmet_hp = 9;
-	public static final GolemSet instance = new GolemSet();
 	public static double leggings_hp = 11;
-
-	public GolemSet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() {
@@ -43,9 +51,7 @@ public class GolemSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Absorption"),
-				new StringTextComponent(FormatingCodes.gray + "Grants the wearer " + FormatingCodes.dark_green
-						+ "Absorption III " + FormatingCodes.gray + "for 20 seconds when they kill an entity."));
+		return fsb;
 	}
 
 	@Override

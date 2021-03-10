@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.ItemProperties;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
@@ -13,6 +12,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 /**
@@ -24,9 +24,9 @@ import net.minecraft.world.World;
  * @since 14 August 2020
  */
 public class RecluseFang extends ModSwordItem {
-	private static final List<StringTextComponent> tooltip = Arrays.asList(
-			new StringTextComponent(FormatingCodes.gold + "Item Ability: Squash 'em"),
-			new StringTextComponent(FormatingCodes.gray + "Squash Spiders to accumulate strength against them."));
+	private static final List<ITextComponent> tooltip = Arrays.asList(
+			new StringTextComponent("Item Ability: Squash 'em").mergeStyle(TextFormatting.GOLD),
+			new StringTextComponent("Squash Spiders to accumulate strength against them."));
 
 	public RecluseFang() {
 		super(ModSwordTier.Recluse_Fang, ItemProperties.c1, ModItemRarity.Rare);

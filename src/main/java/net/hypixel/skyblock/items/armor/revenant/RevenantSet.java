@@ -6,10 +6,11 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -21,15 +22,16 @@ import net.minecraft.util.text.TextFormatting;
  * @since 11 October 2019
  */
 public class RevenantSet implements FullSetInformation {
-
 	public static final RevenantSet instance = new RevenantSet();
+	private static final List<ITextComponent> fsb = Arrays.asList(
+			full_set_bonus.deepCopy().append(new TranslationTextComponent("armor.revenant.fsb"))
+					.mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.revenant.fsb.discription.0"),
+			new TranslationTextComponent("armor.revenant.fsb.discription.1", StatString.defense));
 
 	public double boots_hp = 20;
 	public double chestplate_hp = 36;
 	public double leggings_hp = 26;
-
-	public RevenantSet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() throws IllegalAccessException {
@@ -43,9 +45,7 @@ public class RevenantSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent("Full Set Bonus: Trolling the Reaper").mergeStyle(TextFormatting.GOLD),
-				new StringTextComponent("Healing Wands are 50% more effective."),
-				new StringTextComponent("Gain +20 defense against Zombies."));
+		return fsb;
 	}
 
 	@Override

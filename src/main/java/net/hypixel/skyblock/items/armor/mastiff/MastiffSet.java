@@ -6,11 +6,11 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.StatString;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -23,24 +23,24 @@ import net.minecraft.util.text.StringTextComponent;
  */
 public class MastiffSet implements FullSetInformation {
 	public static final MastiffSet instance = new MastiffSet();
-	
-	protected static final List<ITextComponent> fsb = Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Absolute Unit"),
-			new StringTextComponent("+10 ").append(StatString.health).appendString(" per ").append(StatString.crit_damage).appendString("."),
-			new StringTextComponent("Regain 2% of max hp when hit."),
-			new StringTextComponent("Receive -20% damage from wolves."),
-			StatString.crit_damage.appendString(" is 50% less effective"));
+
+	protected static final List<ITextComponent> fsb = Arrays.asList(
+			full_set_bonus.deepCopy().append(new TranslationTextComponent("armor.mastiff.fsb"))
+					.mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.mastiff.fsb.discription.0", StatString.health, StatString.crit_damage),
+			new TranslationTextComponent("armor.mastiff.fsb.discription.1"),
+			new TranslationTextComponent("armor.mastiff.fsb.discription.2"),
+			new TranslationTextComponent("armor.mastiff.fsb.discription.3", StatString.crit_damage));
 
 	private final double boots_hp = 500;
-
 	private final int boots_int = 25;
+
 	private final double chestplate_hp = 500;
+
 	private final double helmet_hp = 500;
 	private final int helmet_int = 125;
 
 	private final double leggings_hp = 500;
-
-	public MastiffSet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() throws IllegalAccessException {

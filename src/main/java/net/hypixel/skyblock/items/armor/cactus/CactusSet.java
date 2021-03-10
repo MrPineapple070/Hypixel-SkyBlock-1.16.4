@@ -6,10 +6,10 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -22,9 +22,9 @@ import net.minecraft.util.text.StringTextComponent;
  */
 public class CactusSet implements FullSetInformation {
 	public static final CactusSet instance = new CactusSet();
-
-	public CactusSet() {
-	}
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.cactus.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.cactus.fsb.discription"));
 
 	@Override
 	public double[] getBootsBuffs() {
@@ -38,8 +38,7 @@ public class CactusSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Deflect"),
-				new StringTextComponent(FormatingCodes.gray + "Rebound 33% of the damage you take back at your enemy."));
+		return fsb;
 	}
 
 	@Override

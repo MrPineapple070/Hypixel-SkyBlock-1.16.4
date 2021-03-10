@@ -6,10 +6,10 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -22,9 +22,10 @@ import net.minecraft.util.text.StringTextComponent;
  */
 public class DiverSet implements FullSetInformation {
 	public static final DiverSet instance = new DiverSet();
-
-	public DiverSet() {
-	}
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.diver.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.diver.fsb.discription.0"),
+			new TranslationTextComponent("armor.diver.fsb.discription.1"));
 
 	@Override
 	public double[] getBootsBuffs() {
@@ -38,9 +39,7 @@ public class DiverSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: One with the Fish"),
-				new StringTextComponent(FormatingCodes.gray + "While toughing the water you move increadibly fast."),
-				new StringTextComponent(FormatingCodes.gray + "You also have permanent water breathing."));
+		return fsb;
 	}
 
 	@Override

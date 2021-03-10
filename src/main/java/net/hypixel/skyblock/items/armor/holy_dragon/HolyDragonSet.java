@@ -6,10 +6,10 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -22,14 +22,14 @@ import net.minecraft.util.text.StringTextComponent;
  */
 public class HolyDragonSet implements FullSetInformation {
 	public static final HolyDragonSet instance = new HolyDragonSet();
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.holy.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.holy.fsb.discription"));
 
 	private final int boots_hp = 20;
 	private final int chestplate_hp = 36;
 	private final int helmet_hp = 22;
 	private final int leggings_hp = 31;
-
-	public HolyDragonSet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() throws IllegalAccessException {
@@ -43,8 +43,7 @@ public class HolyDragonSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Holy Blood"),
-				new StringTextComponent("Tripples the natural regneration rate of you and all players in a 6 block radius."));
+		return fsb;
 	}
 
 	@Override

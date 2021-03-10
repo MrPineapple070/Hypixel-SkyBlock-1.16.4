@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.ItemProperties;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
@@ -13,6 +12,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 /**
@@ -24,10 +24,9 @@ import net.minecraft.world.World;
  * @since 11 June 2019
  */
 public class GolemSword extends ModSwordItem {
-	private static final List<StringTextComponent> tooltip = Arrays.asList(
-			new StringTextComponent(FormatingCodes.gold + "Item Ability: Iron Punch"),
-			new StringTextComponent(FormatingCodes.gray
-					+ "Punch the ground, damaging enemies in a hexagon around you for 250 base magic damage."));
+	private static final List<ITextComponent> tooltip = Arrays.asList(
+			new StringTextComponent("Item Ability: Iron Punch").mergeStyle(TextFormatting.GOLD),
+			new StringTextComponent("Punch the ground, damaging enemies in a hexagon around you for 250 base magic damage."));
 
 	public GolemSword() {
 		super(ModSwordTier.Golem_Sword, ItemProperties.m1, ModItemRarity.Rare);

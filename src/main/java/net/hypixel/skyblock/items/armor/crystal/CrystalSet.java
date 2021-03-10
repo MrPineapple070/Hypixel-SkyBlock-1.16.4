@@ -6,10 +6,10 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -22,9 +22,9 @@ import net.minecraft.util.text.StringTextComponent;
  */
 public class CrystalSet implements FullSetInformation {
 	public static final CrystalSet instance = new CrystalSet();
-
-	public CrystalSet() {
-	}
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.crystal.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.crystal.fsb.discription"));
 
 	@Override
 	public double[] getBootsBuffs() {
@@ -38,8 +38,7 @@ public class CrystalSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Refraction"),
-				new StringTextComponent(FormatingCodes.gray	+ "The stats of this armor change from 0% to 200% depending on the current light level."));
+		return fsb;
 	}
 
 	@Override

@@ -6,10 +6,11 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -22,14 +23,14 @@ import net.minecraft.util.text.TextFormatting;
  */
 public class YoungDragonSet implements FullSetInformation {
 	public static final YoungDragonSet instance = new YoungDragonSet();
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.young.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.young.fsb.discription", StatString.health));
 
 	private final double boots_hp = 12;
 	private final double chestplate_hp = 24;
 	private final double helmet_hp = 14;
 	private final double leggings_hp = 20;
-
-	public YoungDragonSet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() throws IllegalAccessException {
@@ -43,8 +44,7 @@ public class YoungDragonSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent("Full Set Bonus: Young Blood").mergeStyle(TextFormatting.GOLD),
-				new StringTextComponent("Gain +70 walk speed when above 50% health."));
+		return fsb;
 	}
 
 	@Override

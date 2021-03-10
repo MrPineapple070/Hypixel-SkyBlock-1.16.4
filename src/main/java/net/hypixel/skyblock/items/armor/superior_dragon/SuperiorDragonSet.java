@@ -8,8 +8,8 @@ import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the <a href=
@@ -22,14 +22,15 @@ import net.minecraft.util.text.TextFormatting;
  */
 public class SuperiorDragonSet implements FullSetInformation {
 	public static final SuperiorDragonSet instance = new SuperiorDragonSet();
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.superior.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.superior.fsb.discription.0"),
+			new TranslationTextComponent("armor.superior.fsb.discription.1"));
 
 	private final double boots_hp = 16;
 	private final double chestplate_hp = 30;
 	private final double helmet_hp = 18;
 	private final double leggings_hp = 26;
-
-	public SuperiorDragonSet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() throws IllegalAccessException {
@@ -43,9 +44,7 @@ public class SuperiorDragonSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent("Full Set Bonus: Superior Blood").mergeStyle(TextFormatting.GOLD),
-				new StringTextComponent("All stats are increased by 5%."),
-				new StringTextComponent("The Aspect of the Dragons ability deals 50% more damage."));
+		return fsb;
 	}
 
 	@Override

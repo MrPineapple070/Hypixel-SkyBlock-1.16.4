@@ -6,10 +6,10 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -22,9 +22,10 @@ import net.minecraft.util.text.StringTextComponent;
  */
 public class BlazeSet implements FullSetInformation {
 	public static final BlazeSet instance = new BlazeSet();
-
-	public BlazeSet() {
-	}
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.blaze.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.blaze.fsb.discription.0"),
+			new TranslationTextComponent("armor.blaze.fsb.discription.1"));
 
 	@Override
 	public double[] getBootsBuffs() {
@@ -38,9 +39,7 @@ public class BlazeSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Blazing Aura"),
-				new StringTextComponent(FormatingCodes.gray + "Damages mobs in a 5 block range for 3% of their max Health per second."),
-				new StringTextComponent(FormatingCodes.gray + "Also grants permanent Fire and Lava immunity"));
+		return fsb;
 	}
 
 	@Override

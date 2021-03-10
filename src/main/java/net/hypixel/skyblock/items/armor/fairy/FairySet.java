@@ -6,11 +6,11 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.StatString;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -21,25 +21,27 @@ import net.minecraft.util.text.StringTextComponent;
  * @since 11 June 2019
  */
 public class FairySet implements FullSetInformation {
-	public static double boots_hp = .2;
+	public static final FairySet instance = new FairySet();
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.fairy.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.fairy.fsb.discription.0", StatString.speed),
+			new TranslationTextComponent("armor.fairy.fsb.discription.1", StatString.health));
 
+	public static double boots_hp = .2;
 	public static final int boots_int = -1;
 	public static final int boots_spd = 10;
+
 	public static double chestplate_hp = .2;
 	public static final int chestplate_int = -1;
-
 	public static final int chestplate_spd = 10;
+
 	public static double helmet_hp = .2;
 	public static final int helmet_int = -1;
 	public static final int helmet_spd = 10;
 
-	public static final FairySet instance = new FairySet();
 	public static double leggings_hp = .2;
 	public static final int leggings_int = -1;
 	public static final int leggings_spd = 10;
-
-	public FairySet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() {
@@ -53,9 +55,7 @@ public class FairySet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Fairy's Outfit"),
-				new StringTextComponent(FormatingCodes.gray + "Increases " + StatString.speed + "by 10%."),
-				new StringTextComponent("Gain .2 " + StatString.health + "per Fairy Soul found."));
+		return fsb;
 	}
 
 	@Override

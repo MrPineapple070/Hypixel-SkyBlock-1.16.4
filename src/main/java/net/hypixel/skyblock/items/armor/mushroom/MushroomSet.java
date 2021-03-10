@@ -6,10 +6,14 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.potion.Effects;
+import net.minecraft.util.text.Color;
+import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.Style;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -22,14 +26,18 @@ import net.minecraft.util.text.StringTextComponent;
  */
 public class MushroomSet implements FullSetInformation {
 	public static final MushroomSet instance = new MushroomSet();
+	private static final List<ITextComponent> fsb = Arrays.asList(
+			full_set_bonus.deepCopy().append(new TranslationTextComponent("armor.mushroom.fsb"))
+					.mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.mushroom.fsb.discription.0",
+					((IFormattableTextComponent) Effects.NIGHT_VISION.getDisplayName())
+							.mergeStyle(Style.EMPTY.setColor(Color.fromInt(Effects.NIGHT_VISION.getLiquidColor())))),
+			new TranslationTextComponent("armor.mushroom.fsb.discription.1"));
 
 	public int boots_hp = 3;
 	public int chestplate_hp = 2;
 	public int helmet_hp = 4;
 	public int leggings_hp = 1;
-
-	public MushroomSet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() throws IllegalAccessException {
@@ -43,9 +51,7 @@ public class MushroomSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Night Affinity"),
-				new StringTextComponent("Grants the wearer permanent Night Vision."),
-				new StringTextComponent("During the Night, the stats of the armor pieces are tripled."));
+		return fsb;
 	}
 
 	@Override

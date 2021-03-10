@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.ItemProperties;
 import net.hypixel.skyblock.util.StatString;
 import net.minecraft.client.util.ITooltipFlag;
@@ -14,6 +13,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 /**
@@ -25,11 +25,11 @@ import net.minecraft.world.World;
  * @since 14 August 2020
  */
 public class EndStoneSword extends ModSwordItem {
-	private static final List<StringTextComponent> tooltip = Arrays.asList(
-			new StringTextComponent(FormatingCodes.gold + "Item Ability: Extreme Focus"),
-			new StringTextComponent(FormatingCodes.gray + "Consumes all your remaining" + StatString.intelligence
-					+ "to grant Damage Resistance for 5 seconds and extra Damage on your next hit depending on how much"
-					+ StatString.intelligence + " was consumed."));
+	private static final List<ITextComponent> tooltip = Arrays.asList(
+			new StringTextComponent("Item Ability: Extreme Focus").mergeStyle(TextFormatting.GOLD),
+			new StringTextComponent("Consumes all your remaining").append(StatString.intelligence).appendString(
+					"to grant Damage Resistance for 5 seconds and extra Damage on your next hit depending on how much")
+					.append(StatString.intelligence).appendString(" was consumed."));
 
 	public EndStoneSword() {
 		super(ModSwordTier.End_Stone_Sword, ItemProperties.m1, ModItemRarity.Epic);

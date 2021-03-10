@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.ItemProperties;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
@@ -13,6 +12,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 /**
@@ -25,10 +25,9 @@ import net.minecraft.world.World;
  * @since 11 October 2019
  */
 public class OrnateZombieSword extends ModSwordItem {
-	private static final List<StringTextComponent> tooltip = Arrays.asList(
-			new StringTextComponent(FormatingCodes.gold + "Item Ability: Instant Heal"),
-			new StringTextComponent(FormatingCodes.gray
-					+ "Heal yourself for 29 + 5% max Health and Players within 7 blocks for 10 Health."));
+	private static final List<ITextComponent> tooltip = Arrays.asList(
+			new StringTextComponent("Item Ability: Instant Heal").mergeStyle(TextFormatting.GOLD),
+			new StringTextComponent("Heal yourself for 29 + 5% max Health and Players within 7 blocks for 10 Health."));
 
 	public OrnateZombieSword() {
 		super(ModSwordTier.Ornate_Zombie_Sword, ItemProperties.c1, ModItemRarity.Epic);

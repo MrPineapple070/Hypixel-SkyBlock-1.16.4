@@ -8,12 +8,11 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 
 /**
  * <a href=
- * "https://hypixel-skyblock.fandom.com/wiki/Armor_of_Magma#Helmet">Magma
+ * "https://hypixel-skyblock.fandom.com/wiki/Armor_of_Magma#Helmet">MagmaSet
  * Helmet</a>
  *
  * @author MrPineapple070
@@ -22,11 +21,14 @@ import net.minecraft.world.World;
  */
 public class MagmaHelmet extends ModArmorItem {
 	public MagmaHelmet() {
-		super(Magma.material, EquipmentSlotType.HEAD, ItemProperties.c1, Magma.rarity);
+		super(MagmaSet.instance.getMaterial(), EquipmentSlotType.HEAD, ItemProperties.c1, MagmaSet.instance.getRarity());
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent(Magma.fsb));
+		try {
+			tooltip.addAll(MagmaSet.instance.getDescription(this.slot));
+		} catch (IllegalAccessException e) {
+		}
 	}
 }

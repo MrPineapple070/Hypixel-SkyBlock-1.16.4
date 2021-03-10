@@ -8,8 +8,8 @@ import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -22,14 +22,14 @@ import net.minecraft.util.text.TextFormatting;
  */
 public class PumpkinSet implements FullSetInformation {
 	public static final PumpkinSet instance = new PumpkinSet();
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.pumpkin.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.pumpkin.fsb.discription"));
 
 	public double boots_hp = 1.6;
 	public double chestplate_hp = 2.8;
 	public double helmet_hp = 1.6;
 	public double leggings_hp = 2;
-
-	public PumpkinSet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() throws IllegalAccessException {
@@ -43,8 +43,7 @@ public class PumpkinSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent("Full Set Bonus: Pumpkin Buff").mergeStyle(TextFormatting.GOLD),
-				new StringTextComponent("Grants +10% damage reduction from all sources and +10% damage."));
+		return fsb;
 	}
 
 	@Override

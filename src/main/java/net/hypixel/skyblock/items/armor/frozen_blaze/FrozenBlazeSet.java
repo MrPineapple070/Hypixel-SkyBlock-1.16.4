@@ -6,11 +6,15 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.StatString;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.potion.Effects;
+import net.minecraft.util.text.Color;
+import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.Style;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -23,6 +27,14 @@ import net.minecraft.util.text.StringTextComponent;
  */
 public class FrozenBlazeSet implements FullSetInformation {
 	public static final FrozenBlazeSet instance = new FrozenBlazeSet();
+	private static final List<ITextComponent> fsb = Arrays.asList(
+			full_set_bonus.deepCopy().append(new TranslationTextComponent("armor.frozen_blaze.fsb"))
+					.mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.frozen_blaze.fsb.discription.0", StatString.health,
+					((IFormattableTextComponent) Effects.SLOWNESS.getDisplayName())
+							.mergeStyle(Style.EMPTY.setColor(Color.fromInt(Effects.SLOWNESS.getLiquidColor())))),
+			new TranslationTextComponent("armor.frozen_blaze.fsb.discription.1"),
+			new TranslationTextComponent("armor.frozen_blaze.fsb.discription.2"));
 
 	private final int boots_spd = 2;
 	private final int boots_str = 40;
@@ -33,9 +45,6 @@ public class FrozenBlazeSet implements FullSetInformation {
 	private final int helmet_str = 40;
 	private final int leggings_spd = 2;
 	private final int leggings_str = 40;
-
-	public FrozenBlazeSet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() throws IllegalAccessException {
@@ -49,11 +58,7 @@ public class FrozenBlazeSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Blazing Aura"),
-				new StringTextComponent("Damages mobs in a 5 block range for 300 base damage + 3% of their max "
-						+ StatString.health + "per second and applies Slowness 1 for 4 seconds."),
-				new StringTextComponent("Max damage per second increased by +100 per 5000 rods (5000 max damage cap)."),
-				new StringTextComponent("Also grants permanent Fire and Lava immunity."));
+		return fsb;
 	}
 
 	@Override

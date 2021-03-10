@@ -6,15 +6,15 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class CheapTuxedoSet implements FullSetInformation {
 	public static CheapTuxedoSet instance = new CheapTuxedoSet();
-
-	public CheapTuxedoSet() {
-	}
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.tux.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.tux.fsb.discription", "75", "50"));
 
 	@Override
 	public double[] getBootsBuffs() {
@@ -28,8 +28,7 @@ public class CheapTuxedoSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Dashing!"),
-				new StringTextComponent(FormatingCodes.gray + "Max health is set to 75. Deal +50% more damaage."));
+		return fsb;
 	}
 
 	@Override

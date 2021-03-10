@@ -6,11 +6,10 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.StatString;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -22,7 +21,10 @@ import net.minecraft.util.text.StringTextComponent;
  * @since 11 October 2019
  */
 public class PackSet implements FullSetInformation {
-	static final PackSet instance = new PackSet();
+	public static final PackSet instance = new PackSet();
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy().append(new TranslationTextComponent("armor.pack.fsb")),
+			new TranslationTextComponent("armor.pack.fsb.discription.0", StatString.strength, StatString.defense),
+			new TranslationTextComponent("armor.pack.fsb.discription.1"));
 
 	private static final int helmet = 29;
 	private static final int chestplate = 35;
@@ -41,11 +43,7 @@ public class PackSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Armor of the Pack"),
-				new StringTextComponent("Gain +35 ").append(StatString.strength).appendString(" and +80 ")
-						.append(StatString.defense)
-						.appendString(" for each Armor of the Pack wearers within 30 blocks."),
-				new StringTextComponent("Max of 3 players."));
+		return fsb;
 	}
 
 	@Override

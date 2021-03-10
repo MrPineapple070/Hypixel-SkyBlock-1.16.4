@@ -8,8 +8,8 @@ import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -22,9 +22,9 @@ import net.minecraft.util.text.TextFormatting;
  */
 public class SpookySet implements FullSetInformation {
 	public static final SpookySet instance = new SpookySet();
-
-	public SpookySet() {
-	}
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.spooky.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.spooky.fsb.discription"));
 
 	@Override
 	public double[] getBootsBuffs() throws IllegalAccessException {
@@ -38,8 +38,7 @@ public class SpookySet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent("Full Set Bonus: Candy Man").mergeStyle(TextFormatting.GOLD),
-				new StringTextComponent("Grants a +5% chance to find rare candy."));
+		return fsb;
 	}
 
 	@Override

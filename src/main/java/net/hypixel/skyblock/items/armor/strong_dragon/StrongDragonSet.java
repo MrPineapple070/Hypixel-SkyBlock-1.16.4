@@ -7,8 +7,8 @@ import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * @author MrPineapple070
@@ -17,6 +17,9 @@ import net.minecraft.util.text.TextFormatting;
  */
 public class StrongDragonSet implements FullSetInformation {
 	public static final StrongDragonSet instance = new StrongDragonSet();
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.strong.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.strong.fsb.discription"));
 
 	private final double boots_hp = 12;
 	private final int boots_str = 25;
@@ -26,9 +29,6 @@ public class StrongDragonSet implements FullSetInformation {
 	private final int helmet_str = 25;
 	private final double leggings_hp = 20;
 	private final int leggings_str = 25;
-
-	public StrongDragonSet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() throws IllegalAccessException {
@@ -42,9 +42,7 @@ public class StrongDragonSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent("Full Set Bonus: Strong Blood").mergeStyle(TextFormatting.GOLD),
-				new StringTextComponent(
-						"Gives +75 damage, +2 teleport distance, +3 seconds of duration, +5 strength of cast to the Aspect of the End."));
+		return fsb;
 	}
 
 	@Override

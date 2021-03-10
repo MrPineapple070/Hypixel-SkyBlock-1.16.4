@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.ItemProperties;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
@@ -13,6 +12,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 /**
@@ -25,10 +25,10 @@ import net.minecraft.world.World;
  * @since 02 August 2019
  */
 public class AspectOfTheDragon extends ModSwordItem {
-	private static final List<StringTextComponent> tooltip = Arrays.asList(
-			new StringTextComponent(FormatingCodes.gold + "Item Ability: Dragon Rage"),
-			new StringTextComponent(FormatingCodes.gray + "Deal 12000 Damage to all Monsters in front of you."),
-			new StringTextComponent(FormatingCodes.gray + "Damaged Monsters take huge Knockback."));
+	private static final List<ITextComponent> tooltip = Arrays.asList(
+			new StringTextComponent("Item Ability: Dragon Rage").mergeStyle(TextFormatting.GOLD),
+			new StringTextComponent("Deal 12000 Damage to all Monsters in front of you."),
+			new StringTextComponent("Damaged Monsters take huge Knockback."));
 
 	public AspectOfTheDragon() {
 		super(ModSwordTier.AOTD, ItemProperties.c1, ModItemRarity.Legendary);

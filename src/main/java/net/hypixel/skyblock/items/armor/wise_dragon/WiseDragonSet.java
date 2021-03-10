@@ -8,8 +8,8 @@ import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.hypixel.skyblock.util.StatString;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * <a href="https://hypixel-skyblock.fandom.com/wiki/Wise_Dragon_Armor">Wise
@@ -21,14 +21,14 @@ import net.minecraft.util.text.TextFormatting;
  */
 public class WiseDragonSet implements FullSetInformation {
 	public static final WiseDragonSet instance = new WiseDragonSet();
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.wise.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.wise.fsb.discription", StatString.mana));
 
 	private final double boots_hp = 12;
 	private final double chestplate_hp = 24;
 	private final double helmet_hp = 14;
 	private final double leggings_hp = 20;
-
-	public WiseDragonSet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() throws IllegalAccessException {
@@ -42,8 +42,7 @@ public class WiseDragonSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent("Full Set Bonus: Wise Blood").mergeStyle(TextFormatting.GOLD),
-				new StringTextComponent("All abilities cost 33% less ").append(StatString.mana).appendString("."));
+		return fsb;
 	}
 
 	@Override

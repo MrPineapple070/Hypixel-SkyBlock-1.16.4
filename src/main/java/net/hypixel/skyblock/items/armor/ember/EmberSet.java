@@ -6,10 +6,10 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -22,9 +22,12 @@ import net.minecraft.util.text.StringTextComponent;
  */
 public class EmberSet implements FullSetInformation {
 	public static final EmberSet instance = new EmberSet();
-
-	public EmberSet() {
-	}
+	private static final List<ITextComponent> fsb = Arrays.asList(
+			full_set_bonus.deepCopy().append(new TranslationTextComponent("armor.ember.fsb"))
+					.mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.ember.fsb.discription.0"),
+			new TranslationTextComponent("armor.ember.fsb.discription.1"),
+			new TranslationTextComponent("armor.ember.fsb.discription.2"));
 
 	@Override
 	public double[] getBootsBuffs() {
@@ -38,10 +41,7 @@ public class EmberSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Nether Lord"),
-				new StringTextComponent(FormatingCodes.gray	+ "Obsidian will be created below you when walking on Lava."),
-				new StringTextComponent(FormatingCodes.gray + "It also increases the chance of Nether monsters dropping an item by 20%."),
-				new StringTextComponent(FormatingCodes.gray + "Wearing this full set will also prevent you from taking Lava and Fire Damage."));
+		return fsb;
 	}
 
 	@Override

@@ -6,10 +6,10 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -21,16 +21,15 @@ import net.minecraft.util.text.StringTextComponent;
  * @since 08 August 2020
  */
 public class LeafletSet implements FullSetInformation {
-
 	public static final LeafletSet instance = new LeafletSet();
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.leaflet.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.leaflet.fsb.discription"));
 
 	public double boots_hp = 3;
 	public double chestplate_hp = 7;
 	public double helmet_hp = 4;
 	public double leggings_hp = 6;
-
-	public LeafletSet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() throws IllegalAccessException {
@@ -44,8 +43,7 @@ public class LeafletSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Energy of the Forest"),
-				new StringTextComponent(FormatingCodes.gray	+ "Grants +10% damage reduction and +10% extra damage."));
+		return fsb;
 	}
 
 	@Override

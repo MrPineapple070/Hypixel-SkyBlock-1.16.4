@@ -6,10 +6,10 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific infomration for the
@@ -22,9 +22,9 @@ import net.minecraft.util.text.StringTextComponent;
  */
 public class ElegantTuxedoSet implements FullSetInformation {
 	public static final ElegantTuxedoSet instance = new ElegantTuxedoSet();
-
-	public ElegantTuxedoSet() {
-	}
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.tux.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.tux.fsb.discription", "50", "150"));
 
 	@Override
 	public double[] getBootsBuffs() {
@@ -38,9 +38,7 @@ public class ElegantTuxedoSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Dashing!"),
-				new StringTextComponent(FormatingCodes.gray + "Max health is set to 50."),
-				new StringTextComponent(FormatingCodes.gray + "Deal +150% more damage"));
+		return fsb;
 	}
 
 	@Override

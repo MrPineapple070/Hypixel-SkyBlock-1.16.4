@@ -6,10 +6,11 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -21,15 +22,15 @@ import net.minecraft.util.text.TextFormatting;
  * @since 11 June 2019
  */
 public class SpeedsterSet implements FullSetInformation {
-	private static final int boots_spd = 15;
+	public static final SpeedsterSet instance = new SpeedsterSet();
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.speedster.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.speedster.fsb.discription", StatString.speed));
 
+	private static final int boots_spd = 15;
 	private static final int chestplate_spd = 15;
 	private static final int helmet_spd = 15;
-	public static final SpeedsterSet instance = new SpeedsterSet();
 	private static final int leggings_spd = 15;
-
-	public SpeedsterSet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() throws IllegalAccessException {
@@ -43,8 +44,7 @@ public class SpeedsterSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent("Full Set Bonus: Bonus Speed").mergeStyle(TextFormatting.GOLD),
-				new StringTextComponent("Increases speed by 20%."));
+		return fsb;
 	}
 
 	@Override

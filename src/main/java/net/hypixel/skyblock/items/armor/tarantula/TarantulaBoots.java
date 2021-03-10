@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.hypixel.skyblock.items.armor.ModArmorItem;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.ItemProperties;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 public class TarantulaBoots extends ModArmorItem {
@@ -19,11 +19,10 @@ public class TarantulaBoots extends ModArmorItem {
 	static {
 		try {
 			discription.addAll(TarantulaSet.instance.getDescription(EquipmentSlotType.FEET));
-			discription.add(new StringTextComponent(FormatingCodes.gold + "Item Ability: Double Jump"));
-			discription.add(new StringTextComponent(FormatingCodes.gray + "Allows you to Double Jump."));
-			discription.add(new StringTextComponent(FormatingCodes.gold + "Piece Bonus: Spider Bulwark"));
-			discription.add(new StringTextComponent(
-					FormatingCodes.gray + "Every spider you kill will accumulate defense against them."));
+			discription.add(new StringTextComponent("Item Ability: Double Jump").mergeStyle(TextFormatting.GOLD));
+			discription.add(new StringTextComponent("Allows you to Double Jump."));
+			discription.add(new StringTextComponent("Piece Bonus: Spider Bulwark").mergeStyle(TextFormatting.GOLD));
+			discription.add(new StringTextComponent("Every spider you kill will accumulate defense against them."));
 		} catch (final IllegalAccessException e) {
 			e.printStackTrace();
 		}

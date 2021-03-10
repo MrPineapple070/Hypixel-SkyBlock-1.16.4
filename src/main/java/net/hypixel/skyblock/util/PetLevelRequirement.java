@@ -82,8 +82,8 @@ public class PetLevelRequirement {
 
 	@Nonnegative
 	public static final int getRequirement(@Nonnull ModItemRarity rarity, @Nonnegative int lvl) {
-		if (lvl < 0 || lvl > 100)
-			throw new IllegalStateException("Illegal Pet level: " + lvl);
+		if (lvl < 0 || lvl > 99)
+			return Integer.MAX_VALUE;
 		return getRequirement(rarity).get(lvl);
 	}
 }

@@ -6,9 +6,10 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * @author MrPineapple070
@@ -17,14 +18,16 @@ import net.minecraft.util.text.StringTextComponent;
  */
 public class OldDragonSet implements FullSetInformation {
 	public static final OldDragonSet instance = new OldDragonSet();
+	private static final List<ITextComponent> fsb = Arrays.asList(
+			full_set_bonus.deepCopy().append(new TranslationTextComponent("armor.old.fsb"))
+					.mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.old.fsb.discription", "Growth",
+					Enchantments.PROTECTION.getDisplayName(1), Enchantments.FEATHER_FALLING.getDisplayName(1)));
 
 	public double boots_hp = 15;
 	public double chestplate_hp = 32;
 	public double helmet_hp = 22;
 	public double leggings_hp = 26;
-
-	public OldDragonSet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() throws IllegalAccessException {
@@ -38,8 +41,7 @@ public class OldDragonSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Old Blood"),
-				new StringTextComponent("Increases the strength of Growth, Protection, Feather Falling, Sugar Rush, and True Protection Enchantments while worn."));
+		return fsb;
 	}
 
 	@Override

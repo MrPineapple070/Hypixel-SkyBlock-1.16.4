@@ -6,11 +6,11 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.StatString;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -23,14 +23,16 @@ import net.minecraft.util.text.StringTextComponent;
  */
 public class FarmSuitSet implements FullSetInformation {
 	public static final FarmSuitSet instance = new FarmSuitSet();
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.farm.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.farm.fsb.discription", StatString.speed),
+			full_set_bonus.deepCopy().append(new TranslationTextComponent("armor.farm_suit.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.farm_suit.fsb.discription"));
 
 	private final int boots_spd = 0;
 	private final int chestplate_spd = 0;
 	private final int helmet_spd = 0;
 	private final int leggings_spd = 0;
-
-	public FarmSuitSet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() throws IllegalAccessException {
@@ -44,11 +46,7 @@ public class FarmSuitSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Bonus Speed"),
-				new StringTextComponent("Increases " + StatString.speed
-						+ " by 20% while worn near Farming Minions or in the Farm, Barn, and Mushroom Desert."),
-				new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Farmer Aura"),
-				new StringTextComponent("Increases te regrowth rate of nearby crops on public islands."));
+		return fsb;
 	}
 
 	@Override

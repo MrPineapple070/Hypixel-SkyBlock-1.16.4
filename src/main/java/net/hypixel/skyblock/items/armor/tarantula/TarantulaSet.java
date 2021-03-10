@@ -8,8 +8,8 @@ import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -22,15 +22,14 @@ import net.minecraft.util.text.TextFormatting;
  */
 public class TarantulaSet implements FullSetInformation {
 	public static final TarantulaSet instance = new TarantulaSet();
-
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.tarantula.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.tarantula.fsb.discription"));
+	
 	private final double boots_hp = 14;
 	private final double chestplate_hp = 24;
 	private final double helmet_hp = 20;
 	private final double leggings_hp = 12;
-
-	public TarantulaSet() {
-	}
-
 	@Override
 	public double[] getBootsBuffs() throws IllegalAccessException {
 		return new double[] { 0, 0, 0, this.boots_hp, 5, 50, 0 };
@@ -43,8 +42,7 @@ public class TarantulaSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent("Full Set Bonus: Octodexterity").mergeStyle(TextFormatting.GOLD),
-				new StringTextComponent("Every 4th strike, deal double damage and apply Venom reducing healing by 40% for 4 seconds."));
+		return fsb;
 	}
 
 	@Override

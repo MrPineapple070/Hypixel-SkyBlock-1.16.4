@@ -6,10 +6,10 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -21,16 +21,15 @@ import net.minecraft.util.text.StringTextComponent;
  * @since 09 August 2020
  */
 public class MinerSet implements FullSetInformation {
+	public static final MinerSet instance = new MinerSet();
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.miner.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.miner.fsb.discription"));
 
 	public static int boots_def = 9;
-
 	public static int chestplate_def = 19;
 	public static int helmet_def = 9;
-	public static final MinerSet instance = new MinerSet();
 	public static int leggings_def = 14;
-
-	public MinerSet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() throws IllegalAccessException {
@@ -44,8 +43,7 @@ public class MinerSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Regeneration"),
-				new StringTextComponent("Regenerates 5% of your max Health every second when exiting combat for 8 seconds."));
+		return fsb;
 	}
 
 	@Override

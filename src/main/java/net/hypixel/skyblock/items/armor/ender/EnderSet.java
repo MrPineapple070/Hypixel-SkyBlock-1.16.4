@@ -8,7 +8,7 @@ import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -21,14 +21,12 @@ import net.minecraft.util.text.StringTextComponent;
  */
 public class EnderSet implements FullSetInformation {
 	public static final EnderSet instance = new EnderSet();
+	private static final List<ITextComponent> fsb = Arrays.asList(new TranslationTextComponent("armor.ender.fsb"));
 
 	private static int helmet_hp = 4;
 	private static final int chestplate_hp = 6;
 	private static int leggings_hp = 5;
 	private static final int boots_hp = 3;
-
-	public EnderSet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() {
@@ -42,7 +40,7 @@ public class EnderSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent("All stats of this armor are doubled while in The End."));
+		return fsb;
 	}
 
 	@Override

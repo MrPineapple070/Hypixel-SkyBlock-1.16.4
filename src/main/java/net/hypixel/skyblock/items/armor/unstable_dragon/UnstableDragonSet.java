@@ -7,8 +7,8 @@ import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * @author MrPineapple070
@@ -16,16 +16,15 @@ import net.minecraft.util.text.TextFormatting;
  * @since 10 August 2020
  */
 public class UnstableDragonSet implements FullSetInformation {
-
 	public static final UnstableDragonSet instance = new UnstableDragonSet();
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.unstable.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.unstable.fsb.discription"));
 
 	private final double boots_hp = 12;
 	private final double chestplate_hp = 24;
 	private final double helmet_hp = 14;
 	private final double leggings_hp = 20;
-
-	public UnstableDragonSet() {
-	}
 
 	@Override
 	public double[] getBootsBuffs() throws IllegalAccessException {
@@ -39,8 +38,7 @@ public class UnstableDragonSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent("Full Set Bonus: Unstable Blood").mergeStyle(TextFormatting.GOLD),
-				new StringTextComponent("Every 10 seconds, skrike mobs with in 7 blocks with 3000 damage."));
+		return fsb;
 	}
 
 	@Override

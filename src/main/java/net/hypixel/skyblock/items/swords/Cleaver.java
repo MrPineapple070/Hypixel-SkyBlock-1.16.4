@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.ItemProperties;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
@@ -13,6 +12,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 /**
@@ -23,8 +23,8 @@ import net.minecraft.world.World;
  * @since 11 June 2019
  */
 public class Cleaver extends ModSwordItem {
-	private static final List<StringTextComponent> tooltip = Arrays
-			.asList(new StringTextComponent(FormatingCodes.gold + "Item Ability: Cleave"), new StringTextComponent(
+	private static final List<ITextComponent> tooltip = Arrays
+			.asList(new StringTextComponent("Item Ability: Cleave").mergeStyle(TextFormatting.GOLD), new StringTextComponent(
 					"When hitting a mob, any entity within a 3 block radius will take a small portion of damage."));
 
 	public Cleaver() {

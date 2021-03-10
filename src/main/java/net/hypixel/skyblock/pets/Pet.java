@@ -98,7 +98,7 @@ public abstract class Pet {
 		this.rarity = Objects.requireNonNull(rarity, "Pet must have a rarity.");
 		this.petType = Objects.requireNonNull(petType, "Pet must have a PetType");
 		this.collection = Objects.requireNonNull(collection, "Pet must have a Collection");
-		this.level = 1;
+		this.level = 100;
 		this.current_xp = 0;
 		this.req_xp = PetLevelRequirement.getRequirement(this.rarity, this.level);
 	}
@@ -115,7 +115,8 @@ public abstract class Pet {
 		while (amount < xp)
 			amount += lvl.get(++inc);
 		this.level = inc;
-		this.req_xp = lvl.get(this.level + 1);
+		if (this.level != 100)
+			this.req_xp = lvl.get(this.level + 1);
 	}
 
 	/**

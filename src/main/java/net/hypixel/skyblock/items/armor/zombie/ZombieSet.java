@@ -8,8 +8,8 @@ import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
  * Holds {@link EquipmentSlotType} specific information for the
@@ -22,7 +22,10 @@ import net.minecraft.util.text.TextFormatting;
  */
 public class ZombieSet implements FullSetInformation {
 	public static final ZombieSet instance = new ZombieSet();
-
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.zombie.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.zombie.fsb.discription"));
+	
 	private final double boots_hp = 24;
 	private final double chestplate_hp = 40;
 	private final double leggings_hp = 32;
@@ -39,10 +42,7 @@ public class ZombieSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(
-				new StringTextComponent("Full Set Bonus: Projectile Absorption").mergeStyle(TextFormatting.GOLD),
-				new StringTextComponent(
-						"Heals the wearer for 2 health per second for 5 seconds when hit by a projectile."));
+		return fsb;
 	}
 
 	@Override

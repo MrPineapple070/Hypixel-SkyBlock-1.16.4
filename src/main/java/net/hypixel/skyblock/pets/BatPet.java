@@ -15,14 +15,14 @@ public final class BatPet extends Pet {
 	private double scc;
 	private double intel;
 	private double speed;
-	private int candy;
-	private int n_intel;
-	private int n_speed;
-	private int wings;
-	private int sonar;
+	private double candy;
+	private double n_intel;
+	private double n_speed;
+	private double wings;
+	private double sonar;
 
 	public BatPet() {
-		super(ModItemRarity.Common, Collection.Mining, PetType.Bat);
+		super(ModItemRarity.Legendary, Collection.Mining, PetType.Bat);
 	}
 
 	@Override
@@ -32,36 +32,36 @@ public final class BatPet extends Pet {
 		this.speed = .05d * this.level;
 		this.n_intel = 0;
 		this.n_speed = 0;
-		int c = 0, w = 0, s = 0;
+		double c = 0, w = 0, s = 0;
 		switch (this.rarity) {
 		case Common:
-			c = 10;
+			c = .1;
 			break;
 		case Uncommon:
-			c = 15;
+			c = .15;
 			break;
 		case Rare:
-			c = 15;
+			c = .15;
 			this.n_intel += .2d * this.level;
 			this.n_speed += .4d * this.level;
 			break;
 		case Epic:
-			c = 20;
-			this.n_intel += .3 * this.level;
-			this.n_speed += .5 * this.level;
+			c = .2;
+			this.n_intel += .3d * this.level;
+			this.n_speed += .5d * this.level;
 			break;
 		case Legendary:
-			c = 20;
-			this.n_intel += .3 * this.level;
-			this.n_speed += .5 * this.level;
-			w = 5;
+			c = .2;
+			this.n_intel += .3d * this.level;
+			this.n_speed += .5d * this.level;
+			w = .5;
 			break;
 		case Mythic:
-			c = 20;
-			this.n_intel += .3 * this.level;
-			this.n_speed += .5 * this.level;
-			w = 5;
-			s = 25;
+			c = .2;
+			this.n_intel += .3d * this.level;
+			this.n_speed += .5d * this.level;
+			w = .5;
+			s = .25;
 			break;
 		default:
 			throw new IllegalStateException("Illegal Bet Pet rarity:\t" + this.rarity.name());

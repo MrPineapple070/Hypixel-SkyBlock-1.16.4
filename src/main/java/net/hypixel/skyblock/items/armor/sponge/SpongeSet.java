@@ -6,12 +6,14 @@ import java.util.List;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.armor.FullSetInformation;
 import net.hypixel.skyblock.items.armor.ModArmorMaterial;
-import net.hypixel.skyblock.util.FormatingCodes;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 /**
- *<a href="https://hypixel-skyblock.fandom.com/wiki/Sponge_Armor">Sponge Armor</a>.
+ * <a href="https://hypixel-skyblock.fandom.com/wiki/Sponge_Armor">Sponge
+ * Armor</a>.
  *
  * @author MrPineapple070
  * @version 09 August 2020
@@ -19,9 +21,9 @@ import net.minecraft.util.text.StringTextComponent;
  */
 public class SpongeSet implements FullSetInformation {
 	public static final SpongeSet instance = new SpongeSet();
-
-	public SpongeSet() {
-	}
+	private static final List<ITextComponent> fsb = Arrays.asList(full_set_bonus.deepCopy()
+			.append(new TranslationTextComponent("armor.sponge.fsb")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("armor.sponge.fsb.discription", StatString.defense));
 
 	@Override
 	public double[] getBootsBuffs() throws IllegalAccessException {
@@ -35,8 +37,7 @@ public class SpongeSet implements FullSetInformation {
 
 	@Override
 	public List<ITextComponent> getFullSetBonus() {
-		return Arrays.asList(new StringTextComponent(FormatingCodes.gold + "Full Set Bonus: Absorb"),
-				new StringTextComponent("Doubles defense while in water."));
+		return fsb;
 	}
 
 	@Override

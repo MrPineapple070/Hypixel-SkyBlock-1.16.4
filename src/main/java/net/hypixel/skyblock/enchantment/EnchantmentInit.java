@@ -72,14 +72,12 @@ public class EnchantmentInit {
 			() -> new Telekinesis(EnchantmentType.BOW));
 
 	// Armor
-	// public static final RegistryObject<Enchantment> growth =
-	// enchantments.register("growth" , () -> new Enchantment());
+	 public static final RegistryObject<Enchantment> growth = enchantments.register("growth", Growth::new);
 	// public static final RegistryObject<Enchantment> rejuvenate =
 	// enchantments.register("rejuvenate" , () -> new Enchantment());
 	// public static final RegistryObject<Enchantment> true_protection =
 	// enchantments.register("true_protection" , () -> new Enchantment());
-	// public static final RegistryObject<Enchantment> sugar_rush =
-	// enchantments.register("sugar_rush" , () -> new Enchantment());
+	public static final RegistryObject<Enchantment> sugar_rush = enchantments.register("sugar_rush" , SugarRush::new);
 
 	// Fishing Rod
 	// public static final RegistryObject<Enchantment> angler =
