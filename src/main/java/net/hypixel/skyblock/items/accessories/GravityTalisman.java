@@ -4,14 +4,14 @@ import java.util.List;
 
 import net.hypixel.skyblock.entity.player.ModServerPlayerEntity;
 import net.hypixel.skyblock.items.ModItemRarity;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.ItemProperties;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -24,16 +24,15 @@ import net.minecraft.world.World;
  * @version 25 July 2020
  */
 public class GravityTalisman extends Accessory {
+	private static final ITextComponent info = new TranslationTextComponent("accessory.gravity", StatString.strength, StatString.defense);
+	
 	public GravityTalisman() {
 		super(ItemProperties.m1, ModItemRarity.Uncommon);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(
-				new StringTextComponent(FormatingCodes.gray + "The closer you are to the spawn on the island, the more "
-						+ FormatingCodes.dark_red + "Strength " + FormatingCodes.gray + "and " + FormatingCodes.green
-						+ "Defence " + FormatingCodes.gray + "you will get. (Max +10)"));
+		tooltip.add(info);
 	}
 
 	@Override

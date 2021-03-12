@@ -7,7 +7,7 @@ import net.hypixel.skyblock.util.ItemProperties;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -19,12 +19,13 @@ import net.minecraft.world.World;
  * @version 25 July 2020
  */
 public class CrookedArtifact extends Accessory {
+	private static final ITextComponent info = new TranslationTextComponent("accessory.crooked_artifact");
 	public CrookedArtifact() {
 		super(ItemProperties.c1, ModItemRarity.Rare);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent("Gives a 2% discount on most shops."));
+		tooltip.add(info);
 	}
 }

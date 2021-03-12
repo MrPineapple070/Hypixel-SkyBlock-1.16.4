@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "hypixelskyblock:items/hamster_wheel"
+	}
+}

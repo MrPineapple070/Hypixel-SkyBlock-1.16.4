@@ -7,7 +7,7 @@ import net.hypixel.skyblock.util.ItemProperties;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -20,12 +20,14 @@ import net.minecraft.world.World;
  * @since 19 August 2020
  */
 public class TreasureArtifact extends Accessory {
+	public static final ITextComponent info = new TranslationTextComponent("accessory.treasure", 3);
+	
 	public TreasureArtifact() {
 		super(ItemProperties.d1, ModItemRarity.Legendary);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent("Grants +3% extra loot to end of dungeon chests."));
+		tooltip.add(info);
 	}
 }

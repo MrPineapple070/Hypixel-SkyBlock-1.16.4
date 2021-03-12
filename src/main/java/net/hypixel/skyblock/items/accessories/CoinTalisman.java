@@ -12,7 +12,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -24,6 +24,7 @@ import net.minecraft.world.World;
  * @version 18 May 2020
  */
 public class CoinTalisman extends Accessory {
+	private static final ITextComponent info = new TranslationTextComponent("accessory.coin_talisman");
 	private int tick;
 
 	public CoinTalisman() {
@@ -33,7 +34,7 @@ public class CoinTalisman extends Accessory {
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent("Accationaly spawns Coins while in your inventory."));
+		tooltip.add(info);
 	}
 
 	@Override

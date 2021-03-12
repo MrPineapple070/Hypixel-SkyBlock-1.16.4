@@ -1,5 +1,6 @@
 package net.hypixel.skyblock.items.accessories;
 
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.common.collect.ImmutableList;
@@ -24,7 +25,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -37,31 +38,32 @@ import net.minecraft.world.server.ServerWorld;
  */
 public class FarmerOrb extends Accessory {
 	private static final ImmutableList<Integer> dx = ImmutableList
-			.copyOf(new Integer[] { -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7 });
+			.copyOf(Arrays.asList(-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7));
 	private static final ImmutableList<Integer> dy = ImmutableList
-			.copyOf(new Integer[] { -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7 });
+			.copyOf(Arrays.asList(-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7));
 	private static final ImmutableList<Integer> dz = ImmutableList
-			.copyOf(new Integer[] { -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7 });
+			.copyOf(Arrays.asList(-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7));
 
-	private static final ImmutableList<Block> effective_on = ImmutableList.copyOf(new Block[] { Blocks.WHEAT,
+	private static final ImmutableList<Block> effective_on = ImmutableList.copyOf(Arrays.asList(Blocks.WHEAT,
 			Blocks.CARROTS, Blocks.POTATOES, Blocks.BEETROOTS, Blocks.MELON_STEM, Blocks.PUMPKIN_STEM, Blocks.CACTUS,
-			Blocks.SUGAR_CANE, Blocks.COCOA, Blocks.BAMBOO, Blocks.BAMBOO_SAPLING });
+			Blocks.SUGAR_CANE, Blocks.COCOA, Blocks.BAMBOO, Blocks.BAMBOO_SAPLING));
 
 	private static final int Wheat = 0, Carrots = 1, Potatoes = 2, Beetroot = 3, Melon = 4, Pumpkin = 5, Cactus = 6,
 			Sugar_Cane = 7, Cocoa = 8, Bamboo = 9, Bamboo_Sapling = 10;
+	
+	private static final ITextComponent info = new TranslationTextComponent("accessory.farmer_orb");
 
 	private final BlockPos[][][] nearby = new BlockPos[16][16][16];
 
-	/**
-	 * Construct this.
-	 */
+	private BlockPos pos;
+
 	public FarmerOrb() {
 		super(ItemProperties.f1, ModItemRarity.Uncommon);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent("Increases the regrowth rate of nearby crops."));
+		tooltip.add(info);
 	}
 
 	@Override
@@ -115,10 +117,13 @@ public class FarmerOrb extends Accessory {
 	}
 
 	private void setNearby(PlayerEntity player) {
-		final double px = player.getPosX(), py = player.getPosY(), pz = player.getPosZ();
+		if (player.getPosition().equals(pos))
+			return;
+		pos = player.getPosition();
 		for (int i = 0; i < this.nearby.length; i++)
 			for (int j = 0; j < this.nearby[i].length; j++)
 				for (int k = 0; k < this.nearby[i][j].length; k++)
-					this.nearby[i][j][k] = new BlockPos(px + dx.get(j), py + dy.get(i), pz + dz.get(k));
+					this.nearby[i][j][k] = new BlockPos(pos.getX() + dx.get(j), pos.getY() + dy.get(i),
+							pos.getZ() + dz.get(k));
 	}
 }

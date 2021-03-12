@@ -7,7 +7,7 @@ import net.hypixel.skyblock.util.ItemProperties;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -17,12 +17,14 @@ import net.minecraft.world.World;
  * @version 29 July 2020
  */
 public class SeaCreatureArtifact extends Accessory {
+	private static final ITextComponent info = new TranslationTextComponent("accessory.sea_creature", "15%");
+	
 	public SeaCreatureArtifact() {
 		super(ItemProperties.fi1, ModItemRarity.Rare);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent("Take 15% less damage from Sea Creatures."));
+		tooltip.add(info);
 	}
 }

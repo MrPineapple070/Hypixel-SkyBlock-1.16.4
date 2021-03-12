@@ -3,7 +3,6 @@
     "input": {
 		"item": "minecraft:cobblestone"
 	},
-	"count": 32,
     "output": {
         "item": "hypixelskyblockmod:enchanted_cobblestone",
         "count": 1

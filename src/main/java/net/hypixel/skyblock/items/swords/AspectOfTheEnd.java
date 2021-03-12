@@ -5,6 +5,7 @@ import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.util.ItemProperties;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -13,6 +14,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -26,8 +28,8 @@ import net.minecraft.world.World;
  */
 public class AspectOfTheEnd extends ModSwordItem {
 	private static final List<ITextComponent> tooltip = Arrays.asList(
-			new StringTextComponent("Item Ability: Instant Transmission").mergeStyle(TextFormatting.GOLD),
-			new StringTextComponent( "Teleports you 8 blocks ahead of you and you gain +50% Speed for 3 seconds."));
+			item_ability.deepCopy().append(new TranslationTextComponent("sword.aote")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("sword.aote.0", StatString.speed));
 
 	public AspectOfTheEnd() {
 		super(ModSwordTier.AOTE, ItemProperties.c1, ModItemRarity.Rare);

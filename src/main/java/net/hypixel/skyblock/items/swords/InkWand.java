@@ -5,14 +5,20 @@ import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.util.ItemProperties;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.text.Color;
+import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -24,8 +30,10 @@ import net.minecraft.world.World;
  */
 public class InkWand extends ModSwordItem {
 	private static final List<ITextComponent> tooltip = Arrays.asList(
-			new StringTextComponent("Item Ability: Ink Bomb").mergeStyle(TextFormatting.GOLD),
-			new StringTextComponent("Shoot an ink bomb in front of you dealing 10000 damage and giving Blindless."));
+			item_ability.deepCopy().append(new TranslationTextComponent("sword.ink")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("sword.ink.0", StatString.ability_damage,
+					((IFormattableTextComponent) Effects.BLINDNESS.getDisplayName())
+							.mergeStyle(Style.EMPTY.setColor(Color.fromInt(Effects.BLINDNESS.getLiquidColor())))));
 
 	public InkWand() {
 		super(ModSwordTier.Ink_Wand, ItemProperties.fi1, ModItemRarity.Epic);

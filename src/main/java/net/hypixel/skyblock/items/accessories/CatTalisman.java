@@ -3,8 +3,8 @@ package net.hypixel.skyblock.items.accessories;
 import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.ItemProperties;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -14,7 +14,7 @@ import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -32,6 +32,8 @@ public class CatTalisman extends Accessory {
 	 */
 	private static final AttributeModifier speed_mod = new AttributeModifier(
 			Attributes.MOVEMENT_SPEED.getAttributeName(), .001, Operation.ADDITION);
+	
+	private static final ITextComponent info = new TranslationTextComponent("accessory.cat_talisman", StatString.speed);
 
 	public CatTalisman() {
 		super(ItemProperties.ms1, ModItemRarity.Uncommon);
@@ -39,8 +41,7 @@ public class CatTalisman extends Accessory {
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent(
-				FormatingCodes.gray + "Increases " + FormatingCodes.white + "speed " + FormatingCodes.gray + "by 1%."));
+		tooltip.add(info);
 	}
 
 	@Override

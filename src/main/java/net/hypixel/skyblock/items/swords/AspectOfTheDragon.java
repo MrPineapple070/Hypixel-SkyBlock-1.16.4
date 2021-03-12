@@ -5,6 +5,7 @@ import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.util.ItemProperties;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -13,6 +14,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -26,9 +28,9 @@ import net.minecraft.world.World;
  */
 public class AspectOfTheDragon extends ModSwordItem {
 	private static final List<ITextComponent> tooltip = Arrays.asList(
-			new StringTextComponent("Item Ability: Dragon Rage").mergeStyle(TextFormatting.GOLD),
-			new StringTextComponent("Deal 12000 Damage to all Monsters in front of you."),
-			new StringTextComponent("Damaged Monsters take huge Knockback."));
+			item_ability.deepCopy().append(new TranslationTextComponent("sword.aotd")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("sword.aotd.0", StatString.ability_damage),
+			new TranslationTextComponent("sword.aotd.1"));
 
 	public AspectOfTheDragon() {
 		super(ModSwordTier.AOTD, ItemProperties.c1, ModItemRarity.Legendary);

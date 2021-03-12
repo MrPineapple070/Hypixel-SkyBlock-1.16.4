@@ -5,6 +5,7 @@ import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.util.ItemProperties;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -13,6 +14,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -25,10 +27,10 @@ import net.minecraft.world.World;
  */
 public class YetiSword extends ModSwordItem {
 	private static final List<ITextComponent> tooltip = Arrays.asList(
-			new StringTextComponent("Item Ability: Terrain Toss").mergeStyle(TextFormatting.GOLD),
-			new StringTextComponent("Throws a chunk of terrain in the direction you are facing."),
-			new StringTextComponent("Deals up to 4000 damage."),
-			new StringTextComponent("Maximum range of 32 blocks."));
+			item_ability.deepCopy().append(new TranslationTextComponent("sword.yeti")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("sword.yeti.0"),
+			new TranslationTextComponent("sword.yeti.1", StatString.ability_damage),
+			new TranslationTextComponent("sword.yeti.2"));
 
 	public YetiSword() {
 		super(ModSwordTier.Yeti_Sowrd, ItemProperties.c1, ModItemRarity.Legendary);

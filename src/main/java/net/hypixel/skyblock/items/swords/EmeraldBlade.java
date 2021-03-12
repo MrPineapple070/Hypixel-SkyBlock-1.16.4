@@ -11,6 +11,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -22,8 +23,7 @@ import net.minecraft.world.World;
  * @since 02 August 2019
  */
 public class EmeraldBlade extends ModSwordItem {
-	private static final StringTextComponent tooltip = new StringTextComponent(
-			"This blade becomes stronger as you carry more coins in your purse.");
+	private static final ITextComponent tooltip = new TranslationTextComponent("sword.emerald");
 
 	public EmeraldBlade() {
 		super(ModSwordTier.Emerald_Blade, ItemProperties.m1, ModItemRarity.Epic);

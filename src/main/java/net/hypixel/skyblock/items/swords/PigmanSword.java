@@ -5,14 +5,15 @@ import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.util.ItemProperties;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -25,8 +26,9 @@ import net.minecraft.world.World;
  */
 public class PigmanSword extends ModSwordItem {
 	private static final List<ITextComponent> tooltip = Arrays.asList(
-			new StringTextComponent("Item Ability: Burning Souls").mergeStyle(TextFormatting.GOLD),
-			new StringTextComponent("Gain +10 Defense for 5s and cast a vortex of flamies towards nearby enemies dealing up to 1500 damage over 5 seconds."));
+			item_ability.deepCopy().append(new TranslationTextComponent("sword.pigman"))
+					.mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("sword.pigman.0", StatString.defense, StatString.ability_damage));
 
 	public PigmanSword() {
 		super(ModSwordTier.Pigman_Sword, ItemProperties.f1, ModItemRarity.Legendary);

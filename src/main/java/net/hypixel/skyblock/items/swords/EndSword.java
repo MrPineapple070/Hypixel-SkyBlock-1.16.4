@@ -11,6 +11,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -22,8 +23,7 @@ import net.minecraft.world.World;
  * @since 11 June 2019
  */
 public class EndSword extends ModSwordItem {
-	private static final StringTextComponent tooltip = new StringTextComponent(
-			"Deals double damage to Endermits, Endermen, and Ender Dragons.");
+	private static final ITextComponent tooltip = new TranslationTextComponent("sword.end");
 
 	public EndSword() {
 		super(ModSwordTier.End_Sword, ItemProperties.c1, ModItemRarity.Uncommon);

@@ -14,6 +14,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -26,10 +27,8 @@ import net.minecraft.world.World;
  */
 public class ZombieSword extends ModSwordItem {
 	private static final List<ITextComponent> tooltip = Arrays.asList(
-			new StringTextComponent("Item Ability: Instant Heal").mergeStyle(TextFormatting.GOLD),
-			new StringTextComponent("Heal yourself for 24 + 5% max ").append(StatString.health)
-			.appendString(" and Players within 7 blocks for 10 ").append(StatString.health)
-			.appendString("."));
+			item_ability.deepCopy().append(new TranslationTextComponent("sword.zombie")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("sword.zombie.0", StatString.health));
 
 	public ZombieSword() {
 		super(ModSwordTier.Zombie_Sword, ItemProperties.c1, ModItemRarity.Rare);

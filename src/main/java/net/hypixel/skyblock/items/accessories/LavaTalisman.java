@@ -7,7 +7,7 @@ import net.hypixel.skyblock.util.ItemProperties;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -19,12 +19,14 @@ import net.minecraft.world.World;
  * @version 28 July 2020
  */
 public class LavaTalisman extends Accessory {
+	private static final ITextComponent info = new TranslationTextComponent("accessory.lava");
+	
 	public LavaTalisman() {
 		super(ItemProperties.c1, ModItemRarity.Uncommon);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent("Provides an immunity to Lava."));
+		tooltip.add(info);
 	}
 }

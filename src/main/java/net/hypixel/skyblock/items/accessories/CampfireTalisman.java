@@ -5,14 +5,14 @@ import java.util.List;
 import com.google.common.collect.ImmutableList;
 
 import net.hypixel.skyblock.items.ModItemRarity;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.ItemProperties;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -67,8 +67,7 @@ public class CampfireTalisman extends Accessory {
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent(FormatingCodes.gray + "Heals the player " + FormatingCodes.red + this.heal
-				+ " " + FormatingCodes.gray + "per second."));
+		tooltip.add(new TranslationTextComponent("accessory.campfire", this.heal, StatString.health));
 	}
 
 	/**

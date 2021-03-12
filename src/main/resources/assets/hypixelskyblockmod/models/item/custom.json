@@ -2,15 +2,13 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/cube_all",
 	"texture_size": [64, 64],
-	"textures": {
-		"0": "hypixelskyblockmod:items/white_jumbo_backpack"
-	},
 	"elements": [
 		{
-			"from": [1, 1, 1],
-			"to": [15, 15, 15],
+			"name": "layer0",
+			"from": [0.5, 0.5, 0.5],
+			"to": [15.5, 15.5, 15.5],
 			"faces": {
-				"north": {"uv": [2, 2, 4, 4], "texture": "#0"},
+				"north": {"uv": [1.75, 2, 3.75, 4], "texture": "#0"},
 				"east": {"uv": [0, 2, 2, 4], "texture": "#0"},
 				"south": {"uv": [6, 2, 8, 4], "texture": "#0"},
 				"west": {"uv": [4, 2, 6, 4], "texture": "#0"},
@@ -19,6 +17,7 @@
 			}
 		},
 		{
+			"name": "layer1",
 			"from": [0, 0, 0],
 			"to": [16, 16, 16],
 			"faces": {

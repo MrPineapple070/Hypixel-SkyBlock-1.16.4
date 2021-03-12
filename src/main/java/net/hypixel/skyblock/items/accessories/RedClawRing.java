@@ -3,12 +3,12 @@ package net.hypixel.skyblock.items.accessories;
 import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.ItemProperties;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -20,13 +20,14 @@ import net.minecraft.world.World;
  * @version 29 July 2020
  */
 public class RedClawRing extends Accessory {
+	private static final ITextComponent info = new TranslationTextComponent("accessory.red_claw", StatString.crit_damage, "3%");
+	
 	public RedClawRing() {
 		super(ItemProperties.c1, ModItemRarity.Rare);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent(FormatingCodes.gray + "Increases " + FormatingCodes.blue + "Crit Damage "
-				+ FormatingCodes.gray + "by 3%."));
+		tooltip.add(info);
 	}
 }

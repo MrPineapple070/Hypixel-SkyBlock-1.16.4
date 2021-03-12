@@ -19,7 +19,13 @@ public class MinionFuelItem extends Item {
 	 * The amount this will speed up the minion.
 	 */
 	private final double speed;
-
+	
+	/**
+	 * Constructor
+	 * @param properties {@link Properties}
+	 * @param burnTime in ticks
+	 * @param speed percentage
+	 */
 	public MinionFuelItem(Properties properties, int burnTime, double speed) {
 		super(properties);
 		if (burnTime < -1)

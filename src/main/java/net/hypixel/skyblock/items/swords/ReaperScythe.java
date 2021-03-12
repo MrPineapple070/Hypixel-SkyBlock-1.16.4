@@ -14,6 +14,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -26,9 +27,9 @@ import net.minecraft.world.World;
  */
 public class ReaperScythe extends ModSwordItem {
 	private static final List<ITextComponent> tooltip = Arrays.asList(
-			new StringTextComponent("Item Ability: Desecration").mergeStyle(TextFormatting.GOLD),
-			new StringTextComponent("Within 3 seconds of killing an enemy, Desecrate their grave to spawn a zombie."),
-			new StringTextComponent("Zombies lose 2% ").append(StatString.health).appendString("/s"));
+			item_ability.deepCopy().append(new TranslationTextComponent("sword.reaper")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("sword.reaper.0"),
+			new TranslationTextComponent("sword.reaper.1", StatString.health));
 
 	public ReaperScythe() {
 		super(ModSwordTier.Reaper_Scythe, ItemProperties.c1, ModItemRarity.Legendary);

@@ -13,6 +13,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -25,8 +26,8 @@ import net.minecraft.world.World;
  */
 public class EmberRod extends ModSwordItem {
 	public static final List<ITextComponent> tooltip = Arrays.asList(
-			new StringTextComponent("Item Ability: Fire Blast").mergeStyle(TextFormatting.GOLD),
-			new StringTextComponent("Shoot 3 fireballs forwards in rapid succession."));
+			item_ability.deepCopy().append(new TranslationTextComponent("sword.ember")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("sword.ember.0"));
 
 	public EmberRod() {
 		super(ModSwordTier.Ember_Rod, ItemProperties.c1, ModItemRarity.Epic);

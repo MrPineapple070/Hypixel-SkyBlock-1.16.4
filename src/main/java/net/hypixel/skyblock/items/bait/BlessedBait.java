@@ -5,7 +5,7 @@ import java.util.List;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -16,12 +16,10 @@ import net.minecraft.world.World;
  * @since 2 July 2019
  */
 public class BlessedBait extends Bait {
-	public BlessedBait() {
-		super();
-	}
+	private static final ITextComponent info = new TranslationTextComponent("bait.blessed");
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent("When fishing, get a 15% chance to get double drops."));
+		tooltip.add(info);
 	}
 }

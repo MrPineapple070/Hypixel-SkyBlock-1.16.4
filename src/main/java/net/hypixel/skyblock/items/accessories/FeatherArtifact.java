@@ -7,7 +7,7 @@ import net.hypixel.skyblock.util.ItemProperties;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -20,13 +20,14 @@ import net.minecraft.world.World;
  * @version 25 July 2020
  */
 public class FeatherArtifact extends Accessory {
+	private static final ITextComponent info = new TranslationTextComponent("accessory.feather_artifact");
+	
 	public FeatherArtifact() {
 		super(ItemProperties.f1, ModItemRarity.Rare);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent(
-				"Increases max distance before taking fall damage by 10 blocks and reduces fall damage by 15%."));
+		tooltip.add(info);
 	}
 }

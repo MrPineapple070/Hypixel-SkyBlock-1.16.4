@@ -13,6 +13,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -25,9 +26,9 @@ import net.minecraft.world.World;
  */
 public class RogueSword extends ModSwordItem {
 	private static final List<ITextComponent> tooltip = Arrays.asList(
-			new StringTextComponent("Item Ability: Speed Boost").mergeStyle(TextFormatting.GOLD),
-			new StringTextComponent("Increases your movement Speed by +20% for 30 seconds."),
-			new StringTextComponent("Only gives +10 if already active."));
+			item_ability.deepCopy().append(new TranslationTextComponent("sword.rogue")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("sword.rogue.0"),
+			new TranslationTextComponent("sword.rogue.1"));
 
 	public RogueSword() {
 		super(ModSwordTier.Rogue_Sword, ItemProperties.c1, ModItemRarity.Common);

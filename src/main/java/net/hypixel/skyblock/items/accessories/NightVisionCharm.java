@@ -10,8 +10,11 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
+import net.minecraft.util.text.Color;
+import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.Style;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -23,13 +26,17 @@ import net.minecraft.world.World;
  * @version 28 July 2020
  */
 public class NightVisionCharm extends Accessory {
+	private static final ITextComponent info = new TranslationTextComponent("accessory.night_vision",
+			((IFormattableTextComponent) Effects.NIGHT_VISION.getDisplayName())
+					.mergeStyle(Style.EMPTY.setColor(Color.fromInt(Effects.NIGHT_VISION.getLiquidColor()))));
+
 	public NightVisionCharm() {
 		super(ItemProperties.f1, ModItemRarity.Common);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent("Grants Night Vision I."));
+		tooltip.add(info);
 	}
 
 	@Override

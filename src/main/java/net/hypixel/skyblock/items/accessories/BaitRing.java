@@ -5,7 +5,6 @@ import java.util.List;
 import net.hypixel.skyblock.entity.player.ModServerPlayerEntity;
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.items.bait.Bait;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.ItemProperties;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
@@ -15,7 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -29,14 +28,15 @@ import net.minecraft.world.World;
  * @version 26 July 2020
  */
 public class BaitRing extends Accessory {
+	private static final ITextComponent info = new TranslationTextComponent("accessory.bait_ring");
+	
 	public BaitRing() {
 		super(ItemProperties.fi1, ModItemRarity.Rare);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent(FormatingCodes.gray + "Grants a " + FormatingCodes.white + "5% "
-				+ FormatingCodes.gray + "chance to not consume " + FormatingCodes.yellow + "Bait."));
+		tooltip.add(info);
 	}
 
 	@Override

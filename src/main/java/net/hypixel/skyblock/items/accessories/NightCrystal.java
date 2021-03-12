@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.util.ItemProperties;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -13,7 +14,7 @@ import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 public class NightCrystal extends Accessory {
@@ -29,6 +30,8 @@ public class NightCrystal extends Accessory {
 	 */
 	private static final AttributeModifier defense_mod = new AttributeModifier(Attributes.ARMOR.getAttributeName(), 0xA,
 			Operation.ADDITION);
+	
+	private static final ITextComponent info = new TranslationTextComponent("accessory.night_crystal", StatString.strength, StatString.defense);
 
 	public NightCrystal() {
 		super(ItemProperties.m1, ModItemRarity.Rare);
@@ -36,7 +39,7 @@ public class NightCrystal extends Accessory {
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent("Gives extra strength & defense during the night"));
+		tooltip.add(info);
 	}
 
 	@Override

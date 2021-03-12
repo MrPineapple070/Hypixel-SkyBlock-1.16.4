@@ -49,7 +49,6 @@ public class ClientEventBusSubscriber {
 					RegistryObject<ContainerType<AbstractMinionContainer>> obj = null;
 					obj = (RegistryObject<ContainerType<AbstractMinionContainer>>) field.get(obj);
 					ContainerType<AbstractMinionContainer> screen = obj.get();
-					HypixelSkyBlockMod.LOGGER.info(screen.getRegistryName().toString());
 					ScreenManager.registerFactory(screen, AbstractMinionScreen::new);
 				} catch (IllegalArgumentException | IllegalAccessException e) {
 					continue;
@@ -59,17 +58,18 @@ public class ClientEventBusSubscriber {
 		ScreenManager.registerFactory(ModContainerTypes.medium_mcc.get(), MediumMCS::new);
 		ScreenManager.registerFactory(ModContainerTypes.large_mcc.get(), LargeMCS::new);
 		
-		for (Field field : MinionBlockInit.class.getDeclaredFields())
+		/**for (Field field : MinionBlockInit.class.getDeclaredFields())
 			if (field.getType() == RegistryObject.class)
 				try {
 					RegistryObject<Block> obj = null;
 					obj = (RegistryObject<Block>) field.get(obj);
 					Block block = obj.get();
-					HypixelSkyBlockMod.LOGGER.info(block.getRegistryName().toString());
 					RenderTypeLookup.setRenderLayer(block, RenderType.getTranslucent());
 				} catch (IllegalArgumentException | IllegalAccessException e) {
 					continue;
-				}
+				}*/
+		for (RegistryObject<Block> obj : MinionBlockInit.minionBlocks.getEntries())
+			RenderTypeLookup.setRenderLayer(obj.get(), RenderType.getTranslucent());
 		
 		ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.small_mcte.get(), ChestTileEntityRenderer::new);
 		ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.medium_mcte.get(), ChestTileEntityRenderer::new);

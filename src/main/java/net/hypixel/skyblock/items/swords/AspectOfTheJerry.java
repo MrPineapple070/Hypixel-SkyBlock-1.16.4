@@ -13,6 +13,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -26,8 +27,8 @@ import net.minecraft.world.World;
  */
 public class AspectOfTheJerry extends ModSwordItem {
 	private static final List<ITextComponent> tooltip = Arrays.asList(
-			new StringTextComponent("Item Ability: Parley").mergeStyle(TextFormatting.GOLD),
-			new StringTextComponent("Channel your inner Jerry."));
+			item_ability.deepCopy().append(new TranslationTextComponent("sword.aotj")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("sword.aotj.0"));
 
 	public AspectOfTheJerry() {
 		super(ModSwordTier.AOTJ, ItemProperties.c1, ModItemRarity.Common);

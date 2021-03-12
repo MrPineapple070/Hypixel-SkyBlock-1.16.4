@@ -7,7 +7,7 @@ import net.hypixel.skyblock.util.ItemProperties;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -18,10 +18,14 @@ import net.minecraft.world.World;
  * @version 28 July 2020
  */
 public class PiggyBank extends Accessory {
-	private enum State {
+	public static enum State {
 		Broken, Cracked, Normal;
 	}
-
+	
+	private static final ITextComponent percent0 = new TranslationTextComponent("accessory.piggy.0");
+	private static final ITextComponent percent1 = new TranslationTextComponent("accessory.piggy.1");
+	private static final ITextComponent percent2 = new TranslationTextComponent("accessory.piggy.2");
+	
 	private State state;
 
 	public PiggyBank() {
@@ -31,19 +35,21 @@ public class PiggyBank extends Accessory {
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		String percent = "";
+		ITextComponent percent;
 		switch (this.state) {
 		case Normal:
-			percent = "100%";
+			percent = percent0;
 			break;
 		case Cracked:
-			percent = "50%";
+			percent = percent1;
 			break;
 		case Broken:
-			percent = "none";
+			percent = percent2;
 			break;
+		default:
+			return;
 		}
-		tooltip.add(new StringTextComponent(String.format("Save %s of your coins.", percent)));
+		tooltip.add(new TranslationTextComponent("accessory.piggy", percent));
 	}
 
 	public void repair() {

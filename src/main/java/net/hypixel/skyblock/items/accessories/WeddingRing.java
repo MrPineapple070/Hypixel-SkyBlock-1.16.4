@@ -8,7 +8,7 @@ import net.hypixel.skyblock.util.ItemProperties;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -95,7 +95,7 @@ public abstract class WeddingRing extends Accessory {
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent("Grants a 1 in 10^" + this.chance + " to deal double damage."));
+		tooltip.add(new TranslationTextComponent("accessory.wedding", this.chance));
 	}
 
 	public boolean chanceSuccessful() {

@@ -13,6 +13,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -23,9 +24,9 @@ import net.minecraft.world.World;
  * @since 11 June 2019
  */
 public class Cleaver extends ModSwordItem {
-	private static final List<ITextComponent> tooltip = Arrays
-			.asList(new StringTextComponent("Item Ability: Cleave").mergeStyle(TextFormatting.GOLD), new StringTextComponent(
-					"When hitting a mob, any entity within a 3 block radius will take a small portion of damage."));
+	private static final List<ITextComponent> tooltip = Arrays.asList(item_ability.deepCopy()
+			.append(new TranslationTextComponent("sword.cleaver")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("sword.cleaver.0"));
 
 	public Cleaver() {
 		super(ModSwordTier.Cleaver, ItemProperties.c1, ModItemRarity.Uncommon);

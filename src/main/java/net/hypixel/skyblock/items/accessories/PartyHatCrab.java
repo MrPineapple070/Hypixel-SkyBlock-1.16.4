@@ -4,13 +4,13 @@ import java.util.List;
 import java.util.Objects;
 
 import net.hypixel.skyblock.items.ModItemRarity;
-import net.hypixel.skyblock.util.FormatingCodes;
 import net.hypixel.skyblock.util.ItemProperties;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -24,6 +24,8 @@ import net.minecraft.world.World;
  * @version 27 July 2020
  */
 public class PartyHatCrab extends Accessory {
+	private static final ITextComponent info = new TranslationTextComponent("accessory.party_hat", StatString.intelligence);
+	
 	/**
 	 * The {@link DyeColor} of this.
 	 */
@@ -53,8 +55,7 @@ public class PartyHatCrab extends Accessory {
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent(FormatingCodes.gray + "Grants +1 " + FormatingCodes.aqua + "Intelligence "
-				+ FormatingCodes.gray + "per in-game year played."));
+		tooltip.add(info);
 	}
 
 	/**

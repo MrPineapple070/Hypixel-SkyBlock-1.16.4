@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.util.ItemProperties;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -13,7 +14,7 @@ import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -28,13 +29,15 @@ import net.minecraft.world.World;
 public class DayCrystal extends Accessory {
 	/**
 	 * An {@link AttributeModifier} that increases {@link Attributes#ATTACK_DAMAGE}
-	 * by 0xA.
+	 * by 10.
 	 */
 	private static final AttributeModifier attack_mod = new AttributeModifier(
 			Attributes.ATTACK_DAMAGE.getAttributeName(), 0xA, Operation.ADDITION);
+	
+	private static final ITextComponent info = new TranslationTextComponent("accessory.day_crystal", StatString.strength, StatString.defense);
 
 	/**
-	 * An {@link AttributeModifier} that increases {@link Attributes#ARMOR} by 0xA.
+	 * An {@link AttributeModifier} that increases {@link Attributes#ARMOR} by 10.
 	 */
 	private static final AttributeModifier defense_mod = new AttributeModifier(Attributes.ARMOR.getAttributeName(), 0xA,
 			Operation.ADDITION);
@@ -45,7 +48,7 @@ public class DayCrystal extends Accessory {
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent("Gives extra strength & defense during the day."));
+		tooltip.add(info);
 	}
 
 	@Override

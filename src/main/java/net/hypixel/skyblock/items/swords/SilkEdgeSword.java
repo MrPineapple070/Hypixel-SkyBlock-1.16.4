@@ -5,6 +5,7 @@ import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.util.ItemProperties;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -13,6 +14,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -26,9 +28,9 @@ import net.minecraft.world.World;
  */
 public class SilkEdgeSword extends ModSwordItem {
 	private static final List<ITextComponent> tooltip = Arrays.asList(
-			new StringTextComponent("Item Ability: Leap").mergeStyle(TextFormatting.GOLD),
-			new StringTextComponent("Leap into the air and deal 400 base Magic Damage to any nearby enemies upon landing on the ground."),
-			new StringTextComponent("Damaged enemies will also be stunned for 1 second."));
+			item_ability.deepCopy().append(new TranslationTextComponent("sword.silk")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("sword.silk.0", StatString.ability_damage),
+			new TranslationTextComponent("sword.silk.1"));
 
 	public SilkEdgeSword() {
 		super(ModSwordTier.Silk_Edge_Sword, ItemProperties.c1, ModItemRarity.Epic);

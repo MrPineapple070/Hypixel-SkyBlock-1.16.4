@@ -14,7 +14,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -53,7 +53,9 @@ public abstract class PersonalCompactor extends Accessory {
 			super(ItemProperties.m1, ModItemRarity.Epic, 6000);
 		}
 	}
-
+	
+	private static final ITextComponent info = new TranslationTextComponent("accessory.comp");
+	
 	/**
 	 * The list of {@link ItemStack}
 	 */
@@ -86,8 +88,7 @@ public abstract class PersonalCompactor extends Accessory {
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent(
-				"Automatically turn certain materials in your inventoy into their enchanted forms."));
+		tooltip.add(info);
 	}
 
 	public ItemStack decrStackSize(int index, int count) {

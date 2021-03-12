@@ -9,7 +9,7 @@ import net.minecraft.entity.monster.CaveSpiderEntity;
 import net.minecraft.entity.monster.SpiderEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -22,12 +22,14 @@ import net.minecraft.world.World;
  * @version 29 July 2020
  */
 public class SpiderTalisman extends Accessory {
+	private static final ITextComponent info = new TranslationTextComponent("accessory.spider", "5%");
+	
 	public SpiderTalisman() {
 		super(ItemProperties.c1, ModItemRarity.Epic);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent("Reduces the damage taken from Spiders and Cave Spiders by 5%."));
+		tooltip.add(info);
 	}
 }

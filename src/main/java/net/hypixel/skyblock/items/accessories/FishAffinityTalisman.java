@@ -4,10 +4,11 @@ import java.util.List;
 
 import net.hypixel.skyblock.items.ModItemRarity;
 import net.hypixel.skyblock.util.ItemProperties;
+import net.hypixel.skyblock.util.StatString;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -20,12 +21,14 @@ import net.minecraft.world.World;
  * @version 26 July 2020
  */
 public class FishAffinityTalisman extends Accessory {
+	private static final ITextComponent info = new TranslationTextComponent("accessory.fish_affinity", StatString.fishing_speed);
+	
 	public FishAffinityTalisman() {
 		super(ItemProperties.fi1, ModItemRarity.Rare);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent("Decreases fishing catching speed by 5%."));
+		tooltip.add(info);
 	}
 }

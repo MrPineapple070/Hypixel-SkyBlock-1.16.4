@@ -13,6 +13,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -25,8 +26,8 @@ import net.minecraft.world.World;
  */
 public class EdibleMace extends ModSwordItem {
 	private static final List<ITextComponent> tooltip = Arrays.asList(
-			new StringTextComponent("Item Ability: ME SMASH HEAD").mergeStyle(TextFormatting.GOLD),
-			new StringTextComponent("The next attack deals double damage and weakens animals."));
+			item_ability.deepCopy().append(new TranslationTextComponent("sword.edible")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("sword.edible.0"));
 
 	public EdibleMace() {
 		super(ModSwordTier.Edible_Mace, ItemProperties.c1, ModItemRarity.Rare);

@@ -13,6 +13,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -25,10 +26,8 @@ import net.minecraft.world.World;
  */
 public class MidasSword extends ModSwordItem {
 	private static final List<ITextComponent> tooltip = Arrays.asList(
-			new StringTextComponent("Item Ability: Greed").mergeStyle(TextFormatting.GOLD),
-			new StringTextComponent(
-					"The Strength and Damge bonus of this item is dependant on the price paid for it at the Dark Auction."),
-			new StringTextComponent("The maximum bonus of this item is 120 if the bid was 50 million or more."));
+			item_ability.deepCopy().append(new TranslationTextComponent("sword.midas")).mergeStyle(TextFormatting.GOLD),
+			new TranslationTextComponent("sword.midas.0"), new TranslationTextComponent("sword.midas.1"));
 
 	public MidasSword() {
 		super(ModSwordTier.Midas_Sword, ItemProperties.c1, ModItemRarity.Legendary);

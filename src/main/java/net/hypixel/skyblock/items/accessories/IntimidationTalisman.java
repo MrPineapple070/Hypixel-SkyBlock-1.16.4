@@ -7,7 +7,7 @@ import net.hypixel.skyblock.util.ItemProperties;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -21,12 +21,14 @@ import net.minecraft.world.World;
  * @version 28 July 2020
  */
 public class IntimidationTalisman extends Accessory {
+	private static final ITextComponent info = new TranslationTextComponent("accessory.intimidation", 1);
+	
 	public IntimidationTalisman() {
 		super(ItemProperties.c1, ModItemRarity.Common);
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new StringTextComponent("Ensures that Monsters under level 1 will no longer target you."));
+		tooltip.add(info);
 	}
 }

@@ -28,6 +28,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -45,7 +46,7 @@ public abstract class ModSwordItem extends SwordItem implements ReforgableItem, 
 	 * @version 29 July 2020
 	 * @since 11 June 2019
 	 */
-	public enum SwordReforge implements Reforge {
+	public static enum SwordReforge implements Reforge {
 		Dirty(new double[0], new double[0], new double[0], new double[0], new double[0]),
 		Epic(new double[] { 15, 0, 0, 0, 0, 10, 0, 1 }, new double[] { 20, 0, 0, 0, 0, 15, 0, 2 },
 				new double[] { 25, 0, 0, 0, 0, 20, 0, 4 }, new double[] { 32, 0, 0, 0, 0, 27, 0, 7 },
@@ -208,7 +209,9 @@ public abstract class ModSwordItem extends SwordItem implements ReforgableItem, 
 			return unique;
 		}
 	}
-
+	
+	public static final ITextComponent item_ability = new TranslationTextComponent("sword.ability");
+	
 	/**
 	 * Determine if {@link #rarity} has been changed.
 	 */

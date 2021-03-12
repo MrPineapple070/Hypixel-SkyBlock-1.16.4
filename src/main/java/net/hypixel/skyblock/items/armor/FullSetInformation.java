@@ -26,13 +26,15 @@ public interface FullSetInformation {
 	static final ImmutableList<IFormattableTextComponent> buff = ImmutableList.copyOf(Arrays.asList(StatString.strength, StatString.crit_chance,
 			StatString.crit_damage, StatString.health, StatString.speed, StatString.intelligence, StatString.true_def));
 	static final ITextComponent full_set_bonus = new TranslationTextComponent("armor.full_set_bonus");
-
+	
 	public static double[] createBuffArray(double str, double cr_chn, double cr_dmg, double hp, double spd, double intel,
 			double tru_def) {
 		return new double[] { str, cr_chn, cr_dmg, hp, spd, intel, tru_def };
 	}
-
+	
 	public static double[] createBuffArray(double[] buff, int[] index) {
+		if (buff.length > 7)
+			throw new IllegalStateException("Expected less than 7 elements, got " + buff.length);
 		if (buff.length != index.length)
 			throw new IllegalStateException("Buff and index arrays must be the same length");
 		double[] b = new double[7];
